@@ -8,6 +8,8 @@
 
 #import "AlohaTester.h"
 
+// A simple test class
+
 @implementation AlohaTester
 
 - (void)setUp
