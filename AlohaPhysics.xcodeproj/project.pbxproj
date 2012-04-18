@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1D054C88153E5F810015BBAD /* GameLayer.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1D054C87153E5F810015BBAD /* GameLayer.mm */; };
 		1DF8B04B153B919600D9ED4A /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF8B04A153B919600D9ED4A /* QuartzCore.framework */; };
 		1DF8B04D153B919600D9ED4A /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF8B04C153B919600D9ED4A /* OpenGLES.framework */; };
 		1DF8B04F153B919600D9ED4A /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF8B04E153B919600D9ED4A /* OpenAL.framework */; };
@@ -167,6 +168,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1D054C86153E5F810015BBAD /* GameLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameLayer.h; sourceTree = "<group>"; };
+		1D054C87153E5F810015BBAD /* GameLayer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = GameLayer.mm; sourceTree = "<group>"; };
 		1DF8B046153B919600D9ED4A /* AlohaPhysics.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AlohaPhysics.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DF8B04A153B919600D9ED4A /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		1DF8B04C153B919600D9ED4A /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -559,6 +562,8 @@
 				1DF8B222153B919900D9ED4A /* RootViewController.h */,
 				1DF8B223153B919900D9ED4A /* RootViewController.m */,
 				1DF8B225153B919900D9ED4A /* HelloWorldLayer.h */,
+				1D054C86153E5F810015BBAD /* GameLayer.h */,
+				1D054C87153E5F810015BBAD /* GameLayer.mm */,
 				1DF8B226153B919900D9ED4A /* HelloWorldLayer.mm */,
 				1DF8B228153B919900D9ED4A /* GLES-Render.h */,
 				1DF8B229153B919900D9ED4A /* GLES-Render.mm */,
@@ -1295,6 +1300,7 @@
 				1DF8B224153B919900D9ED4A /* RootViewController.m in Sources */,
 				1DF8B227153B919900D9ED4A /* HelloWorldLayer.mm in Sources */,
 				1DF8B22A153B919900D9ED4A /* GLES-Render.mm in Sources */,
+				1D054C88153E5F810015BBAD /* GameLayer.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1455,6 +1461,7 @@
 				1DF8B232153B919900D9ED4A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1DF8B247153B926900D9ED4A /* Build configuration list for PBXNativeTarget "AlohaTester" */ = {
 			isa = XCConfigurationList;
@@ -1463,6 +1470,7 @@
 				1DF8B249153B926900D9ED4A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
