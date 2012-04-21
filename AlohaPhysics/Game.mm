@@ -17,6 +17,9 @@
 
 @synthesize level = _level;
 
+/*
+ init game with a level
+*/
 - (id) init {
     if( (self=[super init])) {
         self.level = [[Level alloc] init];
@@ -24,6 +27,9 @@
     return self;
 }
 
+/*
+ The game loop
+*/
 - (void) step {
     self.level->world->Step(1.0/STEPS_PER_SECOND, VELOCITY_ITERATIONS, POSITION_ITERATIONS);
 }
