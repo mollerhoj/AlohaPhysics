@@ -11,7 +11,9 @@
 #import "GLES-Render.h"
 
 @interface GameLayer : CCLayer {
-
+    @private
+    b2World *world;
+    GLESDebugDraw *m_debugDraw;
 }
 
 // returns a CCScene that contains the GameLayer as the only child
