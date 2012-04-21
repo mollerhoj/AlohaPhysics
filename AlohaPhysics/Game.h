@@ -10,11 +10,10 @@
 #import "Level.h"
 
 @interface Game : NSObject {
-    int unit;
+
 }
 
 @property (nonatomic, assign) Level *level;
-@property (nonatomic,assign) int pixels_per_unit;
 
 - (void)step;
 

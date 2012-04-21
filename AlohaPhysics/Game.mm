@@ -8,6 +8,8 @@
 
 #import "Game.h"
 
+static int _unit;
+
 @implementation Game
 
 
@@ -38,14 +40,14 @@
  The unit used in the game. The size of the screen is always 15x10 units.
 */
 + (int) unit {
-    return self.unit;
+    return _unit;
 }
 
 /*
  Define the unit of the game
 */
-+ (void)setUnit:(int)pixel_per_unit {
-    self.unit = pixel_per_unit;
-};
++ (void)setUnit:(int)ppu {
+    _unit = ppu;
+}
 
 @end

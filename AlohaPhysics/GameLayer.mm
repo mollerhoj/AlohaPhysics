@@ -15,10 +15,7 @@
 //@synthesize world = _world;
 //@synthesize m_debugDraw = _m_debugDraw;
 
-#define PIXELS_TO_METER_RATIO 32
-#define STEPS_PER_SECOND 60.0
-#define VELOCITY_ITERATIONS 8
-#define POSITION_ITERATIONS 1
+#define graphicsTag 1
 
 //Static method used to return a scene with this layer, in order to kick off the game
 +(CCScene *) scene
@@ -35,7 +32,6 @@
 	// return the scene
 	return scene;
 }
-
 
 /*
     Init Debug drawing: This method should be removed upon release
@@ -69,12 +65,23 @@
         self.isTouchEnabled = YES;
         
         //Set the unit of the game
-        [Game setUnit:[CCDirector sharedDirector].winSize.width/15];
+        [Game setUnit:(int)[CCDirector sharedDirector].winSize.width/15];
         NSAssert([CCDirector sharedDirector].winSize.width/15 == [CCDirector sharedDirector].winSize.height/10,@"The ratio between width and height is not right");
         
         //Init debug drawing: Remove upon release
         [self initDebugDraw];
 
+        //INIT GRAPICS
+        CCSpriteBatchNode *batch = [CCSpriteBatchNode batchNodeWithFile:@"blocks.png" capacity:150];
+		[self addChild:batch z:0 tag:graphicsTag];
+        
+        CCSpriteBatchNode *batch2 = (CCSpriteBatchNode*) [self getChildByTag:graphicsTag];
+        
+        CCSprite *sprite = [CCSprite spriteWithBatchNode:batch2 rect:CGRectMake(0,0,64,64)];
+        [batch2 addChild:sprite];
+        
+        sprite.position = ccp( 32, 32);
+        
         //Start scheduler
         [self schedule: @selector(tick:)];
 		
