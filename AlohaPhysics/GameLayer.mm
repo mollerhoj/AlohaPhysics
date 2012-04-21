@@ -112,12 +112,15 @@
 //Simple test function to test touches:
 - (void)ccTouchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
-	//Add a new body/atlas sprite at the touched location
+	/*
+    //Add a new body/atlas sprite at the touched location
 	for( UITouch *touch in touches ) {
 		CGPoint location = [touch locationInView: [touch view]];
 		location = [[CCDirector sharedDirector] convertToGL: location];
 		[self.game.level addNewBoxWithCoords: location];
+        //NSLog(@"Coords for location (box): %@", location.x);
 	}
+     */
 }
 
 //DEALLOC, release all objects:

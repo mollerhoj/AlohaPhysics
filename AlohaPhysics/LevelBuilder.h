@@ -13,6 +13,9 @@
 
 @property (nonatomic, assign) Level *level;
 
-- (void) buildLevel:(int)levelNumber;
+- (void)buildLevel:(int)levelNumber;
+-(id)initWithLevel:(Level *)level;
+-(void)addStaticBoxWithCoords:(CGPoint)p withDimensionX:(CGFloat)x andY:(CGFloat)y withAngle:(CGFloat)a;
+-(void)addHeroWithCoords:(CGPoint)p andRadius:(CGFloat)r;
 
 @end

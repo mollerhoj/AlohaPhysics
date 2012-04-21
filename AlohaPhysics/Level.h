@@ -13,6 +13,6 @@
 @interface Level : NSObject {
     @public
     b2World *world;
+    b2Body *hero;
 }
-
 @end

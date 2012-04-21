@@ -32,6 +32,7 @@
 */
 - (void) step {
     self.level->world->Step(1.0/STEPS_PER_SECOND, VELOCITY_ITERATIONS, POSITION_ITERATIONS);
+    self.level->hero->ApplyForce(b2Vec2(0.0f, -10.0f), self.level->hero->GetPosition());
 }
 
 @end
