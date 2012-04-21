@@ -10,4 +10,30 @@
 
 @implementation LevelBuilder
 
+@synthesize level = _level;
+
+-(id) initWithLevel:(Level *)level
+{
+	if( (self=[super init])) {
+        self.level = level;
+	}
+	return self;
+}
+
+-(void)buildLevel:(int)levelNumber {
+    switch (levelNumber) {
+        case 1:
+            //DO SHIT
+            //[self.level addObject]
+            break;
+            
+        case 2:
+            //DO SHIT
+            break;
+            
+        default:
+            break;
+    }
+}
+
 @end

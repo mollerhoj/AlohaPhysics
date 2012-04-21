@@ -38,6 +38,7 @@
         [self defineWorld];
         
         //Init levelBuilder
+        self.levelBuilder = [[LevelBuilder alloc] init];
         
 	}
 	return self;

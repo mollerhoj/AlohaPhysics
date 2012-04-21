@@ -7,7 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Level.h"
 
 @interface LevelBuilder : NSObject
+
+@property (nonatomic, assign) Level *level;
+
+- (void) buildLevel:(int)levelNumber;
 
 @end
