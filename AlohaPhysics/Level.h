@@ -6,8 +6,13 @@
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
+#import "cocos2d.h"
+#import "Box2D.h"
 #import <Foundation/Foundation.h>
 
-@interface Level : NSObject
+@interface Level : NSObject {
+    @public
+    b2World *world;
+}
 
 @end

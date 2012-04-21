@@ -16,7 +16,7 @@
     GLESDebugDraw *m_debugDraw;
 }
 
-@property (nonatomic) Game *game;
+@property (nonatomic, assign) Game *game;
 
 // returns a CCScene that contains the GameLayer as the only child
 +(CCScene *) scene;
