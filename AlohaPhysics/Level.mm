@@ -21,7 +21,7 @@
 -(void) defineWorld {
     // Define the gravity vector.
     b2Vec2 gravity;
-    gravity.Set(0.0f, -10.0f);
+    gravity.Set(0.0f, 0.0f);
     
     // Do we want to let bodies sleep?
     // This will speed up the physics simulation

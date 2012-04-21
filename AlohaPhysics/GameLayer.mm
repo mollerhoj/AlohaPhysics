@@ -75,8 +75,6 @@
         //Init debug drawing: Remove upon release
         [self initDebugDraw];
 
-        //Create levelbuilder
-
         //Start scheduler
         [self schedule: @selector(tick:)];
 		
