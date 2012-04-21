@@ -42,7 +42,7 @@
 */
 -(void) initDebugDraw {
     //init the debug drawer with ratio
-    m_debugDraw = new GLESDebugDraw( PIXELS_TO_METER_RATIO );
+    m_debugDraw = new GLESDebugDraw([Game unit]);
     
     //Set the debug draw into the world
     self.game.level->world->SetDebugDraw(m_debugDraw);
@@ -68,9 +68,9 @@
         //Set the screen to be touchable
         self.isTouchEnabled = YES;
         
-        //TODO: Who shall control the size? global variable? units?
-        CGSize screenSize = [CCDirector sharedDirector].winSize;
-        CCLOG(@"Screen width %0.2f screen height %0.2f",screenSize.width,screenSize.height);
+        //Set the unit of the game
+        [Game setUnit:[CCDirector sharedDirector].winSize.width/15];
+        NSAssert([CCDirector sharedDirector].winSize.width/15 == [CCDirector sharedDirector].winSize.height/10,@"The ratio between width and height is not right");
         
         //Init debug drawing: Remove upon release
         [self initDebugDraw];
