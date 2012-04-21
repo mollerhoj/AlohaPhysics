@@ -13,4 +13,6 @@
 
 @property (nonatomic, assign) Level *level;
 
+- (void)step;
+
 @end
