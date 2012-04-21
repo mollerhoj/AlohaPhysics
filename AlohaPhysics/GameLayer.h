@@ -12,7 +12,6 @@
 #import "Game.h"
 
 @interface GameLayer : CCLayer {
-    //b2World *world;
     GLESDebugDraw *m_debugDraw;
 }
 

@@ -36,15 +36,10 @@
 	return scene;
 }
 
--(void) initProperties {
-    self.isTouchEnabled = YES;
-}
 
--(void) initSize {
-    CGSize screenSize = [CCDirector sharedDirector].winSize;
-    CCLOG(@"Screen width %0.2f screen height %0.2f",screenSize.width,screenSize.height);
-}
-
+/*
+    Init Debug drawing: This method should be removed upon release
+*/
 -(void) initDebugDraw {
     //init the debug drawer with ratio
     m_debugDraw = new GLESDebugDraw( PIXELS_TO_METER_RATIO );
@@ -67,17 +62,21 @@
 {
 	if( (self=[super init])) {
         
+        //Create the game object
         self.game = [[Game alloc] init];
         
+        //Set the screen to be touchable
+        self.isTouchEnabled = YES;
         
-        [self initProperties];
-        [self initSize];
+        //TODO: Who shall control the size? global variable? units?
+        CGSize screenSize = [CCDirector sharedDirector].winSize;
+        CCLOG(@"Screen width %0.2f screen height %0.2f",screenSize.width,screenSize.height);
+        
+        //Init debug drawing: Remove upon release
         [self initDebugDraw];
 
         //Create levelbuilder
-        
-        //Create gameplayJugde
-        
+
         //Start scheduler
         [self schedule: @selector(tick:)];
 		
@@ -91,6 +90,9 @@
     [self.game step];
 }
 
+/*
+    Debug drawing: Remove upon release.
+*/
 -(void) draw
 {
 	// Default GL states: GL_TEXTURE_2D, GL_VERTEX_ARRAY, GL_COLOR_ARRAY, GL_TEXTURE_COORD_ARRAY
@@ -121,17 +123,11 @@
 }
 
 //DEALLOC, release all objects:
-/*
 - (void) dealloc
 {
-	// in case you have something to dealloc, do it in this method
-	delete world;
-	world = NULL;
-	
 	delete m_debugDraw;
-    
-	// don't forget to call "super dealloc"
+
 	[super dealloc];
-}*/
+}
 
 @end
