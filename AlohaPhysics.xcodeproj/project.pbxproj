@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		1D054C88153E5F810015BBAD /* GameLayer.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1D054C87153E5F810015BBAD /* GameLayer.mm */; };
 		1D054C93154262D40015BBAD /* Game.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D054C92154262D40015BBAD /* Game.m */; };
+		1D054C96154267A30015BBAD /* Level.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D054C95154267A30015BBAD /* Level.m */; };
+		1D054C99154267B50015BBAD /* LevelBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D054C98154267B50015BBAD /* LevelBuilder.m */; };
+		1D054C9C154267D00015BBAD /* Mechanic.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D054C9B154267CF0015BBAD /* Mechanic.m */; };
+		1D054C9F154267F30015BBAD /* MoveableObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D054C9E154267F30015BBAD /* MoveableObject.m */; };
 		1DF8B04B153B919600D9ED4A /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF8B04A153B919600D9ED4A /* QuartzCore.framework */; };
 		1DF8B04D153B919600D9ED4A /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF8B04C153B919600D9ED4A /* OpenGLES.framework */; };
 		1DF8B04F153B919600D9ED4A /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF8B04E153B919600D9ED4A /* OpenAL.framework */; };
@@ -173,6 +177,14 @@
 		1D054C87153E5F810015BBAD /* GameLayer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = GameLayer.mm; sourceTree = "<group>"; };
 		1D054C91154262D30015BBAD /* Game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Game.h; sourceTree = "<group>"; };
 		1D054C92154262D40015BBAD /* Game.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Game.m; sourceTree = "<group>"; };
+		1D054C94154267A30015BBAD /* Level.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Level.h; sourceTree = "<group>"; };
+		1D054C95154267A30015BBAD /* Level.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Level.m; sourceTree = "<group>"; };
+		1D054C97154267B20015BBAD /* LevelBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LevelBuilder.h; sourceTree = "<group>"; };
+		1D054C98154267B50015BBAD /* LevelBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LevelBuilder.m; sourceTree = "<group>"; };
+		1D054C9A154267CF0015BBAD /* Mechanic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Mechanic.h; sourceTree = "<group>"; };
+		1D054C9B154267CF0015BBAD /* Mechanic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Mechanic.m; sourceTree = "<group>"; };
+		1D054C9D154267F20015BBAD /* MoveableObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoveableObject.h; sourceTree = "<group>"; };
+		1D054C9E154267F30015BBAD /* MoveableObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoveableObject.m; sourceTree = "<group>"; };
 		1DF8B046153B919600D9ED4A /* AlohaPhysics.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AlohaPhysics.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DF8B04A153B919600D9ED4A /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		1DF8B04C153B919600D9ED4A /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -576,6 +588,14 @@
 				1DF8B21B153B919900D9ED4A /* Supporting Files */,
 				1D054C91154262D30015BBAD /* Game.h */,
 				1D054C92154262D40015BBAD /* Game.m */,
+				1D054C94154267A30015BBAD /* Level.h */,
+				1D054C97154267B20015BBAD /* LevelBuilder.h */,
+				1D054C9A154267CF0015BBAD /* Mechanic.h */,
+				1D054C9D154267F20015BBAD /* MoveableObject.h */,
+				1D054C9E154267F30015BBAD /* MoveableObject.m */,
+				1D054C9B154267CF0015BBAD /* Mechanic.m */,
+				1D054C98154267B50015BBAD /* LevelBuilder.m */,
+				1D054C95154267A30015BBAD /* Level.m */,
 			);
 			path = AlohaPhysics;
 			sourceTree = "<group>";
@@ -1307,6 +1327,10 @@
 				1DF8B22A153B919900D9ED4A /* GLES-Render.mm in Sources */,
 				1D054C88153E5F810015BBAD /* GameLayer.mm in Sources */,
 				1D054C93154262D40015BBAD /* Game.m in Sources */,
+				1D054C96154267A30015BBAD /* Level.m in Sources */,
+				1D054C99154267B50015BBAD /* LevelBuilder.m in Sources */,
+				1D054C9C154267D00015BBAD /* Mechanic.m in Sources */,
+				1D054C9F154267F30015BBAD /* MoveableObject.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
