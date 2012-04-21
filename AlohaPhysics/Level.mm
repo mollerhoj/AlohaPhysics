@@ -7,17 +7,46 @@
 //
 
 #import "Level.h"
+#import "LevelBuilder.h"
+
+@interface Level ()
+@property (nonatomic,assign) LevelBuilder *levelBuilder;
+@property (nonatomic,assign) int *currentLevel;
+@property (nonatomic,assign) double *touchTime;
+@property (nonatomic,assign) double *maxTouchTime;
+@property (nonatomic,assign) BOOL *touching;
+@end
 
 @implementation Level
 
+@synthesize levelBuilder = _levelBuilder;
+@synthesize currentLevel = _currentLevel;
+@synthesize touchTime = _touchTime;
+@synthesize maxTouchTime = _maxTouchTime;
+@synthesize touching = _touching;
+
+
+/*
+ Init level
+ Setup the physics
+ Init levelbuilder
+*/
 -(id) init
 {
 	if( (self=[super init])) {
+        //Define physical world
         [self defineWorld];
+        
+        //Init levelBuilder
+        self.levelBuilder = [[LevelBuilder alloc] init];
+        
 	}
 	return self;
 }
 
+/*
+ Define the physical world
+*/
 -(void) defineWorld {
     // Define the gravity vector.
     b2Vec2 gravity;
