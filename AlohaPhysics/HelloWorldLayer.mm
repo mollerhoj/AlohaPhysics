@@ -23,9 +23,55 @@ enum {
 	kTagAnimation1 = 1,
 };
 
+// NEW CODE
+@interface HelloWorldLayer (PrivateMethods)
+- (void)startTouchTimer:(float)delay;
+- (void)touchHeld:(NSTimer*)timer;
+@end
+// NEW CODE END
 
 // HelloWorldLayer implementation
 @implementation HelloWorldLayer
+
+// NEW CODE
+@synthesize touchTimer, touchStatusLabel;
+
+- (void)startTouchTimer:(float)delay {
+	
+	touchTimer = [NSTimer scheduledTimerWithTimeInterval:delay target:self selector:@selector(ccTouchHeld:) userInfo:nil repeats:NO];
+	
+}
+
+- (void)ccTouchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+	
+	NSLog(@"Touch Start");
+	[self startTouchTimer:3.00];
+    NSLog(@"End of Touch start");
+}
+/*
+- (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
+	
+	NSLog(@"Touch Moved");
+	if ([touchTimer isValid]) [touchTimer invalidate];
+	[self startTouchTimer:3.00];
+	
+}
+
+- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
+    
+	NSLog(@"Touch Ended");
+	if ([touchTimer isValid]) [touchTimer invalidate];
+	
+}
+*/
+- (void)ccTouchHeld:(NSTimer*)timer {
+    
+	NSLog(@"Touch Held");
+	if ([touchTimer isValid]) [touchTimer invalidate];
+	[self startTouchTimer:3.00];
+	
+}
+// NEW CODE END
 
 +(CCScene *) scene
 {
@@ -60,7 +106,7 @@ enum {
 		
 		// Define the gravity vector.
 		b2Vec2 gravity;
-		gravity.Set(0.0f, -10.0f);
+		gravity.Set(0.0f, 0.0f);
 		
 		// Do we want to let bodies sleep?
 		// This will speed up the physics simulation
@@ -195,6 +241,10 @@ enum {
 	int32 velocityIterations = 8;
 	int32 positionIterations = 1;
 	
+    // Define the gravity vector.
+    b2Vec2 gravity;
+    gravity.Set(0.0f, -10.0f);
+    
 	// Instruct the world to perform a single step of simulation. It is
 	// generally best to keep the time step and iterations fixed.
 	world->Step(dt, velocityIterations, positionIterations);
@@ -208,13 +258,15 @@ enum {
 			CCSprite *myActor = (CCSprite*)b->GetUserData();
 			myActor.position = CGPointMake( b->GetPosition().x * PTM_RATIO, b->GetPosition().y * PTM_RATIO);
 			myActor.rotation = -1 * CC_RADIANS_TO_DEGREES(b->GetAngle());
+            b->ApplyForce(gravity, b->GetPosition());
 		}	
 	}
 }
 
 - (void)ccTouchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
-	//Add a new body/atlas sprite at the touched location
+	NSLog(@"Touch begin");
+    //Add a new body/atlas sprite at the touched location
 	for( UITouch *touch in touches ) {
 		CGPoint location = [touch locationInView: [touch view]];
 		
@@ -222,6 +274,9 @@ enum {
 		
 		[self addNewSpriteWithCoords: location];
 	}
+    
+    if ([touchTimer isValid]) [touchTimer invalidate];
+    NSLog(@"End of touch");
 }
 
 - (void)accelerometer:(UIAccelerometer*)accelerometer didAccelerate:(UIAcceleration*)acceleration
