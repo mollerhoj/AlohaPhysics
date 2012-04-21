@@ -12,23 +12,17 @@
 #import "Box2D.h"
 #import "GLES-Render.h"
 
-
-
-
-
-// \m/ (-_-) \m/
-// Jenner tisser i bukserne
-
-
-
-
-
 // HelloWorldLayer
 @interface HelloWorldLayer : CCLayer
 {
 	b2World* world;
 	GLESDebugDraw *m_debugDraw;
 }
+
+// NEW CODE
+@property (nonatomic, retain) UILabel *touchStatusLabel;
+@property (nonatomic, retain) NSTimer *touchTimer;
+// NEW CODE END
 
 // returns a CCScene that contains the HelloWorldLayer as the only child
 +(CCScene *) scene;
