@@ -593,9 +593,9 @@
 				1D054C97154267B20015BBAD /* LevelBuilder.h */,
 				1D054C98154267B50015BBAD /* LevelBuilder.mm */,
 				1D054C9A154267CF0015BBAD /* Mechanic.h */,
+				1D054C9B154267CF0015BBAD /* Mechanic.mm */,
 				1D054C9D154267F20015BBAD /* MoveableObject.h */,
 				1D054C9E154267F30015BBAD /* MoveableObject.mm */,
-				1D054C9B154267CF0015BBAD /* Mechanic.mm */,
 			);
 			path = AlohaPhysics;
 			sourceTree = "<group>";
