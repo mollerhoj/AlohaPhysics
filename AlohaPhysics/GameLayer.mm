@@ -7,9 +7,11 @@
 //
 
 #import "GameLayer.h"
+#import "Game.h"
 
 @implementation GameLayer
 
+@synthesize game = _game;
 //@synthesize world = _world;
 //@synthesize m_debugDraw = _m_debugDraw;
 
@@ -79,6 +81,9 @@
 -(id) init
 {
 	if( (self=[super init])) {
+        
+        self.game = [[Game init] alloc];
+        
         [self initProperties];
         [self initSize];
         [self initDefineWorld];
