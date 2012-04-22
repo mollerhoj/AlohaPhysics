@@ -7,7 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "cocos2d.h"
 
 @interface MoveableObject : NSObject
+
+@property (nonatomic, assign) int mechanicType;
+@property (nonatomic, assign) CCSprite *image;
 
 @end

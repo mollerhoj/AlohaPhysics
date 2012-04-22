@@ -7,15 +7,39 @@
 //
 
 #import "Mechanic.h"
+@interface Mechanic()
+
+@property (nonatomic, assign) MoveableObject *moveableObject;
+
+@end
 
 @implementation Mechanic
 
-//property object
+@synthesize moveableObject = _moveableObject;
 
-
-//method moveforward
-//method movebackwards
-
+-(void)playMechanicType:(int) mechanicType withBody:(b2Body *)body
+{
+    if(body->GetType() == b2_kinematicBody) 
+    {
+        switch (mechanicType) {
+            case 1:
+                NSLog(@"Mechanic type 1");
+                body->ApplyAngularImpulse(2.0);
+                break;
+        
+            case 2:
+                body->ApplyAngularImpulse(2.0);
+                break;
+        
+            case 3:
+                body->ApplyAngularImpulse(3.0);
+                break;
+            
+            default:
+                break;
+        }
+    }
+}
 
 
 @end

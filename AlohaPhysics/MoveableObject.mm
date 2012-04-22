@@ -8,12 +8,9 @@
 
 #import "MoveableObject.h"
 
-@interface MoveableObject()
-
-@end
 @implementation MoveableObject
 
-//property object
-//property mechanic
+@synthesize mechanicType = _mechanicType;
+@synthesize image = _image;
 
 @end

@@ -7,6 +7,13 @@
 //
 
 #import "Game.h"
+#import "Mechanic.h"
+
+@interface Game ()
+
+@property (nonatomic,assign) Mechanic *mechanic;
+
+@end
 
 @implementation Game
 
@@ -16,6 +23,7 @@
 #define POSITION_ITERATIONS 1
 
 @synthesize level = _level;
+@synthesize mechanic = _mechanic;
 
 /*
  init game with a level
@@ -23,6 +31,7 @@
 - (id) init {
     if( (self=[super init])) {
         self.level = [[Level alloc] init];
+        self.mechanic = [[Mechanic alloc] init];
     }
     return self;
 }
@@ -48,6 +57,13 @@
             [self.level nextLevel];
         }
     }
+    
+    //Make kinetic bodies move
+    for (b2Body* body = self.level->world->GetBodyList(); body; body = body->GetNext())
+	{
+        MoveableObject *mo = (MoveableObject*)body->GetUserData();
+        [self.mechanic playMechanicType:mo.mechanicType withBody:body];
+	}
 }
 
 @end
