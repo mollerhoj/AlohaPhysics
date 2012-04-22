@@ -88,7 +88,7 @@
 	//bodyDef.userData = sprite;
     
     // Construct a hero and set it to levels hero
-    self.level->hero = self.level->world->CreateBody(&bodyDef);
+    self.level.hero = self.level->world->CreateBody(&bodyDef);
     //b2Body *body = self.level->world->CreateBody(&bodyDef);
 	
 	// Define another circle shape for our dynamic body.
@@ -100,13 +100,13 @@
 	fixtureDef.shape = &dynamicCircle;
 	fixtureDef.density = 1.0f;
 	fixtureDef.friction = 0.3f;
-	self.level->hero->CreateFixture(&fixtureDef);
+	self.level.hero->CreateFixture(&fixtureDef);
     //body->CreateFixture(&fixtureDef);
 }
 
 -(void)addGoalWithCoords:(CGPoint)p
 {
-	self.level->goal = p;
+	self.level.goal = p;
 }
 
 @end

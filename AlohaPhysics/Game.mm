@@ -51,15 +51,15 @@ static int _unit;
     //self.level->hero->ApplyForce(b2Vec2(0.0f, -10.0f), self.level->hero->GetPosition());
     
     //Check if hero is out of the frame
-    b2Vec2 heroPosition = self.level->hero->GetPosition();
+    b2Vec2 heroPosition = self.level.hero->GetPosition();
     if(heroPosition.x < 0.0 || heroPosition.x > 15.0 || heroPosition.y < 0.0 || heroPosition.y > 10.0) 
     {
         [self.level restartLevel];
     }
 
     //Check if the hero reaches the goal
-    if(self.level->hero->GetFixtureList()->GetShape() != nil) {
-        if(self.level->hero->GetFixtureList()->GetShape()->TestPoint(self.level->hero->GetTransform(), b2Vec2(self.level->goal.x/[Game unit], self.level->goal.y/[Game unit]))) 
+    if(self.level.hero->GetFixtureList()->GetShape() != nil) {
+        if(self.level.hero->GetFixtureList()->GetShape()->TestPoint(self.level.hero->GetTransform(), b2Vec2(self.level.goal.x/[Game unit], self.level.goal.y/[Game unit]))) 
         {
             [self.level nextLevel];
         }
