@@ -10,6 +10,10 @@
 
 static int _unit;
 
+@interface Game ()
+@property (nonatomic,assign) CCLayer *view;
+@end
+
 @implementation Game
 
 
@@ -17,14 +21,16 @@ static int _unit;
 #define VELOCITY_ITERATIONS 8
 #define POSITION_ITERATIONS 1
 
+@synthesize view = _view;
 @synthesize level = _level;
 
 /*
  init game with a level
 */
-- (id) init {
+- (id) initWithView:(CCLayer *)view {
     if( (self=[super init])) {
-        self.level = [[Level alloc] init];
+        self.view = view;
+        self.level = [[Level alloc] initInGame:self];
     }
     return self;
 }

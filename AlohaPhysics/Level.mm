@@ -8,8 +8,10 @@
 
 #import "Level.h"
 #import "LevelBuilder.h"
+#import "Game.h"
 
 @interface Level ()
+@property (nonatomic,assign) Game *game;
 @property (nonatomic,assign) LevelBuilder *levelBuilder;
 @property (nonatomic,assign) int *currentLevel;
 @property (nonatomic,assign) double *touchTime;
@@ -24,16 +26,18 @@
 @synthesize touchTime = _touchTime;
 @synthesize maxTouchTime = _maxTouchTime;
 @synthesize touching = _touching;
+@synthesize game = _game;
 
 
 /*
- Init level
- Setup the physics
- Init levelbuilder
+ Init level in game
 */
--(id) init
+-(id) initInGame:(Game *)game
 {
 	if( (self=[super init])) {
+        //Set the game this level is part of
+        self.game = game;
+        
         //Define physical world
         [self defineWorld];
         
@@ -47,7 +51,7 @@
 /*
  Define the physical world
 */
--(void) defineWorld {
+-(void)defineWorld {
     // Define the gravity vector.
     b2Vec2 gravity;
     gravity.Set(0.0f, -10.0f);
@@ -61,6 +65,7 @@
     
     world->SetContinuousPhysics(true);
 }
+
 
 //Simple box adding test
 -(void) addNewBoxWithCoords:(CGPoint)p

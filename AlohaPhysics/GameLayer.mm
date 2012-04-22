@@ -58,29 +58,31 @@
 {
 	if( (self=[super init])) {
         
-        //Create the game object
-        self.game = [[Game alloc] init];
-        
-        //Set the screen to be touchable
-        self.isTouchEnabled = YES;
-        
         //Set the unit of the game
         [Game setUnit:(int)[CCDirector sharedDirector].winSize.width/15];
         NSAssert([CCDirector sharedDirector].winSize.width/15 == [CCDirector sharedDirector].winSize.height/10,@"The ratio between width and height is not right");
+        
+        //Create the game object
+        self.game = [[Game alloc] initWithView:self];
+        
+        //Set the screen to be touchable
+        self.isTouchEnabled = YES;
         
         //Init debug drawing: Remove upon release
         [self initDebugDraw];
 
         //INIT GRAPICS
-        CCSpriteBatchNode *batch = [CCSpriteBatchNode batchNodeWithFile:@"blocks.png" capacity:150];
+        CCSpriteBatchNode *batch = [CCSpriteBatchNode batchNodeWithFile:@"graphics.png" capacity:150];
 		[self addChild:batch z:0 tag:graphicsTag];
         
         CCSpriteBatchNode *batch2 = (CCSpriteBatchNode*) [self getChildByTag:graphicsTag];
         
-        CCSprite *sprite = [CCSprite spriteWithBatchNode:batch2 rect:CGRectMake(0,0,64,64)];
+        CCSprite *sprite = [CCSprite spriteWithBatchNode:batch2 rect:CGRectMake([Game unit]*0,[Game unit]*0,[Game unit]*1,[Game unit]*1)];
         [batch2 addChild:sprite];
         
         sprite.position = ccp( 32, 32);
+        
+        [self removeChild:sprite cleanup: YES];
         
         //Start scheduler
         [self schedule: @selector(tick:)];

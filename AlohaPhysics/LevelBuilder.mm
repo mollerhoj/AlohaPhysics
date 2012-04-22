@@ -7,6 +7,7 @@
 //
 
 #import "LevelBuilder.h"
+#import "Game.h"
 
 @implementation LevelBuilder
 
@@ -34,6 +35,7 @@
         default:
             break;
     }
+    
 }
 
 @end
