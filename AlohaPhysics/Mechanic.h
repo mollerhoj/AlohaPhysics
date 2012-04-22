@@ -7,7 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "MoveableObject.h"
+#import "Box2D.h"
 
-@interface Mechanic : NSObject
+@interface Mechanic : NSObject 
+
+-(void)playMechanicType:(int) mechanicType withBody:(b2Body *)body;
 
 @end

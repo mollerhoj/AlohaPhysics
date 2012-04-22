@@ -13,6 +13,14 @@
 
 @property (nonatomic, assign) Level *level;
 
-- (void) buildLevel:(int)levelNumber;
+- (void)buildLevel:(int)levelNumber;
+-(id)initWithLevel:(Level *)level;
+-(void)addKinematicBoxWithCoords:(CGPoint)p 
+                  withDimensionX:(CGFloat)x 
+                            andY:(CGFloat)y 
+                       withAngle:(CGFloat)a 
+                 andMechanicType:(int) mT;
+-(void)addHeroWithCoords:(CGPoint)p;
+-(void)addGoalWithCoords:(CGPoint)p;
 
 @end

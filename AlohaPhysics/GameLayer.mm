@@ -83,15 +83,29 @@
     }
 }
 
+- (void)ccTouchEnded:(UITouch *)touch withEvent:(UIEvent *)event
+{
+    /*
+    for (b2Body* b = self.game.level->world->GetBodyList(); b; b = b->GetNext())
+	{
+		if(b->bodyDef) {
+            bodyDef.type = b2_dynamicBody;
+        }
+	}
+     */
+}
+
 //Simple test function to test touches:
 - (void)ccTouchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
-	//Add a new body/atlas sprite at the touched location
+	/*
+    //Add a new body/atlas sprite at the touched location
 	for( UITouch *touch in touches ) {
 		CGPoint location = [touch locationInView: [touch view]];
 		location = [[CCDirector sharedDirector] convertToGL: location];
 		[self.stepListener.level addNewBoxWithCoords: location];
 	}
+     */
 }
 
 //DEALLOC, release all objects:

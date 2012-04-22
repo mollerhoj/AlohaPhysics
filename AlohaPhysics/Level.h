@@ -15,4 +15,9 @@
     b2World *world;
 }
 
+@property (nonatomic,assign) b2Body *hero;
+@property (nonatomic,assign) CGPoint goal;
+
+-(void)nextLevel;
+-(void)restartLevel;
 @end

@@ -10,4 +10,7 @@
 
 @implementation MoveableObject
 
+@synthesize mechanicType = _mechanicType;
+@synthesize image = _image;
+
 @end
