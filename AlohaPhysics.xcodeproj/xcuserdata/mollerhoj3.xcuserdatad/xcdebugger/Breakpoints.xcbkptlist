@@ -55,9 +55,7 @@
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "19"
-         endingLineNumber = "19"
-         landmarkName = "-setStepListener:"
-         landmarkType = "5">
+         endingLineNumber = "19">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "Yes"
@@ -111,9 +109,7 @@
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "25"
-         endingLineNumber = "25"
-         landmarkName = "@implementation GameLayer"
-         landmarkType = "3">
+         endingLineNumber = "25">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"
