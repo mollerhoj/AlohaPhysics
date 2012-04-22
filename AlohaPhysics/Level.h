@@ -17,6 +17,10 @@
     CGPoint goal;
 }
 
+@property (nonatomic, assign) double maxTime;
+@property (nonatomic, assign) BOOL playing;
+@property (nonatomic, assign) int time;
+
 -(void)nextLevel;
 -(void)restartLevel;
 @end

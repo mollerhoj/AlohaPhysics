@@ -107,34 +107,24 @@
 	glEnable(GL_TEXTURE_2D);
 	glEnableClientState(GL_COLOR_ARRAY);
 	glEnableClientState(GL_TEXTURE_COORD_ARRAY);
-    
 }
 
 //Play moveable objects
 - (void)ccTouchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    for (b2Body* body = self.game.level->world->GetBodyList(); body; body = body->GetNext())
-	{
-        MoveableObject *mo = (MoveableObject*)body->GetUserData();
-        [self.game.mechanic playMechanicType:mo.mechanicType withBody:body];
-	}
+    self.game.level.playing = YES;
 }
 
 //Rewind moveable objects
 - (void)ccTouchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
-	for (b2Body* body = self.game.level->world->GetBodyList(); body; body = body->GetNext())
-	{
-        MoveableObject *mo = (MoveableObject*)body->GetUserData();
-        [self.game.mechanic rewindMechanicType:mo.mechanicType withBody:body];
-	}
+    self.game.level.playing = NO;
 }
 
 //DEALLOC, release all objects:
 - (void) dealloc
 {
 	delete m_debugDraw;
-
 	[super dealloc];
 }
 

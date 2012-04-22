@@ -23,7 +23,6 @@
     {
         switch (mechanicType) {
             case 1:
-                NSLog(@"Mechanic type 1");
                 body->SetAngularVelocity(-1.0);                
                 break;
         
@@ -46,8 +45,8 @@
     if(body->GetType() == b2_kinematicBody) 
     {
         switch (mechanicType) {
+            
             case 1:
-                NSLog(@"Mechanic type 1");
                 body->SetAngularVelocity(1.0);                
                 break;
                 
@@ -62,6 +61,16 @@
             default:
                 break;
         }
+    }
+}
+
+//Stop movement
+-(void)stopMovementForBody:(b2Body *)body
+{
+    if(body->GetType() == b2_kinematicBody) 
+    {
+        body->SetLinearVelocity(b2Vec2(0.0, 0.0));
+        body->SetAngularVelocity(0.0);
     }
 }
 

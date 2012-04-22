@@ -24,20 +24,38 @@
 -(void)buildLevel:(int)levelNumber {
     switch (levelNumber) {
         case 1:
+            //Moveable objects
             [self addKinematicBoxWithCoords:CGPointMake(320.0, 100.0) withDimensionX:1.5 andY:1.0 withAngle:0.0 andMechanicType:2];
             [self addKinematicBoxWithCoords:CGPointMake(150.0, 150.0) withDimensionX:3.5 andY:0.5 withAngle:-0.1 andMechanicType:1];
+            
+            //Adding hero
             [self addHeroWithCoords:CGPointMake(100.0, 200.0)];
+            
+            //Adding goal
             [self addGoalWithCoords:CGPointMake(430.0, 50.0)];
+            
+            //Setting max frames for a moveable object to move
+            self.level.maxTime = 40;
             break;
             
         case 2:
+            //Moveable objects
             [self addKinematicBoxWithCoords:CGPointMake(320.0, 100.0) withDimensionX:1.5 andY:1.0 withAngle:0.1 andMechanicType:2];
             [self addKinematicBoxWithCoords:CGPointMake(150.0, 150.0) withDimensionX:2.5 andY:0.5 withAngle:-0.1 andMechanicType:1];
+            
+            //Adding hero
             [self addHeroWithCoords:CGPointMake(100.0, 200.0)];
-            [self addGoalWithCoords:CGPointMake(430.0, 50.0)];
+            
+            //Adding goal
+            [self addGoalWithCoords:CGPointMake(430.0, 250.0)];
+            
+            //Setting max frames for a moveable object to move
+            self.level.maxTime = 40;
             break;
             
         default:
+            //Adding hero
+            [self addHeroWithCoords:CGPointMake(100.0, 200.0)];
             break;
     }
 }
@@ -75,6 +93,7 @@
 	body->CreateFixture(&fixtureDef);
 }
 
+//Add a hero to the physical world
 -(void)addHeroWithCoords:(CGPoint)p
 {
     // Define the dynamic body.
@@ -102,6 +121,7 @@
     //body->CreateFixture(&fixtureDef);
 }
 
+//Add a goal to the physical world
 -(void)addGoalWithCoords:(CGPoint)p
 {
 	self.level->goal = p;

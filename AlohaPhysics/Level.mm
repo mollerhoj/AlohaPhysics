@@ -12,19 +12,15 @@
 @interface Level ()
 @property (nonatomic,assign) LevelBuilder *levelBuilder;
 @property (nonatomic,assign) int currentLevel;
-@property (nonatomic,assign) double *touchTime;
-@property (nonatomic,assign) double *maxTouchTime;
-@property (nonatomic,assign) BOOL *touching;
 @end
 
 @implementation Level
 
 @synthesize levelBuilder = _levelBuilder;
 @synthesize currentLevel = _currentLevel;
-@synthesize touchTime = _touchTime;
-@synthesize maxTouchTime = _maxTouchTime;
-@synthesize touching = _touching;
-
+@synthesize maxTime = _maxTime;
+@synthesize time = _time;
+@synthesize playing = _playing;
 
 /*
  Init level
@@ -55,6 +51,7 @@
 	{
 		world->DestroyBody(b);
 	}
+    self.time = 0;
 }
 
 //Restart level
@@ -79,7 +76,7 @@
 {
     // Define the gravity vector.
     b2Vec2 gravity;
-    gravity.Set(0.0f, -20.0f);
+    gravity.Set(0.0f, -10.0f);
     
     // Do we want to let bodies sleep?
     // This will speed up the physics simulation

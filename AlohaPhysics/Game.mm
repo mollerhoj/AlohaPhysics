@@ -9,12 +9,6 @@
 #import "Game.h"
 #import "Mechanic.h"
 
-
-@interface Game ()
-
-
-@end
-
 @implementation Game
 
 #define PIXELS_TO_METER_RATIO 32
@@ -40,8 +34,50 @@
  The game loop
 */
 - (void) step {
+    
+    //Make moveable objects move (play) if touched and held, when release rewind moveable objects to default position 
+    if(self.level.playing)
+    {
+        if(self.level.time != self.level.maxTime)
+        {
+            //Increase time if max isn't reached
+            self.level.time++;
+            
+            //Play moveable objects
+            for (b2Body* body = self.level->world->GetBodyList(); body; body = body->GetNext())
+            {
+                MoveableObject *mo = (MoveableObject*)body->GetUserData();
+                [self.mechanic playMechanicType:mo.mechanicType withBody:body];
+            }
+        } else {
+            //Stop moveable objects when max time is reached
+            for (b2Body* body = self.level->world->GetBodyList(); body; body = body->GetNext())
+            {
+                [self.mechanic stopMovementForBody:body];
+            }
+        }
+    } else {
+        if(self.level.time != 0)
+        {
+            //Decrease time until default is reached
+            self.level.time--;
+            
+            //Rewind moveable objects
+            for (b2Body* body = self.level->world->GetBodyList(); body; body = body->GetNext())
+            {
+                MoveableObject *mo = (MoveableObject*)body->GetUserData();
+                [self.mechanic rewindMechanicType:mo.mechanicType withBody:body];
+            }
+        } else {
+            //Stop moveable objects when default is reached
+            for (b2Body* body = self.level->world->GetBodyList(); body; body = body->GetNext())
+            {
+                [self.mechanic stopMovementForBody:body];
+            }
+        }
+    }
+    
     self.level->world->Step(1.0/STEPS_PER_SECOND, VELOCITY_ITERATIONS, POSITION_ITERATIONS);
-    //self.level->hero->ApplyForce(b2Vec2(0.0f, -10.0f), self.level->hero->GetPosition());
     
     //Check if hero is out of the frame
     b2Vec2 heroPosition = self.level->hero->GetPosition();
@@ -57,14 +93,6 @@
             [self.level nextLevel];
         }
     }
-    /*
-    //Make kinetic bodies move
-    for (b2Body* body = self.level->world->GetBodyList(); body; body = body->GetNext())
-	{
-        MoveableObject *mo = (MoveableObject*)body->GetUserData();
-        [self.mechanic playMechanicType:mo.mechanicType withBody:body];
-	}
-     */
 }
 
 @end
