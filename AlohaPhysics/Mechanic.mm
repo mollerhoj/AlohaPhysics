@@ -23,7 +23,6 @@
     {
         switch (mechanicType) {
             case 1:
-                NSLog(@"Mechanic type 1");
                 body->ApplyAngularImpulse(2.0);
                 break;
         

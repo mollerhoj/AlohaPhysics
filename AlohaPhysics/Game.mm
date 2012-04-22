@@ -34,7 +34,7 @@ static int _unit;
 /*
  init game with a level
 */
-- (id) initWithScene:(CCScene *)scene {
+- (id) initWithScene:(GameScene *)scene {
     if( (self=[super init])) {
 		self.mechanic = [[Mechanic alloc] init];
         self.scene = scene;

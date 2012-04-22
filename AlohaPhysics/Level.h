@@ -9,6 +9,7 @@
 #import "cocos2d.h"
 #import "Box2D.h"
 #import <Foundation/Foundation.h>
+#import "GraphicLayer.h"
 
 @interface Level : NSObject {
     @public
@@ -17,6 +18,7 @@
 
 @property (nonatomic,assign) b2Body *hero;
 @property (nonatomic,assign) CGPoint goal;
+@property (nonatomic,assign) GraphicLayer *graphicLayer;
 
 -(void)nextLevel;
 -(void)restartLevel;

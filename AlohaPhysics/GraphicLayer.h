@@ -20,6 +20,6 @@ typedef Picture;
 
 -(CCSprite*)createSpriteFromPicture:(Picture)picture;
 
--(void)removeSprite:(CCSprite*)sprite;
+-(void)removeSprites;
 
 @end

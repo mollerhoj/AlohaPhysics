@@ -107,6 +107,8 @@
 -(void)addGoalWithCoords:(CGPoint)p
 {
 	self.level.goal = p;
+    CCSprite* sprite = [self.level.graphicLayer createSpriteFromPicture:(GOAL)];
+    sprite.position = ccp(p.x, p.y);
 }
 
 @end

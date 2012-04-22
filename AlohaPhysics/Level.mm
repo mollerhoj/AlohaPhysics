@@ -18,7 +18,6 @@
 @property (nonatomic,assign) double *touchTime;
 @property (nonatomic,assign) double *maxTouchTime;
 @property (nonatomic,assign) BOOL *touching;
-@property (nonatomic,assign) CCLayer *graphicLayer;
 @end
 
 @implementation Level
@@ -45,7 +44,9 @@
         //Define physical world
         [self defineWorld];
         
-        self.graphicLayer = self.game.scene.graphicLayer;
+        NSLog(@"graphicLayer: %@",self.game.scene);
+        
+        self.graphicLayer = [self.game.scene graphicLayer];
         
         //Init levelBuilder
         self.levelBuilder = [[LevelBuilder alloc] initWithLevel:self];
@@ -58,10 +59,14 @@
 	return self;
 }
 
-//Iterate over the bodies in the physics world and delete them
+//Destroy Level
 -(void)destroyLevel
 {
-	for (b2Body* b = world->GetBodyList(); b; b = b->GetNext())
+    //Remove all sprites from graphics
+	[self.graphicLayer removeSprites];
+    
+    //Iterate over the bodies in the physics world and delete them
+    for (b2Body* b = world->GetBodyList(); b; b = b->GetNext())
 	{
 		world->DestroyBody(b);
 	}

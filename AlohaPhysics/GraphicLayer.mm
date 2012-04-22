@@ -12,7 +12,7 @@
 @interface GraphicLayer()
 
 //The sprite batch for all the sprites to be created in
-@property CCSpriteBatchNode *batch;
+@property (nonatomic,assign) CCSpriteBatchNode *batch;
 
 @end
 
@@ -28,10 +28,6 @@
         //Init sprite batch
         self.batch = [CCSpriteBatchNode batchNodeWithFile:@"graphics.png" capacity:150];
 		[self addChild:self.batch z:0 tag:graphicsTag];
-        
-        //Test creating a picture
-        CCSprite *sprite = [self createSpriteFromPicture:GOAL];
-        sprite.position = ccp(16, 16);
     }
     return self;
 }
@@ -57,8 +53,8 @@
     return sprite;
 }
 
--(void)removeSprite:(CCSprite*)sprite {
-    [self.batch removeChild:sprite cleanup:true];
+-(void)removeSprites {
+    [self.batch removeAllChildrenWithCleanup:true];
 }
 
 @end

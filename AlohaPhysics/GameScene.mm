@@ -33,6 +33,9 @@
         BackgroundLayer *backgroundLayer = [BackgroundLayer node];
         [self addChild:backgroundLayer z:0];
         
+        // Graphic Layer
+        self.graphicLayer = [GraphicLayer node];
+        
         //Create the game object
         self.game = [[Game alloc] initWithScene:self];
         
@@ -41,9 +44,6 @@
         
         //gameLayer.addTouchListener()
         gameLayer.stepListener = self.game;
-        
-        // Graphic Layer
-        self.graphicLayer = [GraphicLayer node];
         
         [self addChild:gameLayer z:5];
     }

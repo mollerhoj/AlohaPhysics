@@ -18,7 +18,7 @@
 
 @property (nonatomic,assign) GameScene *scene;
 
-- (id)initWithScene:(CCScene *)scene;
+- (id)initWithScene:(GameScene *)scene;
 
 - (void)step;
 
