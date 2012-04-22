@@ -23,7 +23,7 @@
     {
         switch (mechanicType) {
             case 1:
-                body->SetAngularVelocity(-1.0);                
+                body->SetAngularVelocity(-1.0);
                 break;
         
             case 2:

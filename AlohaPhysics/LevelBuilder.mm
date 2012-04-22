@@ -25,14 +25,14 @@
     switch (levelNumber) {
         case 1:
             //Moveable objects
-            [self addKinematicBoxWithCoords:CGPointMake(320.0, 100.0) withDimensionX:1.5 andY:1.0 withAngle:0.0 andMechanicType:2];
-            [self addKinematicBoxWithCoords:CGPointMake(150.0, 150.0) withDimensionX:3.5 andY:0.5 withAngle:-0.1 andMechanicType:1];
+            [self addKinematicBoxWithCoords:CGPointMake(150.0, 150.0) withDimensionX:3.5 andY:0.3 withAngle:-0.1 andMechanicType:1];
+            [self addKinematicBoxWithCoords:CGPointMake(320.0, 100.0) withDimensionX:1.5 andY:0.5 withAngle:0.0 andMechanicType:2];
             
             //Adding hero
             [self addHeroWithCoords:CGPointMake(100.0, 200.0)];
             
             //Adding goal
-            [self addGoalWithCoords:CGPointMake(430.0, 50.0)];
+            [self addGoalWithCoords:CGPointMake(480.0, 320.0)];
             
             //Setting max frames for a moveable object to move
             self.level.maxTime = 40;
@@ -40,8 +40,8 @@
             
         case 2:
             //Moveable objects
-            [self addKinematicBoxWithCoords:CGPointMake(320.0, 100.0) withDimensionX:1.5 andY:1.0 withAngle:0.1 andMechanicType:2];
             [self addKinematicBoxWithCoords:CGPointMake(150.0, 150.0) withDimensionX:2.5 andY:0.5 withAngle:-0.1 andMechanicType:1];
+            [self addKinematicBoxWithCoords:CGPointMake(320.0, 100.0) withDimensionX:1.5 andY:1.0 withAngle:0.1 andMechanicType:2];
             
             //Adding hero
             [self addHeroWithCoords:CGPointMake(100.0, 200.0)];
@@ -110,7 +110,7 @@
 	
 	// Define another circle shape for our dynamic body.
     b2CircleShape dynamicCircle;
-	dynamicCircle.m_radius = 0.5; //Sets the radius of the circle
+	dynamicCircle.m_radius = 0.3; //Sets the radius of the circle
 	
 	// Define the dynamic body fixture.
 	b2FixtureDef fixtureDef;
