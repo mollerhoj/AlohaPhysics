@@ -8,10 +8,12 @@
 
 #import "GameLayer.h"
 #import "Game.h"
+#import "MoveableObject.h"
 
 @implementation GameLayer
 
 @synthesize stepListener = _stepListener;
+@synthesize touchListener = _touchListener;
 
 #define graphicsTag 1
 
@@ -83,36 +85,22 @@
     }
 }
 
-- (void)ccTouchEnded:(UITouch *)touch withEvent:(UIEvent *)event
+//Play moveable objects
+- (void)ccTouchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    /*
-    for (b2Body* b = self.game.level->world->GetBodyList(); b; b = b->GetNext())
-	{
-		if(b->bodyDef) {
-            bodyDef.type = b2_dynamicBody;
-        }
-	}
-     */
+    self.touchListener.playing = YES;
 }
 
-//Simple test function to test touches:
+//Rewind moveable objects
 - (void)ccTouchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
-	/*
-    //Add a new body/atlas sprite at the touched location
-	for( UITouch *touch in touches ) {
-		CGPoint location = [touch locationInView: [touch view]];
-		location = [[CCDirector sharedDirector] convertToGL: location];
-		[self.stepListener.level addNewBoxWithCoords: location];
-	}
-     */
+    self.touchListener.playing = NO;
 }
 
 //DEALLOC, release all objects:
 - (void) dealloc
 {
 	delete m_debugDraw;
-
 	[super dealloc];
 }
 

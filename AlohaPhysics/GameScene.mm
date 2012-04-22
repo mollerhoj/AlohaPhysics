@@ -42,7 +42,7 @@
         // Gameplay Layer
         GameLayer *gameLayer = [GameLayer node];
         
-        //gameLayer.addTouchListener()
+        gameLayer.touchListener = self.game.level;
         gameLayer.stepListener = self.game;
         
         [self addChild:gameLayer z:5];

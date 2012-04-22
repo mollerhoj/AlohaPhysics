@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "Level.h"
 #import "GameScene.h"
+#import "Mechanic.h"
 
 @interface Game : NSObject {
 

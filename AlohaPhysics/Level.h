@@ -16,9 +16,15 @@
     b2World *world;
 }
 
+
 @property (nonatomic,assign) b2Body *hero;
 @property (nonatomic,assign) CGPoint goal;
 @property (nonatomic,assign) GraphicLayer *graphicLayer;
+
+@property (nonatomic, assign) double maxTime;
+@property (nonatomic, assign) BOOL playing;
+@property (nonatomic, assign) int time;
+
 
 -(void)nextLevel;
 -(void)restartLevel;
