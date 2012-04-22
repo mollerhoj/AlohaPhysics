@@ -13,6 +13,11 @@
 		1D054C99154267B50015BBAD /* LevelBuilder.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1D054C98154267B50015BBAD /* LevelBuilder.mm */; };
 		1D054C9C154267D00015BBAD /* Mechanic.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1D054C9B154267CF0015BBAD /* Mechanic.mm */; };
 		1D054C9F154267F30015BBAD /* MoveableObject.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1D054C9E154267F30015BBAD /* MoveableObject.mm */; };
+		1D6926921543D4F000CAC718 /* GraphicLayer.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1D6926911543D4F000CAC718 /* GraphicLayer.mm */; };
+		1DE2B5F915437311003855DE /* graphics.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DE2B5F815437311003855DE /* graphics.png */; };
+		1DE2B5FC15438972003855DE /* BackgroundLayer.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1DE2B5FB15438971003855DE /* BackgroundLayer.mm */; };
+		1DE2B5FE15438B39003855DE /* Background.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DE2B5FD15438B39003855DE /* Background.png */; };
+		1DE2B60115438BDB003855DE /* GameScene.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1DE2B60015438BDB003855DE /* GameScene.mm */; };
 		1DF8B04B153B919600D9ED4A /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF8B04A153B919600D9ED4A /* QuartzCore.framework */; };
 		1DF8B04D153B919600D9ED4A /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF8B04C153B919600D9ED4A /* OpenGLES.framework */; };
 		1DF8B04F153B919600D9ED4A /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF8B04E153B919600D9ED4A /* OpenAL.framework */; };
@@ -185,6 +190,14 @@
 		1D054C9B154267CF0015BBAD /* Mechanic.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Mechanic.mm; sourceTree = "<group>"; };
 		1D054C9D154267F20015BBAD /* MoveableObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoveableObject.h; sourceTree = "<group>"; };
 		1D054C9E154267F30015BBAD /* MoveableObject.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MoveableObject.mm; sourceTree = "<group>"; };
+		1D6926901543D4F000CAC718 /* GraphicLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GraphicLayer.h; sourceTree = "<group>"; };
+		1D6926911543D4F000CAC718 /* GraphicLayer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = GraphicLayer.mm; sourceTree = "<group>"; };
+		1DE2B5F815437311003855DE /* graphics.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = graphics.png; path = Resources/graphics.png; sourceTree = "<group>"; };
+		1DE2B5FA15438971003855DE /* BackgroundLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BackgroundLayer.h; sourceTree = "<group>"; };
+		1DE2B5FB15438971003855DE /* BackgroundLayer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = BackgroundLayer.mm; sourceTree = "<group>"; };
+		1DE2B5FD15438B39003855DE /* Background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Background.png; path = Resources/Background.png; sourceTree = "<group>"; };
+		1DE2B5FF15438BDB003855DE /* GameScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameScene.h; sourceTree = "<group>"; };
+		1DE2B60015438BDB003855DE /* GameScene.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = GameScene.mm; sourceTree = "<group>"; };
 		1DF8B046153B919600D9ED4A /* AlohaPhysics.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AlohaPhysics.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DF8B04A153B919600D9ED4A /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		1DF8B04C153B919600D9ED4A /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -578,8 +591,14 @@
 				1DF8B223153B919900D9ED4A /* RootViewController.m */,
 				1DF8B225153B919900D9ED4A /* HelloWorldLayer.h */,
 				1DF8B226153B919900D9ED4A /* HelloWorldLayer.mm */,
+				1DE2B5FF15438BDB003855DE /* GameScene.h */,
+				1DE2B60015438BDB003855DE /* GameScene.mm */,
 				1D054C86153E5F810015BBAD /* GameLayer.h */,
 				1D054C87153E5F810015BBAD /* GameLayer.mm */,
+				1D6926901543D4F000CAC718 /* GraphicLayer.h */,
+				1D6926911543D4F000CAC718 /* GraphicLayer.mm */,
+				1DE2B5FA15438971003855DE /* BackgroundLayer.h */,
+				1DE2B5FB15438971003855DE /* BackgroundLayer.mm */,
 				1DF8B228153B919900D9ED4A /* GLES-Render.h */,
 				1DF8B229153B919900D9ED4A /* GLES-Render.mm */,
 				1DF8B22B153B919900D9ED4A /* GameConfig.h */,
@@ -603,6 +622,8 @@
 		1DF8B05B153B919600D9ED4A /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				1DE2B5FD15438B39003855DE /* Background.png */,
+				1DE2B5F815437311003855DE /* graphics.png */,
 				1DF8B05C153B919600D9ED4A /* Default.png */,
 				1DF8B05E153B919600D9ED4A /* fps_images.png */,
 				1DF8B060153B919600D9ED4A /* Icon-72.png */,
@@ -1157,6 +1178,8 @@
 				1DF8B06B153B919600D9ED4A /* Icon@2x.png in Resources */,
 				1DF8B06E153B919600D9ED4A /* iTunesArtwork in Resources */,
 				1DF8B22D153B919900D9ED4A /* blocks.png in Resources */,
+				1DE2B5F915437311003855DE /* graphics.png in Resources */,
+				1DE2B5FE15438B39003855DE /* Background.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1331,6 +1354,9 @@
 				1D054C99154267B50015BBAD /* LevelBuilder.mm in Sources */,
 				1D054C9C154267D00015BBAD /* Mechanic.mm in Sources */,
 				1D054C9F154267F30015BBAD /* MoveableObject.mm in Sources */,
+				1DE2B5FC15438972003855DE /* BackgroundLayer.mm in Sources */,
+				1DE2B60115438BDB003855DE /* GameScene.mm in Sources */,
+				1D6926921543D4F000CAC718 /* GraphicLayer.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

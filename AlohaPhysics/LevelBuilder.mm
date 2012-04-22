@@ -7,6 +7,7 @@
 //
 
 #import "LevelBuilder.h"
+#import "Game.h"
 #import "MoveableObject.h"
 
 @implementation LevelBuilder
@@ -58,6 +59,7 @@
             [self addHeroWithCoords:CGPointMake(100.0, 200.0)];
             break;
     }
+    
 }
 
 //Add a kinetic box to the physical world
@@ -105,7 +107,7 @@
 	//bodyDef.userData = sprite;
     
     // Construct a hero and set it to levels hero
-    self.level->hero = self.level->world->CreateBody(&bodyDef);
+    self.level.hero = self.level->world->CreateBody(&bodyDef);
     //b2Body *body = self.level->world->CreateBody(&bodyDef);
 	
 	// Define another circle shape for our dynamic body.
@@ -117,14 +119,16 @@
 	fixtureDef.shape = &dynamicCircle;
 	fixtureDef.density = 1.0f;
 	fixtureDef.friction = 0.3f;
-	self.level->hero->CreateFixture(&fixtureDef);
+	self.level.hero->CreateFixture(&fixtureDef);
     //body->CreateFixture(&fixtureDef);
 }
 
 //Add a goal to the physical world
 -(void)addGoalWithCoords:(CGPoint)p
 {
-	self.level->goal = p;
+	self.level.goal = p;
+    CCSprite* sprite = [self.level.graphicLayer createSpriteFromPicture:(GOAL)];
+    sprite.position = ccp(p.x, p.y);
 }
 
 @end

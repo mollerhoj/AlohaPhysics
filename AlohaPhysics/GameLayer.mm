@@ -12,41 +12,22 @@
 
 @implementation GameLayer
 
-@synthesize game = _game;
-//@synthesize world = _world;
-//@synthesize m_debugDraw = _m_debugDraw;
+@synthesize stepListener = _stepListener;
+@synthesize touchListener = _touchListener;
 
-#define PIXELS_TO_METER_RATIO 32
-#define STEPS_PER_SECOND 60.0
-#define VELOCITY_ITERATIONS 8
-#define POSITION_ITERATIONS 1
+#define graphicsTag 1
 
-//Static method used to return a scene with this layer, in order to kick off the game
-+(CCScene *) scene
-{
-	// 'scene' is an autorelease object.
-	CCScene *scene = [CCScene node];
-	
-	// 'layer' is an autorelease object.
-	GameLayer *layer = [GameLayer node];
-	
-	// add layer as a child to scene
-	[scene addChild: layer];
-	
-	// return the scene
-	return scene;
+-(void)setStepListener:(Game *)stepListener {
+    _stepListener = stepListener;
+    self.stepListener.level->world->SetDebugDraw(m_debugDraw);
 }
-
 
 /*
     Init Debug drawing: This method should be removed upon release
 */
 -(void) initDebugDraw {
     //init the debug drawer with ratio
-    m_debugDraw = new GLESDebugDraw( PIXELS_TO_METER_RATIO );
-    
-    //Set the debug draw into the world
-    self.game.level->world->SetDebugDraw(m_debugDraw);
+    m_debugDraw = new GLESDebugDraw([Game unit]);
     
     //Set prefered flags for the debug draw
     uint32 flags = 0;
@@ -63,19 +44,12 @@
 {
 	if( (self=[super init])) {
         
-        //Create the game object
-        self.game = [[Game alloc] init];
-        
         //Set the screen to be touchable
         self.isTouchEnabled = YES;
         
-        //TODO: Who shall control the size? global variable? units?
-        CGSize screenSize = [CCDirector sharedDirector].winSize;
-        CCLOG(@"Screen width %0.2f screen height %0.2f",screenSize.width,screenSize.height);
-        
         //Init debug drawing: Remove upon release
         [self initDebugDraw];
-
+        
         //Start scheduler
         [self schedule: @selector(tick:)];
 		
@@ -86,7 +60,7 @@
 //Tick
 -(void) tick: (ccTime) dt
 {
-    [self.game step];
+    [self.stepListener step];
 }
 
 /*
@@ -94,31 +68,33 @@
 */
 -(void) draw
 {
-	// Default GL states: GL_TEXTURE_2D, GL_VERTEX_ARRAY, GL_COLOR_ARRAY, GL_TEXTURE_COORD_ARRAY
-	// Needed states:  GL_VERTEX_ARRAY, 
-	// Unneeded states: GL_TEXTURE_2D, GL_COLOR_ARRAY, GL_TEXTURE_COORD_ARRAY
-	glDisable(GL_TEXTURE_2D);
-	glDisableClientState(GL_COLOR_ARRAY);
-	glDisableClientState(GL_TEXTURE_COORD_ARRAY);
-	
-	self.game.level->world->DrawDebugData();
-	
-	// restore default GL states
-	glEnable(GL_TEXTURE_2D);
-	glEnableClientState(GL_COLOR_ARRAY);
-	glEnableClientState(GL_TEXTURE_COORD_ARRAY);
+	if (self.stepListener) {
+        // Default GL states: GL_TEXTURE_2D, GL_VERTEX_ARRAY, GL_COLOR_ARRAY, GL_TEXTURE_COORD_ARRAY
+        // Needed states:  GL_VERTEX_ARRAY, 
+        // Unneeded states: GL_TEXTURE_2D, GL_COLOR_ARRAY, GL_TEXTURE_COORD_ARRAY
+        glDisable(GL_TEXTURE_2D);
+        glDisableClientState(GL_COLOR_ARRAY);
+        glDisableClientState(GL_TEXTURE_COORD_ARRAY);
+
+            self.stepListener.level->world->DrawDebugData();
+
+        // restore default GL states
+        glEnable(GL_TEXTURE_2D);
+        glEnableClientState(GL_COLOR_ARRAY);
+        glEnableClientState(GL_TEXTURE_COORD_ARRAY);
+    }
 }
 
 //Play moveable objects
 - (void)ccTouchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    self.game.level.playing = YES;
+    self.touchListener.playing = YES;
 }
 
 //Rewind moveable objects
 - (void)ccTouchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    self.game.level.playing = NO;
+    self.touchListener.playing = NO;
 }
 
 //DEALLOC, release all objects:

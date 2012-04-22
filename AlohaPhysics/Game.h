@@ -8,13 +8,23 @@
 
 #import <Foundation/Foundation.h>
 #import "Level.h"
+#import "GameScene.h"
 #import "Mechanic.h"
 
-@interface Game : NSObject
+@interface Game : NSObject {
+
+}
 
 @property (nonatomic, assign) Level *level;
-@property (nonatomic,assign) Mechanic *mechanic;
+
+@property (nonatomic,assign) GameScene *scene;
+
+- (id)initWithScene:(GameScene *)scene;
 
 - (void)step;
+
++ (int)unit;
+
++ (void)setUnit:(int)pixel_per_unit;
 
 @end
