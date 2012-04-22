@@ -13,5 +13,6 @@
 @interface Mechanic : NSObject 
 
 -(void)playMechanicType:(int) mechanicType withBody:(b2Body *)body;
+-(void)rewindMechanicType:(int) mechanicType withBody:(b2Body *)body;
 
 @end

@@ -8,6 +8,7 @@
 
 #import "GameLayer.h"
 #import "Game.h"
+#import "MoveableObject.h"
 
 @implementation GameLayer
 
@@ -109,30 +110,24 @@
     
 }
 
-- (void)ccTouchEnded:(UITouch *)touch withEvent:(UIEvent *)event
+//Play moveable objects
+- (void)ccTouchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    /*
-    for (b2Body* b = self.game.level->world->GetBodyList(); b; b = b->GetNext())
+    for (b2Body* body = self.game.level->world->GetBodyList(); body; body = body->GetNext())
 	{
-		if(b->bodyDef) {
-            bodyDef.type = b2_dynamicBody;
-        }
+        MoveableObject *mo = (MoveableObject*)body->GetUserData();
+        [self.game.mechanic playMechanicType:mo.mechanicType withBody:body];
 	}
-     */
 }
 
-//Simple test function to test touches:
+//Rewind moveable objects
 - (void)ccTouchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
-	/*
-    //Add a new body/atlas sprite at the touched location
-	for( UITouch *touch in touches ) {
-		CGPoint location = [touch locationInView: [touch view]];
-		location = [[CCDirector sharedDirector] convertToGL: location];
-		[self.game.level addNewBoxWithCoords: location];
-        //NSLog(@"Coords for location (box): %@", location.x);
+	for (b2Body* body = self.game.level->world->GetBodyList(); body; body = body->GetNext())
+	{
+        MoveableObject *mo = (MoveableObject*)body->GetUserData();
+        [self.game.mechanic rewindMechanicType:mo.mechanicType withBody:body];
 	}
-     */
 }
 
 //DEALLOC, release all objects:

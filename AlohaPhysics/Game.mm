@@ -9,9 +9,9 @@
 #import "Game.h"
 #import "Mechanic.h"
 
+
 @interface Game ()
 
-@property (nonatomic,assign) Mechanic *mechanic;
 
 @end
 
@@ -57,13 +57,14 @@
             [self.level nextLevel];
         }
     }
-    
+    /*
     //Make kinetic bodies move
     for (b2Body* body = self.level->world->GetBodyList(); body; body = body->GetNext())
 	{
         MoveableObject *mo = (MoveableObject*)body->GetUserData();
         [self.mechanic playMechanicType:mo.mechanicType withBody:body];
 	}
+     */
 }
 
 @end

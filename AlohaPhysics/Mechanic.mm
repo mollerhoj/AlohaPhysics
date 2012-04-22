@@ -24,11 +24,11 @@
         switch (mechanicType) {
             case 1:
                 NSLog(@"Mechanic type 1");
-                body->ApplyAngularImpulse(2.0);
+                body->SetAngularVelocity(-1.0);                
                 break;
         
             case 2:
-                body->ApplyAngularImpulse(2.0);
+                body->SetLinearVelocity(b2Vec2(5.0, 7.0));
                 break;
         
             case 3:
@@ -41,5 +41,28 @@
     }
 }
 
+-(void)rewindMechanicType:(int) mechanicType withBody:(b2Body *)body
+{
+    if(body->GetType() == b2_kinematicBody) 
+    {
+        switch (mechanicType) {
+            case 1:
+                NSLog(@"Mechanic type 1");
+                body->SetAngularVelocity(1.0);                
+                break;
+                
+            case 2:
+                body->SetLinearVelocity(b2Vec2(-5.0, -7.0));
+                break;
+                
+            case 3:
+                body->ApplyAngularImpulse(3.0);
+                break;
+                
+            default:
+                break;
+        }
+    }
+}
 
 @end

@@ -8,10 +8,12 @@
 
 #import <Foundation/Foundation.h>
 #import "Level.h"
+#import "Mechanic.h"
 
 @interface Game : NSObject
 
 @property (nonatomic, assign) Level *level;
+@property (nonatomic,assign) Mechanic *mechanic;
 
 - (void)step;
 
