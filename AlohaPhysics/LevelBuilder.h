@@ -15,7 +15,8 @@
 
 - (void)buildLevel:(int)levelNumber;
 -(id)initWithLevel:(Level *)level;
--(void)addStaticBoxWithCoords:(CGPoint)p withDimensionX:(CGFloat)x andY:(CGFloat)y withAngle:(CGFloat)a;
--(void)addHeroWithCoords:(CGPoint)p andRadius:(CGFloat)r;
+-(void)addKinematicBoxWithCoords:(CGPoint)p withDimensionX:(CGFloat)x andY:(CGFloat)y withAngle:(CGFloat)a;
+-(void)addHeroWithCoords:(CGPoint)p;
+-(void)addGoalWithCoords:(CGPoint)p;
 
 @end

@@ -10,4 +10,12 @@
 
 @implementation Mechanic
 
+//property object
+
+
+//method moveforward
+//method movebackwards
+
+
+
 @end

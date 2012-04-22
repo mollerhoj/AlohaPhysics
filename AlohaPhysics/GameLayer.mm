@@ -109,6 +109,18 @@
     
 }
 
+- (void)ccTouchEnded:(UITouch *)touch withEvent:(UIEvent *)event
+{
+    /*
+    for (b2Body* b = self.game.level->world->GetBodyList(); b; b = b->GetNext())
+	{
+		if(b->bodyDef) {
+            bodyDef.type = b2_dynamicBody;
+        }
+	}
+     */
+}
+
 //Simple test function to test touches:
 - (void)ccTouchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {

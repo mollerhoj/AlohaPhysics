@@ -8,6 +8,12 @@
 
 #import "MoveableObject.h"
 
+@interface MoveableObject()
+
+@end
 @implementation MoveableObject
+
+//property object
+//property mechanic
 
 @end

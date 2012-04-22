@@ -11,7 +11,7 @@
 
 @interface Level ()
 @property (nonatomic,assign) LevelBuilder *levelBuilder;
-@property (nonatomic,assign) int *currentLevel;
+@property (nonatomic,assign) int currentLevel;
 @property (nonatomic,assign) double *touchTime;
 @property (nonatomic,assign) double *maxTouchTime;
 @property (nonatomic,assign) BOOL *touching;
@@ -40,19 +40,46 @@
         //Init levelBuilder
         self.levelBuilder = [[LevelBuilder alloc] initWithLevel:self];
 
+        self.currentLevel = 1;
+        
         //Build level 1 as default
-        [self.levelBuilder buildLevel:1];
+        [self.levelBuilder buildLevel:self.currentLevel];
 	}
 	return self;
+}
+
+//Iterate over the bodies in the physics world and delete them
+-(void)destroyLevel
+{
+	for (b2Body* b = world->GetBodyList(); b; b = b->GetNext())
+	{
+		world->DestroyBody(b);
+	}
+}
+
+//Restart level
+-(void)restartLevel
+{
+    [self destroyLevel];
+    [self.levelBuilder buildLevel:self.currentLevel];
+}
+
+//Makes next level
+-(void)nextLevel
+{
+    [self destroyLevel];
+    self.currentLevel++;
+    [self.levelBuilder buildLevel:self.currentLevel];
 }
 
 /*
  Define the physical world
 */
--(void) defineWorld {
+-(void) defineWorld 
+{
     // Define the gravity vector.
     b2Vec2 gravity;
-    gravity.Set(0.0f, 0.0f);
+    gravity.Set(0.0f, -20.0f);
     
     // Do we want to let bodies sleep?
     // This will speed up the physics simulation

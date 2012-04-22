@@ -32,7 +32,22 @@
 */
 - (void) step {
     self.level->world->Step(1.0/STEPS_PER_SECOND, VELOCITY_ITERATIONS, POSITION_ITERATIONS);
-    self.level->hero->ApplyForce(b2Vec2(0.0f, -10.0f), self.level->hero->GetPosition());
+    //self.level->hero->ApplyForce(b2Vec2(0.0f, -10.0f), self.level->hero->GetPosition());
+    
+    //Check if hero is out of the frame
+    b2Vec2 heroPosition = self.level->hero->GetPosition();
+    if(heroPosition.x < 0.0 || heroPosition.x > 15.0 || heroPosition.y < 0.0 || heroPosition.y > 10.0) 
+    {
+        [self.level restartLevel];
+    }
+
+    //Check if the hero reaches the goal
+    if(self.level->hero->GetFixtureList()->GetShape() != nil) {
+        if(self.level->hero->GetFixtureList()->GetShape()->TestPoint(self.level->hero->GetTransform(), b2Vec2(self.level->goal.x/PIXELS_TO_METER_RATIO, self.level->goal.y/PIXELS_TO_METER_RATIO))) 
+        {
+            [self.level nextLevel];
+        }
+    }
 }
 
 @end

@@ -14,5 +14,9 @@
     @public
     b2World *world;
     b2Body *hero;
+    CGPoint goal;
 }
+
+-(void)nextLevel;
+-(void)restartLevel;
 @end
