@@ -9,6 +9,7 @@
 #import "Level.h"
 #import "LevelBuilder.h"
 #import "Game.h"
+#import "GraphicLayer.h"
 
 @interface Level ()
 @property (nonatomic,assign) Game *game;
@@ -17,6 +18,7 @@
 @property (nonatomic,assign) double *touchTime;
 @property (nonatomic,assign) double *maxTouchTime;
 @property (nonatomic,assign) BOOL *touching;
+@property (nonatomic,assign) CCLayer *graphicLayer;
 @end
 
 @implementation Level
@@ -27,7 +29,7 @@
 @synthesize maxTouchTime = _maxTouchTime;
 @synthesize touching = _touching;
 @synthesize game = _game;
-
+@synthesize graphicLayer = _graphicLayer;
 
 /*
  Init level in game
@@ -40,6 +42,8 @@
         
         //Define physical world
         [self defineWorld];
+        
+        self.graphicLayer = self.game.scene.graphicLayer;
         
         //Init levelBuilder
         self.levelBuilder = [[LevelBuilder alloc] init];

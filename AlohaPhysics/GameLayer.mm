@@ -11,26 +11,13 @@
 
 @implementation GameLayer
 
-@synthesize game = _game;
-//@synthesize world = _world;
-//@synthesize m_debugDraw = _m_debugDraw;
+@synthesize stepListener = _stepListener;
 
 #define graphicsTag 1
 
-//Static method used to return a scene with this layer, in order to kick off the game
-+(CCScene *) scene
-{
-	// 'scene' is an autorelease object.
-	CCScene *scene = [CCScene node];
-	
-	// 'layer' is an autorelease object.
-	GameLayer *layer = [GameLayer node];
-	
-	// add layer as a child to scene
-	[scene addChild: layer];
-	
-	// return the scene
-	return scene;
+-(void)setStepListener:(Game *)stepListener {
+    _stepListener = stepListener;
+    self.stepListener.level->world->SetDebugDraw(m_debugDraw);
 }
 
 /*
@@ -39,9 +26,6 @@
 -(void) initDebugDraw {
     //init the debug drawer with ratio
     m_debugDraw = new GLESDebugDraw([Game unit]);
-    
-    //Set the debug draw into the world
-    self.game.level->world->SetDebugDraw(m_debugDraw);
     
     //Set prefered flags for the debug draw
     uint32 flags = 0;
@@ -58,31 +42,11 @@
 {
 	if( (self=[super init])) {
         
-        //Set the unit of the game
-        [Game setUnit:(int)[CCDirector sharedDirector].winSize.width/15];
-        NSAssert([CCDirector sharedDirector].winSize.width/15 == [CCDirector sharedDirector].winSize.height/10,@"The ratio between width and height is not right");
-        
-        //Create the game object
-        self.game = [[Game alloc] initWithView:self];
-        
         //Set the screen to be touchable
         self.isTouchEnabled = YES;
         
         //Init debug drawing: Remove upon release
         [self initDebugDraw];
-
-        //INIT GRAPICS
-        CCSpriteBatchNode *batch = [CCSpriteBatchNode batchNodeWithFile:@"graphics.png" capacity:150];
-		[self addChild:batch z:0 tag:graphicsTag];
-        
-        CCSpriteBatchNode *batch2 = (CCSpriteBatchNode*) [self getChildByTag:graphicsTag];
-        
-        CCSprite *sprite = [CCSprite spriteWithBatchNode:batch2 rect:CGRectMake([Game unit]*0,[Game unit]*0,[Game unit]*1,[Game unit]*1)];
-        [batch2 addChild:sprite];
-        
-        sprite.position = ccp( 32, 32);
-        
-        [self removeChild:sprite cleanup: YES];
         
         //Start scheduler
         [self schedule: @selector(tick:)];
@@ -94,7 +58,7 @@
 //Tick
 -(void) tick: (ccTime) dt
 {
-    [self.game step];
+    [self.stepListener step];
 }
 
 /*
@@ -102,20 +66,21 @@
 */
 -(void) draw
 {
-	// Default GL states: GL_TEXTURE_2D, GL_VERTEX_ARRAY, GL_COLOR_ARRAY, GL_TEXTURE_COORD_ARRAY
-	// Needed states:  GL_VERTEX_ARRAY, 
-	// Unneeded states: GL_TEXTURE_2D, GL_COLOR_ARRAY, GL_TEXTURE_COORD_ARRAY
-	glDisable(GL_TEXTURE_2D);
-	glDisableClientState(GL_COLOR_ARRAY);
-	glDisableClientState(GL_TEXTURE_COORD_ARRAY);
-	
-	self.game.level->world->DrawDebugData();
-	
-	// restore default GL states
-	glEnable(GL_TEXTURE_2D);
-	glEnableClientState(GL_COLOR_ARRAY);
-	glEnableClientState(GL_TEXTURE_COORD_ARRAY);
-    
+	if (self.stepListener) {
+        // Default GL states: GL_TEXTURE_2D, GL_VERTEX_ARRAY, GL_COLOR_ARRAY, GL_TEXTURE_COORD_ARRAY
+        // Needed states:  GL_VERTEX_ARRAY, 
+        // Unneeded states: GL_TEXTURE_2D, GL_COLOR_ARRAY, GL_TEXTURE_COORD_ARRAY
+        glDisable(GL_TEXTURE_2D);
+        glDisableClientState(GL_COLOR_ARRAY);
+        glDisableClientState(GL_TEXTURE_COORD_ARRAY);
+
+            self.stepListener.level->world->DrawDebugData();
+
+        // restore default GL states
+        glEnable(GL_TEXTURE_2D);
+        glEnableClientState(GL_COLOR_ARRAY);
+        glEnableClientState(GL_TEXTURE_COORD_ARRAY);
+    }
 }
 
 //Simple test function to test touches:
@@ -125,7 +90,7 @@
 	for( UITouch *touch in touches ) {
 		CGPoint location = [touch locationInView: [touch view]];
 		location = [[CCDirector sharedDirector] convertToGL: location];
-		[self.game.level addNewBoxWithCoords: location];
+		[self.stepListener.level addNewBoxWithCoords: location];
 	}
 }
 

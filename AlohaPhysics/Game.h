@@ -8,12 +8,17 @@
 
 #import <Foundation/Foundation.h>
 #import "Level.h"
+#import "GameScene.h"
 
 @interface Game : NSObject {
 
 }
 
 @property (nonatomic, assign) Level *level;
+
+@property (nonatomic,assign) GameScene *scene;
+
+- (id)initWithScene:(CCScene *)scene;
 
 - (void)step;
 
