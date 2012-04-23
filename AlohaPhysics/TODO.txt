@@ -1,12 +1,10 @@
-W Find better dying sound
-
 C Play sound on collision! (Hard)
 
 C Make polygon shapes
 
 C Make acelrating shapes
 
-J Make animations (for goal)
+J add images to the physical objects
 
 BEFORE RELEASE:
 
