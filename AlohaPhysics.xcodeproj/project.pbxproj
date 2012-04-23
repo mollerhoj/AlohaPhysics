@@ -16,6 +16,8 @@
 		1D41F3031544FA5A00F60662 /* Quicksand-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1D41F3021544FA5A00F60662 /* Quicksand-Regular.ttf */; };
 		1D41F3051545155300F60662 /* Die.wav in Resources */ = {isa = PBXBuildFile; fileRef = 1D41F3041545155300F60662 /* Die.wav */; };
 		1D41F3081545184000F60662 /* Goal.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D41F3071545184000F60662 /* Goal.m */; };
+		1D41F30E1545459400F60662 /* sprites.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1D41F30C1545459400F60662 /* sprites.plist */; };
+		1D41F30F1545459400F60662 /* sprites.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D41F30D1545459400F60662 /* sprites.png */; };
 		1D6926921543D4F000CAC718 /* GraphicLayer.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1D6926911543D4F000CAC718 /* GraphicLayer.mm */; };
 		1DD2E07C1544B9B50072CFB3 /* SoundManager.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1DD2E07B1544B9B50072CFB3 /* SoundManager.mm */; };
 		1DD2E0841544E7EE0072CFB3 /* Chill.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1DD2E0831544E7EE0072CFB3 /* Chill.mp3 */; };
@@ -202,6 +204,8 @@
 		1D41F3041545155300F60662 /* Die.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Die.wav; sourceTree = "<group>"; };
 		1D41F3061545183F00F60662 /* Goal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Goal.h; sourceTree = "<group>"; };
 		1D41F3071545184000F60662 /* Goal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Goal.m; sourceTree = "<group>"; };
+		1D41F30C1545459400F60662 /* sprites.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = sprites.plist; path = Resources/sprites.plist; sourceTree = "<group>"; };
+		1D41F30D1545459400F60662 /* sprites.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = sprites.png; path = Resources/sprites.png; sourceTree = "<group>"; };
 		1D6926901543D4F000CAC718 /* GraphicLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GraphicLayer.h; sourceTree = "<group>"; };
 		1D6926911543D4F000CAC718 /* GraphicLayer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = GraphicLayer.mm; sourceTree = "<group>"; };
 		1DD2E07A1544B9B40072CFB3 /* SoundManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoundManager.h; sourceTree = "<group>"; };
@@ -684,6 +688,8 @@
 		1DF8B05B153B919600D9ED4A /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				1D41F30C1545459400F60662 /* sprites.plist */,
+				1D41F30D1545459400F60662 /* sprites.png */,
 				1D41F3011544F8D200F60662 /* Fonts */,
 				1DD2E07E1544BC300072CFB3 /* Sounds */,
 				1D41F2FF1544F8B300F60662 /* Graphics */,
@@ -1238,6 +1244,8 @@
 				1DD2E08C1544EFA80072CFB3 /* TODO.txt in Resources */,
 				1D41F3031544FA5A00F60662 /* Quicksand-Regular.ttf in Resources */,
 				1D41F3051545155300F60662 /* Die.wav in Resources */,
+				1D41F30E1545459400F60662 /* sprites.plist in Resources */,
+				1D41F30F1545459400F60662 /* sprites.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

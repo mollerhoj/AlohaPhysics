@@ -15,9 +15,6 @@
 @interface Level ()
 @property (nonatomic,assign) LevelBuilder *levelBuilder;
 @property (nonatomic,assign) int currentLevel;
-
-@property (nonatomic,assign) NSMutableArray *gameObjects;
-
 @end
 
 @implementation Level
@@ -31,7 +28,7 @@
 @synthesize graphicLayer = _graphicLayer;
 @synthesize hero = _hero;
 @synthesize goal = _goal;
-@synthesize gameObjects = _gameObjects;
+@synthesize won = _won;
 
 /*
  Init level in game
@@ -65,6 +62,7 @@
 		world->DestroyBody(b);
 	}
     self.time = 0;
+    self.won = NO;
 }
 
 //Restart level

@@ -48,7 +48,8 @@
         [self addChild:gameLayer z:5];
         
         //Setup soundmanager
-        [[SoundManager sharedManager] setup];
+        //Outcommit so that I will not go crazy from the music!
+        //[[SoundManager sharedManager] setup];
         
     }
     return self;

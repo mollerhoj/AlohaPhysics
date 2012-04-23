@@ -11,6 +11,8 @@
 
 @interface Goal ()
 
+-(void)disappear;
+
 @end
 
 @implementation Goal
@@ -18,7 +20,7 @@
 #define PICTURE GOAL
 
 @synthesize sprite = _sprite;
-@synthesize wasHit = _wasHit;
+@synthesize status = _status;
 @synthesize x = _x;
 @synthesize y = _y;
 
@@ -31,19 +33,23 @@
     return self;
 }
 
+-(void)hit {
+    self.status = WAS_HIT;
+}
+
 -(void)step {
-    if (self.wasHit) {
+    if (self.status == WAS_HIT) {
         [self disappear];
     }
 }
 
-/*-(void)disappear {
-    self.sprite.opacity -= 0.05;
+-(void)disappear {
+    self.sprite.opacity -= 5;
     
     if (self.sprite.opacity <= 0) {
-        //DESTROY;
+        self.status = IS_GONE;
     }
-}*/
+}
 
 -(void)setX:(double)x {
     _x = x;

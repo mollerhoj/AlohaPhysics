@@ -105,16 +105,24 @@ static int _unit;
     [self.level.goal step];
     
     //Check if hero is out of the frame
-    b2Vec2 heroPosition = self.level.hero->GetPosition();
-    if(heroPosition.x < -0.5 || heroPosition.x > 15.5 || heroPosition.y < -0.5 || heroPosition.y > 12.5) 
-    {
-        [self.level restartLevel];
+    if (!self.level.won) {
+        b2Vec2 heroPosition = self.level.hero->GetPosition();
+        if(heroPosition.x < -0.5 || heroPosition.x > 15.5 || heroPosition.y < -0.5 || heroPosition.y > 12.5) 
+        {
+            [self.level restartLevel];
+        }
     }
 
     //Check if the hero reaches within radius 0.8 to goal
     b2Vec2 locationHero = self.level.hero->GetWorldCenter();
     if(ccpDistance(CGPointMake(locationHero.x, locationHero.y), CGPointMake(self.level.goal.x/[Game unit], self.level.goal.y/[Game unit])) < 0.8f)
     {
+        [self.level.goal hit];
+        self.level.won = true;
+    }
+    
+    //TODO: Use a listener and remove this from game loop
+    if (self.level.goal.status == IS_GONE) {
         [self.level nextLevel];
     }
 }

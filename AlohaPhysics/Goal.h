@@ -11,12 +11,19 @@
 
 @interface Goal : NSObject
 
-@property BOOL wasHit;
-@property (nonatomic,assign) CCSprite* sprite;
+enum {
+    ALIVE,
+    WAS_HIT,
+    IS_GONE
+} typedef Status;
 
+@property Status status;
+@property (nonatomic,assign) CCSprite* sprite;
 @property (nonatomic,assign) double x;
 @property (nonatomic,assign) double y;
 
 -(void)step;
+
+-(void)hit;
 
 @end

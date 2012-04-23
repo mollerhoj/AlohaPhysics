@@ -25,6 +25,7 @@
 @property (nonatomic, assign) BOOL playing;
 @property (nonatomic, assign) int time;
 
+@property (nonatomic, assign) BOOL won;
 
 -(void)nextLevel;
 -(void)restartLevel;

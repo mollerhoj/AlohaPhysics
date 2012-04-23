@@ -38,12 +38,15 @@ static GraphicLayer *sharedLayer;
 	return sharedLayer;
 }
 
+//Init loads images from the big file.
 -(id)init {
     self = [super init];
     if (self != nil) {
         //Init sprite batch
-        self.batch = [CCSpriteBatchNode batchNodeWithFile:@"graphics.png" capacity:150];
+        self.batch = [CCSpriteBatchNode batchNodeWithFile:@"sprites.png" capacity:150];
 		[self addChild:self.batch z:0 tag:graphicsTag];
+        [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"sprites.plist"];       
+        
         //Init array to hold all labels
         self.labels = [[NSMutableSet alloc] init];
     }
@@ -52,23 +55,24 @@ static GraphicLayer *sharedLayer;
 
 //Create a new sprite on this layer with the given Picture, and return it
 -(CCSprite*)createSpriteFromPicture:(Picture)picture {
-    CGRect rect;
+    NSString *image;
     
     //Defining where each picture is placed on the spritesheet
     switch (picture) {
         case HERO:
-            rect = CGRectMake(0,0,32,32);
+            image = @"Sprite_Hero.png";
             break;
         case GOAL:
-            rect = CGRectMake(32,0,32,32);
+            image = @"Sprite_Goal.png";
             break;
             
         default:
+            NSLog(@"Sprite could not be loaded");
             break;
     }
     
     //Cut out the sprite
-    CCSprite *sprite = [CCSprite spriteWithBatchNode:self.batch rect:rect];
+    CCSprite *sprite = [CCSprite spriteWithSpriteFrameName:image];
     
     //Put sprite in the layer
     [self.batch addChild:sprite];
