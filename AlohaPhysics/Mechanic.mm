@@ -27,13 +27,17 @@
                 break;
         
             case 2:
-                body->SetLinearVelocity(b2Vec2(5.0, 7.0));
+                body->SetLinearVelocity(b2Vec2(0.0, 7.0));
                 break;
         
             case 3:
-                body->ApplyAngularImpulse(3.0);
+                body->SetAngularVelocity(-2.0);
                 break;
             
+            case 4:
+                body->SetLinearVelocity(b2Vec2(0.0, -7.0));
+                break;
+                
             default:
                 break;
         }
@@ -51,11 +55,15 @@
                 break;
                 
             case 2:
-                body->SetLinearVelocity(b2Vec2(-5.0, -7.0));
+                body->SetLinearVelocity(b2Vec2(0.0, -7.0));
                 break;
                 
             case 3:
-                body->ApplyAngularImpulse(3.0);
+                body->SetAngularVelocity(2.0);
+                break;
+                
+            case 4:
+                body->SetLinearVelocity(b2Vec2(0.0, 7.0));
                 break;
                 
             default:
