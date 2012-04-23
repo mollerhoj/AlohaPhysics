@@ -18,6 +18,9 @@ enum  {
 }
 typedef Picture;
 
+//The shared GraphicsLayer
++(GraphicLayer*) sharedLayer;
+
 //Create a sprite of one of the pictures defined in the picture array
 -(CCSprite*)createSpriteFromPicture:(Picture)picture;
 

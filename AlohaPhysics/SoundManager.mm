@@ -21,7 +21,7 @@
 #define BACKGROUND_MUSIC @"Chill.mp3"
 
 #define WIN_SOUND @"Win.wav"
-#define DIE_SOUND @"Die.mp3"
+#define DIE_SOUND @"Die.wav"
 #define HIT_SOUND @"Hit.WAV"
 
 static SoundManager *sharedManager = nil;

@@ -8,9 +8,8 @@
 
 #import "CCScene.h"
 #import "cocos2d.h"
+#import "GraphicLayer.h"
 
 @interface GameScene : CCScene
-
-@property (nonatomic, assign) CCLayer *graphicLayer;
 
 @end

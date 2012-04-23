@@ -13,9 +13,11 @@
 #import "SoundManager.h"
 
 @interface Level ()
-@property (nonatomic,assign) Game *game;
 @property (nonatomic,assign) LevelBuilder *levelBuilder;
 @property (nonatomic,assign) int currentLevel;
+
+@property (nonatomic,assign) NSMutableArray *gameObjects;
+
 @end
 
 @implementation Level
@@ -26,27 +28,20 @@
 @synthesize maxTime = _maxTime;
 @synthesize time = _time;
 @synthesize playing = _playing;
-@synthesize game = _game;
 @synthesize graphicLayer = _graphicLayer;
 @synthesize hero = _hero;
 @synthesize goal = _goal;
+@synthesize gameObjects = _gameObjects;
 
 /*
  Init level in game
 */
--(id) initInGame:(Game *)game
+-(id) init
 {
 	if( (self=[super init])) {
-        //Set the game this level is part of
-        self.game = game;
-        
         //Define physical world
         [self defineWorld];
-        
-        NSLog(@"graphicLayer: %@",self.game.scene);
-        
-        self.graphicLayer = [self.game.scene graphicLayer];
-        
+
         //Init levelBuilder
         self.levelBuilder = [[LevelBuilder alloc] initWithLevel:self];
 
@@ -62,7 +57,7 @@
 -(void)destroyLevel
 {
     //Remove all sprites from graphics
-	[self.graphicLayer removeGraphics];
+	[[GraphicLayer sharedLayer] removeGraphics];
     
     //Iterate over the bodies in the physics world and delete them
     for (b2Body* b = world->GetBodyList(); b; b = b->GetNext())

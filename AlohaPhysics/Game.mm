@@ -23,18 +23,17 @@ static int _unit;
 #define VELOCITY_ITERATIONS 8
 #define POSITION_ITERATIONS 1
 
-@synthesize scene = _scene;
+//@synthesize scene = _scene;
 @synthesize level = _level;
 @synthesize mechanic = _mechanic;
 
 /*
  init game with a level
 */
-- (id) initWithScene:(GameScene *)scene {
+- (id) init {
     if( (self=[super init])) {
 		self.mechanic = [[Mechanic alloc] init];
-        self.scene = scene;
-        self.level = [[Level alloc] initInGame:self];
+        self.level = [[Level alloc] init];
     }
     return self;
 }
@@ -101,6 +100,9 @@ static int _unit;
     
     //Make worlds step
     self.level->world->Step(1.0/STEPS_PER_SECOND, VELOCITY_ITERATIONS, POSITION_ITERATIONS);
+    
+    //Run through goal's step //TODO: Make this general for all GameObjects
+    [self.level.goal step];
     
     //Check if hero is out of the frame
     b2Vec2 heroPosition = self.level.hero->GetPosition();

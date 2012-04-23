@@ -14,18 +14,29 @@
 //The sprite batch for all the sprites to be created in
 @property (nonatomic,assign) CCSpriteBatchNode *batch;
 @property (nonatomic,assign) NSMutableSet *labels;
-
 @end
 
 @implementation GraphicLayer
 
 #define graphicsTag 1
 
+//The shared Layer
+static GraphicLayer *sharedLayer;
+
 //Batch holding all sprites
 @synthesize batch = _batch;
 
 //Array holding all labels
 @synthesize labels = _labels;
+
++(GraphicLayer*) sharedLayer
+{
+	@synchronized(self)     {
+		if (!sharedLayer)
+			sharedLayer = [[GraphicLayer alloc] init];
+	}
+	return sharedLayer;
+}
 
 -(id)init {
     self = [super init];

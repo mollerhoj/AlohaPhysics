@@ -10,6 +10,7 @@
 #import "Game.h"
 #import "MoveableObject.h"
 #import "Box2D.h"
+#import "GraphicLayer.h"
 
 @implementation LevelBuilder
 
@@ -258,9 +259,10 @@
 //Add a goal to the physical world
 -(void)addGoalWithCoords:(CGPoint)p
 {
-	self.level.goal = p;
-    CCSprite* sprite = [self.level.graphicLayer createSpriteFromPicture:(GOAL)];
-    sprite.position = ccp(p.x, p.y);
+    Goal* goal = [[Goal alloc] init];
+    goal.x = p.x;
+    goal.y = p.y;
+	self.level.goal = goal;
 }
 
 @end
