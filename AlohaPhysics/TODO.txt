@@ -1,17 +1,12 @@
+W Find better dying sound
 
-Ball outside of bounds should move all outside..
+C Play sound on collision! (Hard)
 
-Find better dying sound
+C Make polygon shapes
 
-Play sound on collision! (Hard)
+C Make acelrating shapes
 
-Add text instructions (find font etc)
-
-Make polygon shapes
-
-Make acelrating shapes
-
-Make animations (for goal)
+J Make animations (for goal)
 
 BEFORE RELEASE:
 
