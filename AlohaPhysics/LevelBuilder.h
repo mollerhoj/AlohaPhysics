@@ -18,8 +18,11 @@
 -(void)addKinematicBoxWithCoords:(CGPoint)p 
                   withDimensionX:(CGFloat)x 
                             andY:(CGFloat)y 
-                       withAngle:(CGFloat)a 
-                 andMechanicType:(int) mT;
+                       withAngle:(CGFloat)a
+                       andCenter:(b2Vec2)center
+                 andMechanicType:(int) mT 
+                  andMaxTimePlay:(int)maxPlay;
+
 -(void)addHeroWithCoords:(CGPoint)p;
 -(void)addGoalWithCoords:(CGPoint)p;
 

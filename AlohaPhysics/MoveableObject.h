@@ -13,5 +13,6 @@
 
 @property (nonatomic, assign) int mechanicType;
 @property (nonatomic, assign) CCSprite *image;
+@property (nonatomic, assign) int maxTimePlay;
 
 @end

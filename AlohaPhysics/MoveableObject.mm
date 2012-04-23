@@ -12,5 +12,6 @@
 
 @synthesize mechanicType = _mechanicType;
 @synthesize image = _image;
+@synthesize maxTimePlay = _maxTimePlay;
 
 @end

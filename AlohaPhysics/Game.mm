@@ -44,19 +44,25 @@ static int _unit;
 */
 - (void) step {
     
-    //Make moveable objects move (play) if touched and held, when release rewind moveable objects to default position 
     if(self.level.playing)
     {
-        if(self.level.time != self.level.maxTime)
+        if(self.level.time < self.level.maxTime)
         {
             //Increase time if max isn't reached
             self.level.time++;
             
-            //Play moveable objects
+            //Check wether individual object has reached own max time
             for (b2Body* body = self.level->world->GetBodyList(); body; body = body->GetNext())
             {
                 MoveableObject *mo = (MoveableObject*)body->GetUserData();
-                [self.mechanic playMechanicType:mo.mechanicType withBody:body];
+                if(self.level.time <= mo.maxTimePlay) 
+                {
+                    //Play moveable object
+                    [self.mechanic playMechanicType:mo.mechanicType withBody:body];
+                } else {
+                    //Stop moveable object
+                    [self.mechanic stopMovementForBody:body];
+                }
             }
         } else {
             //Stop moveable objects when max time is reached
@@ -66,16 +72,23 @@ static int _unit;
             }
         }
     } else {
-        if(self.level.time != 0)
+        if(self.level.time > 0)
         {
             //Decrease time until default is reached
             self.level.time--;
             
-            //Rewind moveable objects
+            //Check wether individual object...
             for (b2Body* body = self.level->world->GetBodyList(); body; body = body->GetNext())
             {
                 MoveableObject *mo = (MoveableObject*)body->GetUserData();
-                [self.mechanic rewindMechanicType:mo.mechanicType withBody:body];
+                if(self.level.time >= mo.maxTimePlay) 
+                {
+                    //Stop moveable object
+                    [self.mechanic stopMovementForBody:body];
+                } else {
+                    //Rewind moveable object
+                    [self.mechanic rewindMechanicType:mo.mechanicType withBody:body];
+                }
             }
         } else {
             //Stop moveable objects when default is reached
@@ -86,6 +99,7 @@ static int _unit;
         }
     }
     
+    //Make worlds step
     self.level->world->Step(1.0/STEPS_PER_SECOND, VELOCITY_ITERATIONS, POSITION_ITERATIONS);
     
     //Check if hero is out of the frame
@@ -95,12 +109,11 @@ static int _unit;
         [self.level restartLevel];
     }
 
-    //Check if the hero reaches the goal
-    if(self.level.hero->GetFixtureList()->GetShape() != nil) {
-        if(self.level.hero->GetFixtureList()->GetShape()->TestPoint(self.level.hero->GetTransform(), b2Vec2(self.level.goal.x/[Game unit], self.level.goal.y/[Game unit]))) 
-        {
-            [self.level nextLevel];
-        }
+    //Check if the hero reaches within radius 0.8 to goal
+    b2Vec2 locationHero = self.level.hero->GetWorldCenter();
+    if(ccpDistance(CGPointMake(locationHero.x, locationHero.y), CGPointMake(self.level.goal.x/[Game unit], self.level.goal.y/[Game unit])) < 0.8f)
+    {
+        [self.level nextLevel];
     }
 }
 

@@ -96,7 +96,7 @@
 {
     // Define the gravity vector.
     b2Vec2 gravity;
-    gravity.Set(0.0f, -10.0f);
+    gravity.Set(0.0f, -18.0f);
     
     // Do we want to let bodies sleep?
     // This will speed up the physics simulation
@@ -107,29 +107,4 @@
     
     world->SetContinuousPhysics(true);
 }
-
-//Simple box adding test
--(void) addNewBoxWithCoords:(CGPoint)p
-{
-	// Define the dynamic body.
-	//Set up a 1m squared box in the physics world
-	b2BodyDef bodyDef;
-	bodyDef.type = b2_dynamicBody;
-    
-	bodyDef.position.Set(p.x/32, p.y/32);
-	//bodyDef.userData = sprite;
-	b2Body *body = world->CreateBody(&bodyDef);
-	
-	// Define another box shape for our dynamic body.
-	b2PolygonShape dynamicBox;
-	dynamicBox.SetAsBox(.5f, .5f);//These are mid points for our 1m box
-	
-	// Define the dynamic body fixture.
-	b2FixtureDef fixtureDef;
-	fixtureDef.shape = &dynamicBox;	
-	fixtureDef.density = 1.0f;
-	fixtureDef.friction = 0.3f;
-	body->CreateFixture(&fixtureDef);
-}
-
 @end
