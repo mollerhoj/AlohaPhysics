@@ -30,7 +30,7 @@
             self.level.maxTime = 40;
             
             //Moveable objects
-            [self addKinematicBoxWithCoords:CGPointMake(150.0, 150.0) withDimensionX:2.5 andY:0.5 withAngle:-0.1 andCenter:b2Vec2(0.0, 0.0) andMechanicType:1 andMaxTimePlay:self.level.maxTime];
+            [self addKinematicBoxWithCoords:CGPointMake(150.0, 150.0) withDimensionX:2.5 andY:0.5 withAngle:0.0 andCenter:b2Vec2(0.0, 0.0) andMechanicType:1 andMaxTimePlay:self.level.maxTime];
             
             //Adding hero
             [self addHeroWithCoords:CGPointMake(100.0, 300.0)];
@@ -45,8 +45,7 @@
             self.level.maxTime = 50;
             
             //Moveable objects
-            [self addKinematicBoxWithCoords:CGPointMake(100.0, 75.0) withDimensionX:2.0 andY:0.5 withAngle:-0.4 andCenter:b2Vec2(0.0, 0.0) andMechanicType:2 andMaxTimePlay:self.level.maxTime];
-            [self addKinematicBoxWithCoords:CGPointMake(350.0, 200.0) withDimensionX:2.0 andY:0.5 withAngle:0.4 andCenter:b2Vec2(0.0, 0.0) andMechanicType:4 andMaxTimePlay:self.level.maxTime];
+            [self addKinematicBoxWithCoords:CGPointMake(100.0, 75.0) withDimensionX:2.0 andY:0.5 withAngle:-0.5 andCenter:b2Vec2(0.0, 0.0) andMechanicType:2 andMaxTimePlay:self.level.maxTime];
             
             //Adding hero
             [self addHeroWithCoords:CGPointMake(100.0, 250.0)];
@@ -68,6 +67,41 @@
             
             //Adding goal
             [self addGoalWithCoords:CGPointMake(460.0, 150.0)];
+            
+            break;
+            
+        case 4:
+            //Setting max frames for a moveable object to move
+            self.level.maxTime = 35;
+            
+            //Moveable objects
+            [self addKinematicBoxWithCoords:CGPointMake(75.0, 150.0) withDimensionX:1.5 andY:0.5 withAngle:0.5 andCenter:b2Vec2(0.0, 0.0) andMechanicType:3 andMaxTimePlay:self.level.maxTime];
+            [self addKinematicBoxWithCoords:CGPointMake(175.0, 150.0) withDimensionX:1.5 andY:0.5 withAngle:-0.5 andCenter:b2Vec2(0.0, 0.0) andMechanicType:5 andMaxTimePlay:self.level.maxTime];
+            [self addKinematicBoxWithCoords:CGPointMake(275.0, 150.0) withDimensionX:1.5 andY:0.5 withAngle:0.5 andCenter:b2Vec2(0.0, 0.0) andMechanicType:3 andMaxTimePlay:self.level.maxTime];
+            [self addKinematicBoxWithCoords:CGPointMake(375.0, 150.0) withDimensionX:1.5 andY:0.5 withAngle:-0.5 andCenter:b2Vec2(0.0, 0.0) andMechanicType:5 andMaxTimePlay:self.level.maxTime];
+            
+            //Adding hero
+            [self addHeroWithCoords:CGPointMake(75.0, 250.0)];
+            
+            //Adding goal
+            [self addGoalWithCoords:CGPointMake(460.0, 140.0)];
+            
+            break;
+            
+        case 5:
+            //Setting max frames for a moveable object to move
+            self.level.maxTime = 40;
+            
+            //Moveable objects
+            [self addKinematicBoxWithCoords:CGPointMake(55.0, 80.0) withDimensionX:0.5 andY:0.5 withAngle:0.6 andCenter:b2Vec2(0.0, 0.0) andMechanicType:6 andMaxTimePlay:10];
+            [self addKinematicBoxWithCoords:CGPointMake(100.0, 70.0) withDimensionX:0.5 andY:0.5 withAngle:0.6 andCenter:b2Vec2(0.0, 0.0) andMechanicType:6 andMaxTimePlay:0];
+            [self addKinematicBoxWithCoords:CGPointMake(450.0, 70.0) withDimensionX:0.3 andY:1.5 withAngle:0.0 andCenter:b2Vec2(0.0, 0.0) andMechanicType:2 andMaxTimePlay:self.level.maxTime];
+            
+            //Adding hero
+            [self addHeroWithCoords:CGPointMake(85.0, 250.0)];
+            
+            //Adding goal
+            [self addGoalWithCoords:CGPointMake(300.0, 40.0)];
             
             break;
             
@@ -139,6 +173,7 @@
 	fixtureDef.shape = &dynamicCircle;
 	fixtureDef.density = 1.0f;
 	fixtureDef.friction = 0.3f;
+    fixtureDef.restitution = 0.3f;
 	self.level.hero->CreateFixture(&fixtureDef);
     //body->CreateFixture(&fixtureDef);
 }

@@ -27,7 +27,7 @@
                 break;
         
             case 2:
-                body->SetLinearVelocity(b2Vec2(0.0, 7.0));
+                body->SetLinearVelocity(b2Vec2(0.0, 10.0));
                 break;
         
             case 3:
@@ -35,7 +35,15 @@
                 break;
             
             case 4:
-                body->SetLinearVelocity(b2Vec2(0.0, -7.0));
+                body->SetLinearVelocity(b2Vec2(0.0, -10.0));
+                break;
+                
+            case 5:
+                body->SetAngularVelocity(2.0);
+                break;
+                
+            case 6:
+                body->SetLinearVelocity(b2Vec2(13.0, 11.0));   
                 break;
                 
             default:
@@ -55,7 +63,7 @@
                 break;
                 
             case 2:
-                body->SetLinearVelocity(b2Vec2(0.0, -7.0));
+                body->SetLinearVelocity(b2Vec2(0.0, -10.0));
                 break;
                 
             case 3:
@@ -63,7 +71,15 @@
                 break;
                 
             case 4:
-                body->SetLinearVelocity(b2Vec2(0.0, 7.0));
+                body->SetLinearVelocity(b2Vec2(0.0, 10.0));
+                break;
+                
+            case 5:
+                body->SetAngularVelocity(-2.0);
+                break;
+                
+            case 6:
+                body->SetLinearVelocity(b2Vec2(-13.0, -11.0));    
                 break;
                 
             default:
