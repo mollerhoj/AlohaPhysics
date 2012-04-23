@@ -62,7 +62,7 @@
 -(void)destroyLevel
 {
     //Remove all sprites from graphics
-	[self.graphicLayer removeSprites];
+	[self.graphicLayer removeGraphics];
     
     //Iterate over the bodies in the physics world and delete them
     for (b2Body* b = world->GetBodyList(); b; b = b->GetNext())

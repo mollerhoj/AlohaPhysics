@@ -9,7 +9,21 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "AlohaPhysics/LevelBuilder.mm"
-         timestampString = "356843277.078211"
+         timestampString = "356843660.212816"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "40"
+         endingLineNumber = "40"
+         landmarkName = "-buildLevel:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         isPathRelative = "1"
+         filePath = "AlohaPhysics/LevelBuilder.mm"
+         timestampString = "356843660.212816"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "42"
@@ -22,13 +36,27 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          isPathRelative = "1"
-         filePath = "AlohaPhysics/LevelBuilder.mm"
-         timestampString = "356842803.97033"
+         filePath = "AlohaPhysics/GraphicLayer.mm"
+         timestampString = "356847057.891026"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "43"
-         endingLineNumber = "43"
-         landmarkName = "-buildLevel:"
+         startingLineNumber = "67"
+         endingLineNumber = "67"
+         landmarkName = "-removeGraphics"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         isPathRelative = "1"
+         filePath = "AlohaPhysics/GraphicLayer.mm"
+         timestampString = "356847057.891026"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "59"
+         endingLineNumber = "59"
+         landmarkName = "-createText:"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

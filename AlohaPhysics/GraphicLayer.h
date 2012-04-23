@@ -24,6 +24,6 @@ typedef Picture;
 //Create a text label
 -(CCLabelTTF*)createText:(NSString*)text;
 
--(void)removeSprites;
+-(void)removeGraphics;
 
 @end
