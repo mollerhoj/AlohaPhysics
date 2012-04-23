@@ -6,6 +6,12 @@
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
+/*
+ The game scene initializes background, graphic, sound and touch managers
+ It also creates the game object.
+ 
+*/
+
 #import "GameScene.h"
 #import "BackgroundLayer.h"
 #import "GameLayer.h"

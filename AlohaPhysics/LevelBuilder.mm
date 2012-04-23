@@ -40,11 +40,11 @@
             [self addGoalWithCoords:CGPointMake(290.0, 30.0)];
             
             //Writing an introduction
-            CCLabelTTF* intro = [self.level.graphicLayer createText:@"Welcome to Aloha Physics!"];
+            CCLabelTTF* intro = [[GraphicLayer sharedLayer] createText:@"Welcome to Aloha Physics!"];
             intro.position = ccp(240,280);
             
             //Writing an instruction
-            CCLabelTTF* instruction = [self.level.graphicLayer createText:@"Press the screen to start!"];
+            CCLabelTTF* instruction = [[GraphicLayer sharedLayer] createText:@"Press the screen to start!"];
             instruction.position = ccp(240,230);
             
         } //(These are nessary when defining new objects in switch statement)
