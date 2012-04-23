@@ -104,7 +104,7 @@ static int _unit;
     
     //Check if hero is out of the frame
     b2Vec2 heroPosition = self.level.hero->GetPosition();
-    if(heroPosition.x < 0.0 || heroPosition.x > 15.0 || heroPosition.y < 0.0 || heroPosition.y > 10.0) 
+    if(heroPosition.x < -0.5 || heroPosition.x > 15.5 || heroPosition.y < -0.5 || heroPosition.y > 12.5) 
     {
         [self.level restartLevel];
     }
