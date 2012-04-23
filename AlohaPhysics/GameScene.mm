@@ -11,6 +11,7 @@
 #import "GameLayer.h"
 #import "Game.h"
 #import "GraphicLayer.h"
+#import "SoundManager.h"
 
 @interface GameScene ()
 @property (nonatomic,assign) Game *game;
@@ -45,6 +46,11 @@
         gameLayer.touchListener = self.game.level;
         gameLayer.stepListener = self.game;
         
+        [[SimpleAudioEngine sharedEngine] playBackgroundMusic:@"EscapeTheFutureV3.mp3"];
+        
+        //Play sound
+        [[SoundManager sharedManager] setup];
+    
         [self addChild:gameLayer z:5];
     }
     return self;

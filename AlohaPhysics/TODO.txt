@@ -1,0 +1,19 @@
+
+Ball outside of bounds should move all outside..
+
+Find better dying sound
+
+Play sound on collision! (Hard)
+
+Add text instructions (find font etc)
+
+Make polygon shapes
+
+Make acelrating shapes
+
+Make animations (for goal)
+
+BEFORE RELEASE:
+
+Load background music
+Do not debug draw

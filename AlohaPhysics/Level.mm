@@ -10,6 +10,7 @@
 #import "LevelBuilder.h"
 #import "Game.h"
 #import "GraphicLayer.h"
+#import "SoundManager.h"
 
 @interface Level ()
 @property (nonatomic,assign) Game *game;
@@ -74,6 +75,7 @@
 //Restart level
 -(void)restartLevel
 {
+    [[SoundManager sharedManager] playSound:DIE];
     [self destroyLevel];
     [self.levelBuilder buildLevel:self.currentLevel];
 }
@@ -81,6 +83,7 @@
 //Makes next level
 -(void)nextLevel
 {
+    [[SoundManager sharedManager] playSound:WIN];
     [self destroyLevel];
     self.currentLevel++;
     [self.levelBuilder buildLevel:self.currentLevel];
