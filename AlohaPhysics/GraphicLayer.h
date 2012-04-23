@@ -18,7 +18,11 @@ enum  {
 }
 typedef Picture;
 
+//Create a sprite of one of the pictures defined in the picture array
 -(CCSprite*)createSpriteFromPicture:(Picture)picture;
+
+//Create a text label
+-(CCLabelTTF*)createText:(NSString*)text;
 
 -(void)removeSprites;
 

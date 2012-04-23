@@ -13,6 +13,7 @@
 		1D054C99154267B50015BBAD /* LevelBuilder.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1D054C98154267B50015BBAD /* LevelBuilder.mm */; };
 		1D054C9C154267D00015BBAD /* Mechanic.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1D054C9B154267CF0015BBAD /* Mechanic.mm */; };
 		1D054C9F154267F30015BBAD /* MoveableObject.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1D054C9E154267F30015BBAD /* MoveableObject.mm */; };
+		1D41F3031544FA5A00F60662 /* Quicksand-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1D41F3021544FA5A00F60662 /* Quicksand-Regular.ttf */; };
 		1D6926921543D4F000CAC718 /* GraphicLayer.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1D6926911543D4F000CAC718 /* GraphicLayer.mm */; };
 		1DD2E07C1544B9B50072CFB3 /* SoundManager.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1DD2E07B1544B9B50072CFB3 /* SoundManager.mm */; };
 		1DD2E0801544BDD20072CFB3 /* Die.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1DD2E07F1544BDD20072CFB3 /* Die.mp3 */; };
@@ -196,6 +197,7 @@
 		1D054C9B154267CF0015BBAD /* Mechanic.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Mechanic.mm; sourceTree = "<group>"; };
 		1D054C9D154267F20015BBAD /* MoveableObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoveableObject.h; sourceTree = "<group>"; };
 		1D054C9E154267F30015BBAD /* MoveableObject.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MoveableObject.mm; sourceTree = "<group>"; };
+		1D41F3021544FA5A00F60662 /* Quicksand-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand-Regular.ttf"; sourceTree = "<group>"; };
 		1D6926901543D4F000CAC718 /* GraphicLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GraphicLayer.h; sourceTree = "<group>"; };
 		1D6926911543D4F000CAC718 /* GraphicLayer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = GraphicLayer.mm; sourceTree = "<group>"; };
 		1DD2E07A1544B9B40072CFB3 /* SoundManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoundManager.h; sourceTree = "<group>"; };
@@ -560,6 +562,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1D41F2FF1544F8B300F60662 /* Graphics */ = {
+			isa = PBXGroup;
+			children = (
+				1DE2B5FD15438B39003855DE /* Background.png */,
+				1DE2B5F815437311003855DE /* graphics.png */,
+				1DF8B05C153B919600D9ED4A /* Default.png */,
+				1DF8B05E153B919600D9ED4A /* fps_images.png */,
+				1DF8B060153B919600D9ED4A /* Icon-72.png */,
+				1DF8B062153B919600D9ED4A /* Icon-Small-50.png */,
+				1DF8B064153B919600D9ED4A /* Icon-Small.png */,
+				1DF8B066153B919600D9ED4A /* Icon-Small@2x.png */,
+				1DF8B068153B919600D9ED4A /* Icon.png */,
+				1DF8B06A153B919600D9ED4A /* Icon@2x.png */,
+				1DF8B06C153B919600D9ED4A /* Info.plist */,
+				1DF8B06D153B919600D9ED4A /* iTunesArtwork */,
+				1DF8B22C153B919900D9ED4A /* blocks.png */,
+			);
+			name = Graphics;
+			sourceTree = "<group>";
+		};
+		1D41F3011544F8D200F60662 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				1D41F3021544FA5A00F60662 /* Quicksand-Regular.ttf */,
+			);
+			name = Fonts;
+			sourceTree = "<group>";
+		};
 		1DD2E07E1544BC300072CFB3 /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
@@ -609,7 +639,6 @@
 		1DF8B05A153B919600D9ED4A /* AlohaPhysics */ = {
 			isa = PBXGroup;
 			children = (
-				1DD2E07E1544BC300072CFB3 /* Sounds */,
 				1DF8B21F153B919900D9ED4A /* AppDelegate.h */,
 				1DF8B220153B919900D9ED4A /* AppDelegate.mm */,
 				1DF8B222153B919900D9ED4A /* RootViewController.h */,
@@ -650,19 +679,9 @@
 		1DF8B05B153B919600D9ED4A /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				1DE2B5FD15438B39003855DE /* Background.png */,
-				1DE2B5F815437311003855DE /* graphics.png */,
-				1DF8B05C153B919600D9ED4A /* Default.png */,
-				1DF8B05E153B919600D9ED4A /* fps_images.png */,
-				1DF8B060153B919600D9ED4A /* Icon-72.png */,
-				1DF8B062153B919600D9ED4A /* Icon-Small-50.png */,
-				1DF8B064153B919600D9ED4A /* Icon-Small.png */,
-				1DF8B066153B919600D9ED4A /* Icon-Small@2x.png */,
-				1DF8B068153B919600D9ED4A /* Icon.png */,
-				1DF8B06A153B919600D9ED4A /* Icon@2x.png */,
-				1DF8B06C153B919600D9ED4A /* Info.plist */,
-				1DF8B06D153B919600D9ED4A /* iTunesArtwork */,
-				1DF8B22C153B919900D9ED4A /* blocks.png */,
+				1D41F3011544F8D200F60662 /* Fonts */,
+				1DD2E07E1544BC300072CFB3 /* Sounds */,
+				1D41F2FF1544F8B300F60662 /* Graphics */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -1213,6 +1232,7 @@
 				1DD2E0861544E8820072CFB3 /* Win.wav in Resources */,
 				1DD2E08A1544EA340072CFB3 /* Hit.WAV in Resources */,
 				1DD2E08C1544EFA80072CFB3 /* TODO.txt in Resources */,
+				1D41F3031544FA5A00F60662 /* Quicksand-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -53,6 +53,13 @@
     return sprite;
 }
 
+-(CCLabelTTF*)createText:(NSString*)text {
+    CCLabelTTF *label = [CCLabelTTF labelWithString:text fontName:@"Quicksand" fontSize:24];
+    [self addChild:label z:0];
+    [label setColor:ccc3(0,0,0)];
+    return label;
+}
+
 -(void)removeSprites {
     [self.batch removeAllChildrenWithCleanup:true];
 }

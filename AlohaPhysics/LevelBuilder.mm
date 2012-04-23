@@ -25,7 +25,7 @@
 
 -(void)buildLevel:(int)levelNumber {
     switch (levelNumber) {
-        case 1:
+        case 1: { //(These are nessary when defining new objects in switch statement)
             //Setting max frames for a moveable object to move
             self.level.maxTime = 40;
             
@@ -38,6 +38,11 @@
             //Adding goal
             [self addGoalWithCoords:CGPointMake(290.0, 30.0)];
             
+            //CCLabelTTF* introduction = [self.level.graphicLayer createText:@"Welcome to AlohaPhysics!"];
+            
+            CCLabelTTF* intro = [self.level.graphicLayer createText:@"Welcome to Aloha Physics!"];
+            intro.position = ccp(240,280);
+        } //(These are nessary when defining new objects in switch statement)
             break;
         
         case 2:
