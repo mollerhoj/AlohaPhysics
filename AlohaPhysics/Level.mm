@@ -83,7 +83,6 @@
 //Makes next level
 -(void)nextLevel
 {
-    [[SoundManager sharedManager] playSound:WIN];
     [self destroyLevel];
     self.currentLevel++;
     [self.levelBuilder buildLevel:self.currentLevel];

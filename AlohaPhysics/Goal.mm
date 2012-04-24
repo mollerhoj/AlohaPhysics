@@ -8,6 +8,7 @@
 
 #import "Goal.h"
 #import "GraphicLayer.h"
+#import "SoundManager.h"
 
 @interface Goal ()
 
@@ -28,12 +29,12 @@
     self = [super init];
     if (self != nil) {
         self.sprite = [[GraphicLayer sharedLayer] createSpriteFromPicture:PICTURE];
-        self.sprite.position = ccp(0,0);
     }
     return self;
 }
 
 -(void)hit {
+    [[SoundManager sharedManager] playSound:WIN];
     self.status = WAS_HIT;
 }
 

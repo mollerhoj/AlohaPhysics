@@ -14,7 +14,7 @@
 enum  {
     HERO,
     GOAL,
-    BLOCK1
+    BLOCK320x64
 }
 typedef Picture;
 

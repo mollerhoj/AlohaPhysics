@@ -30,7 +30,8 @@
 */
 -(void) initDebugDraw {
     //init the debug drawer with ratio
-    m_debugDraw = new GLESDebugDraw([Game unit]);
+    m_debugDraw = new GLESDebugDraw([Game unit]*[[CCDirector sharedDirector]
+                                                 contentScaleFactor]);
     
     //Set prefered flags for the debug draw
     uint32 flags = 0;

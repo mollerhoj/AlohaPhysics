@@ -6,6 +6,8 @@
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
+
+
 #import "GraphicLayer.h"
 #import "Game.h"
 
@@ -65,6 +67,8 @@ static GraphicLayer *sharedLayer;
         case GOAL:
             image = @"Sprite_Goal.png";
             break;
+        case BLOCK320x64:
+            image = @"block320x64.png";
             
         default:
             NSLog(@"Sprite could not be loaded");
@@ -104,4 +108,7 @@ static GraphicLayer *sharedLayer;
     [self.batch removeAllChildrenWithCleanup:true];
 }
 
+ 
 @end
+ 
+

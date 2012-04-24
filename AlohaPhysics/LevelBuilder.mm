@@ -11,6 +11,7 @@
 #import "MoveableObject.h"
 #import "Box2D.h"
 #import "GraphicLayer.h"
+#import "Hero.h"
 
 @implementation LevelBuilder
 

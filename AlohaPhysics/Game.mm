@@ -49,8 +49,9 @@ static int _unit;
     //Make worlds step
     self.level->world->Step(1.0/STEPS_PER_SECOND, VELOCITY_ITERATIONS, POSITION_ITERATIONS);
     
-    //Run through goal's step //TODO: Make this general for all GameObjects
+    //Run through goal's and hero step //TODO: Make this general for all GameObjects
     [self.level.goal step];
+    [self.level.hero step];
     
     [self heroReachedGoal];
     [self heroOutOfFrame];
@@ -65,8 +66,7 @@ static int _unit;
 //Check if the hero reaches within radius 0.8 to goal
 -(void)heroReachedGoal
 {
-    b2Vec2 locationHero = self.level.hero->GetWorldCenter();
-    if(ccpDistance(CGPointMake(locationHero.x, locationHero.y), CGPointMake(self.level.goal.x/[Game unit], self.level.goal.y/[Game unit])) < 0.8f)
+    if(ccpDistance(CGPointMake(self.level.hero.x, self.level.hero.y), CGPointMake(self.level.goal.x/[Game unit], self.level.goal.y/[Game unit])) < 0.8f)
     {
         [self.level.goal hit];
         self.level.won = true;
@@ -77,8 +77,7 @@ static int _unit;
 -(void)heroOutOfFrame
 {
         if (!self.level.won) {
-        b2Vec2 heroPosition = self.level.hero->GetPosition();
-        if(heroPosition.x < -0.5 || heroPosition.x > 15.5 || heroPosition.y < -0.5 || heroPosition.y > 12.5) 
+        if(self.level.hero.x < -0.5 || self.level.hero.x > 15.5 || self.level.hero.y < -0.5 || self.level.hero.y > 12.5) 
         {
             [self.level restartLevel];
         }
