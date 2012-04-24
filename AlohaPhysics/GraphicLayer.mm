@@ -6,6 +6,8 @@
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
+
+
 #import "GraphicLayer.h"
 #import "Game.h"
 
@@ -104,4 +106,7 @@ static GraphicLayer *sharedLayer;
     [self.batch removeAllChildrenWithCleanup:true];
 }
 
+ 
 @end
+ 
+

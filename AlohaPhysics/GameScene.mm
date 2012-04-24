@@ -33,6 +33,7 @@
         
         //Set the unit of the game
         [Game setUnit:(int)[CCDirector sharedDirector].winSize.width/15];
+        
         NSAssert([CCDirector sharedDirector].winSize.width/15 == [CCDirector sharedDirector].winSize.height/10,@"The ratio between width and height is not right");
         
         //Background Layer

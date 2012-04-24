@@ -13,6 +13,9 @@
 		1D054C99154267B50015BBAD /* LevelBuilder.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1D054C98154267B50015BBAD /* LevelBuilder.mm */; };
 		1D054C9C154267D00015BBAD /* Mechanic.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1D054C9B154267CF0015BBAD /* Mechanic.mm */; };
 		1D054C9F154267F30015BBAD /* MoveableObject.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1D054C9E154267F30015BBAD /* MoveableObject.mm */; };
+		1D1BF4C915463C4600A7E036 /* sprites-hd.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1D1BF4C715463C4600A7E036 /* sprites-hd.plist */; };
+		1D1BF4CA15463C4600A7E036 /* sprites-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D1BF4C815463C4600A7E036 /* sprites-hd.png */; };
+		1D1BF4CD15463E6600A7E036 /* Background-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D1BF4CC15463E6600A7E036 /* Background-hd.png */; };
 		1D41F3031544FA5A00F60662 /* Quicksand-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1D41F3021544FA5A00F60662 /* Quicksand-Regular.ttf */; };
 		1D41F3051545155300F60662 /* Die.wav in Resources */ = {isa = PBXBuildFile; fileRef = 1D41F3041545155300F60662 /* Die.wav */; };
 		1D41F3081545184000F60662 /* Goal.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D41F3071545184000F60662 /* Goal.m */; };
@@ -200,6 +203,9 @@
 		1D054C9B154267CF0015BBAD /* Mechanic.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Mechanic.mm; sourceTree = "<group>"; };
 		1D054C9D154267F20015BBAD /* MoveableObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoveableObject.h; sourceTree = "<group>"; };
 		1D054C9E154267F30015BBAD /* MoveableObject.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MoveableObject.mm; sourceTree = "<group>"; };
+		1D1BF4C715463C4600A7E036 /* sprites-hd.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "sprites-hd.plist"; path = "Resources/sprites-hd.plist"; sourceTree = "<group>"; };
+		1D1BF4C815463C4600A7E036 /* sprites-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "sprites-hd.png"; path = "Resources/sprites-hd.png"; sourceTree = "<group>"; };
+		1D1BF4CC15463E6600A7E036 /* Background-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Background-hd.png"; path = "Resources/Background-hd.png"; sourceTree = "<group>"; };
 		1D41F3021544FA5A00F60662 /* Quicksand-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand-Regular.ttf"; sourceTree = "<group>"; };
 		1D41F3041545155300F60662 /* Die.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Die.wav; sourceTree = "<group>"; };
 		1D41F3061545183F00F60662 /* Goal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Goal.h; sourceTree = "<group>"; };
@@ -572,6 +578,7 @@
 		1D41F2FF1544F8B300F60662 /* Graphics */ = {
 			isa = PBXGroup;
 			children = (
+				1D1BF4CC15463E6600A7E036 /* Background-hd.png */,
 				1DE2B5FD15438B39003855DE /* Background.png */,
 				1DE2B5F815437311003855DE /* graphics.png */,
 				1DF8B05C153B919600D9ED4A /* Default.png */,
@@ -688,6 +695,8 @@
 		1DF8B05B153B919600D9ED4A /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				1D1BF4C715463C4600A7E036 /* sprites-hd.plist */,
+				1D1BF4C815463C4600A7E036 /* sprites-hd.png */,
 				1D41F30C1545459400F60662 /* sprites.plist */,
 				1D41F30D1545459400F60662 /* sprites.png */,
 				1D41F3011544F8D200F60662 /* Fonts */,
@@ -1246,6 +1255,9 @@
 				1D41F3051545155300F60662 /* Die.wav in Resources */,
 				1D41F30E1545459400F60662 /* sprites.plist in Resources */,
 				1D41F30F1545459400F60662 /* sprites.png in Resources */,
+				1D1BF4C915463C4600A7E036 /* sprites-hd.plist in Resources */,
+				1D1BF4CA15463C4600A7E036 /* sprites-hd.png in Resources */,
+				1D1BF4CD15463E6600A7E036 /* Background-hd.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -7,80 +7,80 @@
             <key>Sprite_Goal.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{36,36},{54,54}}</string>
+                <string>{{68,68},{106,106}}</string>
                 <key>offset</key>
-                <string>{0,0}</string>
+                <string>{1,0}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{4,4},{54,54}}</string>
+                <string>{{10,9},{106,106}}</string>
                 <key>sourceSize</key>
-                <string>{62,62}</string>
+                <string>{124,124}</string>
             </dict>
             <key>Sprite_Hero.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{70,166},{32,32}}</string>
+                <string>{{134,326},{64,64}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{0,0},{32,32}}</string>
+                <string>{{0,0},{64,64}}</string>
                 <key>sourceSize</key>
-                <string>{32,32}</string>
+                <string>{64,64}</string>
             </dict>
             <key>block192x64.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,2},{96,32}}</string>
+                <string>{{2,2},{192,64}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{0,0},{96,32}}</string>
+                <string>{{0,0},{192,64}}</string>
                 <key>sourceSize</key>
-                <string>{96,32}</string>
+                <string>{192,64}</string>
             </dict>
             <key>block256x64.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{92,36},{128,32}}</string>
+                <string>{{176,68},{256,64}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{0,0},{128,32}}</string>
+                <string>{{0,0},{256,64}}</string>
                 <key>sourceSize</key>
-                <string>{128,32}</string>
+                <string>{256,64}</string>
             </dict>
             <key>block320x64.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{36,92},{160,32}}</string>
+                <string>{{68,176},{320,64}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{0,0},{160,32}}</string>
+                <string>{{0,0},{320,64}}</string>
                 <key>sourceSize</key>
-                <string>{160,32}</string>
+                <string>{320,64}</string>
             </dict>
             <key>block384x64.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,36},{192,32}}</string>
+                <string>{{2,68},{384,64}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{0,0},{192,32}}</string>
+                <string>{{0,0},{384,64}}</string>
                 <key>sourceSize</key>
-                <string>{192,32}</string>
+                <string>{384,64}</string>
             </dict>
         </dict>
         <key>metadata</key>
@@ -88,13 +88,13 @@
             <key>format</key>
             <integer>2</integer>
             <key>realTextureFileName</key>
-            <string>sprites.png</string>
+            <string>sprites-hd.png</string>
             <key>size</key>
-            <string>{128,256}</string>
+            <string>{256,512}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:81ba31fda963055627ff23813898fbd0$</string>
+            <string>$TexturePacker:SmartUpdate:d2cd18bb9bc06fd3bd913b67a7f79ad5$</string>
             <key>textureFileName</key>
-            <string>sprites.png</string>
+            <string>sprites-hd.png</string>
         </dict>
     </dict>
 </plist>
