@@ -23,6 +23,14 @@
                  andMechanicType:(int) mT 
                   andMaxTimePlay:(int)maxPlay;
 
+-(void)addKinematicPolygonWithCoords:(CGPoint)p 
+                    withVertexes:(b2Vec2*)vertexes 
+             andNumberOfVertexes:(int)count 
+                       withAngle:(CGFloat)a 
+                       andCenter:(b2Vec2)center
+                 andMechanicType:(int) mT 
+                  andMaxTimePlay:(int)maxPlay;
+
 -(void)addHeroWithCoords:(CGPoint)p;
 -(void)addGoalWithCoords:(CGPoint)p;
 

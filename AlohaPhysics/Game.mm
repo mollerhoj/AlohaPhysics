@@ -13,6 +13,11 @@
 
 @property (nonatomic,assign) Mechanic *mechanic;
 
+-(void)moveAndStopPhysicalObjects;
+-(void)heroReachedGoal;
+-(void)heroOutOfFrame;
+-(void)updatePhysicalObjects;
+
 @end
 
 static int _unit;
@@ -41,8 +46,61 @@ static int _unit;
 /*
  The game loop
 */
-- (void) step {
+- (void) step 
+{    
+    [self moveAndStopPhysicalObjects];
     
+    //Make worlds step
+    self.level->world->Step(1.0/STEPS_PER_SECOND, VELOCITY_ITERATIONS, POSITION_ITERATIONS);
+    
+    //Run through goal's step //TODO: Make this general for all GameObjects
+    [self.level.goal step];
+    
+    [self heroReachedGoal];
+    [self heroOutOfFrame];
+    [self updatePhysicalObjects];
+    
+    //TODO: Use a listener and remove this from game loop
+    if (self.level.goal.status == IS_GONE) {
+        [self.level nextLevel];
+    }
+}
+
+//Check if the hero reaches within radius 0.8 to goal
+-(void)heroReachedGoal
+{
+    b2Vec2 locationHero = self.level.hero->GetWorldCenter();
+    if(ccpDistance(CGPointMake(locationHero.x, locationHero.y), CGPointMake(self.level.goal.x/[Game unit], self.level.goal.y/[Game unit])) < 0.8f)
+    {
+        [self.level.goal hit];
+        self.level.won = true;
+    }
+}
+
+//Check if hero is out of the frame
+-(void)heroOutOfFrame
+{
+        if (!self.level.won) {
+        b2Vec2 heroPosition = self.level.hero->GetPosition();
+        if(heroPosition.x < -0.5 || heroPosition.x > 15.5 || heroPosition.y < -0.5 || heroPosition.y > 12.5) 
+        {
+            [self.level restartLevel];
+        }
+    }
+}
+
+//Loop through all physical objects in level and update them
+-(void)updatePhysicalObjects
+{
+    for (MoveableObject *pObject in self.level.physicalObjects)
+    {
+        [pObject step];
+    }
+}
+
+//Move and stop physical objects
+-(void)moveAndStopPhysicalObjects
+{
     if(self.level.playing)
     {
         if(self.level.time < self.level.maxTime)
@@ -51,23 +109,22 @@ static int _unit;
             self.level.time++;
             
             //Check wether individual object has reached own max time
-            for (b2Body* body = self.level->world->GetBodyList(); body; body = body->GetNext())
+            for (MoveableObject *pObject in self.level.physicalObjects)
             {
-                MoveableObject *mo = (MoveableObject*)body->GetUserData();
-                if(self.level.time <= mo.maxTimePlay) 
+                if(self.level.time <= pObject.maxTimePlay) 
                 {
                     //Play moveable object
-                    [self.mechanic playMechanicType:mo.mechanicType withBody:body];
+                    [self.mechanic playMechanicType:pObject.mechanicType withBody:pObject.physicalBody];
                 } else {
                     //Stop moveable object
-                    [self.mechanic stopMovementForBody:body];
+                    [self.mechanic stopMovementForBody:pObject.physicalBody];
                 }
             }
         } else {
             //Stop moveable objects when max time is reached
-            for (b2Body* body = self.level->world->GetBodyList(); body; body = body->GetNext())
+            for (MoveableObject *pObject in self.level.physicalObjects)
             {
-                [self.mechanic stopMovementForBody:body];
+                [self.mechanic stopMovementForBody:pObject.physicalBody];
             }
         }
     } else {
@@ -77,53 +134,24 @@ static int _unit;
             self.level.time--;
             
             //Check wether individual object...
-            for (b2Body* body = self.level->world->GetBodyList(); body; body = body->GetNext())
+            for (MoveableObject *pObject in self.level.physicalObjects)
             {
-                MoveableObject *mo = (MoveableObject*)body->GetUserData();
-                if(self.level.time >= mo.maxTimePlay) 
+                if(self.level.time >= pObject.maxTimePlay) 
                 {
                     //Stop moveable object
-                    [self.mechanic stopMovementForBody:body];
+                    [self.mechanic stopMovementForBody:pObject.physicalBody];
                 } else {
                     //Rewind moveable object
-                    [self.mechanic rewindMechanicType:mo.mechanicType withBody:body];
+                    [self.mechanic rewindMechanicType:pObject.mechanicType withBody:pObject.physicalBody];
                 }
             }
         } else {
             //Stop moveable objects when default is reached
-            for (b2Body* body = self.level->world->GetBodyList(); body; body = body->GetNext())
+            for (MoveableObject *pObject in self.level.physicalObjects)
             {
-                [self.mechanic stopMovementForBody:body];
+                [self.mechanic stopMovementForBody:pObject.physicalBody];
             }
         }
-    }
-    
-    //Make worlds step
-    self.level->world->Step(1.0/STEPS_PER_SECOND, VELOCITY_ITERATIONS, POSITION_ITERATIONS);
-    
-    //Run through goal's step //TODO: Make this general for all GameObjects
-    [self.level.goal step];
-    
-    //Check if hero is out of the frame
-    if (!self.level.won) {
-        b2Vec2 heroPosition = self.level.hero->GetPosition();
-        if(heroPosition.x < -0.5 || heroPosition.x > 15.5 || heroPosition.y < -0.5 || heroPosition.y > 12.5) 
-        {
-            [self.level restartLevel];
-        }
-    }
-
-    //Check if the hero reaches within radius 0.8 to goal
-    b2Vec2 locationHero = self.level.hero->GetWorldCenter();
-    if(ccpDistance(CGPointMake(locationHero.x, locationHero.y), CGPointMake(self.level.goal.x/[Game unit], self.level.goal.y/[Game unit])) < 0.8f)
-    {
-        [self.level.goal hit];
-        self.level.won = true;
-    }
-    
-    //TODO: Use a listener and remove this from game loop
-    if (self.level.goal.status == IS_GONE) {
-        [self.level nextLevel];
     }
 }
 

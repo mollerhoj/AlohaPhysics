@@ -20,6 +20,7 @@
 @property (nonatomic,assign) b2Body *hero;
 @property (nonatomic,assign) Goal *goal;
 @property (nonatomic,assign) GraphicLayer *graphicLayer;
+@property (nonatomic,assign) NSMutableArray *physicalObjects;
 
 @property (nonatomic, assign) double maxTime;
 @property (nonatomic, assign) BOOL playing;
