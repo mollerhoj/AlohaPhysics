@@ -1,35 +1,42 @@
 //
-//  MoveableObject.m
+//  Hero.m
 //  AlohaPhysics
 //
-//  Created by Jens Møllerhøj on 20/04/2012.
+//  Created by Jens Møllerhøj on 23/04/2012.
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
-#import "MoveableObject.h"
+#import "Hero.h"
+#import "GraphicLayer.h"
 #import "cocos2d.h"
 #import "Box2D.h"
+#import "Game.h"
 
-@implementation MoveableObject
+@implementation Hero
 
-@synthesize mechanicType = _mechanicType;
-@synthesize image = _image;
-@synthesize maxTimePlay = _maxTimePlay;
-@synthesize position = _position;
-@synthesize physicalBody = _physicalBody;
+#define PICTURE HERO
 
 @synthesize sprite = _sprite;
 @synthesize x = _x;
 @synthesize y = _y;
+@synthesize physicalBody = _physicalBody;
 
-//Update your own position
--(void)step
-{
+-(id)init {
+    self = [super init];
+    if (self != nil) {
+        self.sprite = [[GraphicLayer sharedLayer] createSpriteFromPicture:PICTURE];
+    }
+    return self;
+}
+
+-(void)step {
     b2Vec2 worldPosition = self.physicalBody->GetWorldCenter();
     self.x = worldPosition.x;
     self.y = worldPosition.y;
+    
     self.sprite.rotation = self.physicalBody->GetAngle()/M_PI*-(180);
 }
+
 
 -(void)setX:(double)x {
     _x = x;

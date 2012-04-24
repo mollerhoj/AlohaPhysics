@@ -11,13 +11,14 @@
 #import <Foundation/Foundation.h>
 #import "GraphicLayer.h"
 #import "Goal.h"
+#import "Hero.h"
 
 @interface Level : NSObject {
     @public
     b2World *world;
 }
 
-@property (nonatomic,assign) b2Body *hero;
+@property (nonatomic,assign) Hero *hero;
 @property (nonatomic,assign) Goal *goal;
 @property (nonatomic,assign) GraphicLayer *graphicLayer;
 @property (nonatomic,assign) NSMutableArray *physicalObjects;

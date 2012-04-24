@@ -18,6 +18,10 @@
 @property (nonatomic,assign) b2Vec2 position;
 @property (nonatomic,assign) b2Body *physicalBody;
 
+@property (nonatomic,assign) CCSprite* sprite;
+@property (nonatomic,assign) double x;
+@property (nonatomic,assign) double y;
+
 -(void)step;
 
 @end

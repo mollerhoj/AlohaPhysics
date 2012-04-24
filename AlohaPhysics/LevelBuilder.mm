@@ -11,6 +11,7 @@
 #import "MoveableObject.h"
 #import "Box2D.h"
 #import "GraphicLayer.h"
+#import "Hero.h"
 
 @implementation LevelBuilder
 
@@ -265,6 +266,7 @@
     MoveableObject *moveableObject = [[MoveableObject alloc] init];
     moveableObject.mechanicType = mT;
     moveableObject.maxTimePlay = maxPlay;
+    moveableObject.sprite = [[GraphicLayer sharedLayer] createSpriteFromPicture:BLOCK320x64];
     //bodyDef.userData = moveableObject;
 	
     //Create body
@@ -341,8 +343,12 @@
 	bodyDef.position.Set(p.x, p.y);
 	//bodyDef.userData = sprite;
     
-    // Construct a hero and set it to levels hero
-    self.level.hero = self.level->world->CreateBody(&bodyDef);
+    // Construct a hero
+    Hero* hero = [[Hero alloc] init];
+    hero.x = p.x;
+    hero.y = p.y;
+    
+    hero.physicalBody = self.level->world->CreateBody(&bodyDef);
     //b2Body *body = self.level->world->CreateBody(&bodyDef);
 	
 	// Define another circle shape for our dynamic body.
@@ -355,8 +361,10 @@
 	fixtureDef.density = 1.0f;
 	fixtureDef.friction = 0.4f;
     fixtureDef.restitution = 0.15f;
-	self.level.hero->CreateFixture(&fixtureDef);
     //body->CreateFixture(&fixtureDef);
+    hero.physicalBody->CreateFixture(&fixtureDef);
+    
+	self.level.hero = hero;
 }
 
 //Add a goal to the physical world
