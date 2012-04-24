@@ -10,6 +10,7 @@
 #import "Game.h"
 #import "MoveableObject.h"
 #import "Box2D.h"
+#import "GraphicLayer.h"
 
 @implementation LevelBuilder
 
@@ -25,7 +26,7 @@
 
 -(void)buildLevel:(int)levelNumber {
     switch (levelNumber) {
-        case 1:
+        case 1: { //(These are nessary when defining new objects in switch statement)
             //Setting max frames for a moveable object to move
             self.level.maxTime = 40;
             
@@ -38,6 +39,15 @@
             //Adding goal
             [self addGoalWithCoords:CGPointMake(9.4, 1.0)];
             
+            //Writing an introduction
+            CCLabelTTF* intro = [[GraphicLayer sharedLayer] createText:@"Welcome to Aloha Physics!"];
+            intro.position = ccp(240,280);
+            
+            //Writing an instruction
+            CCLabelTTF* instruction = [[GraphicLayer sharedLayer] createText:@"Press the screen to start!"];
+            instruction.position = ccp(240,230);
+            
+        } //(These are nessary when defining new objects in switch statement)
             break;
         
         case 2:

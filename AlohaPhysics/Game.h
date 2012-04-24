@@ -17,10 +17,6 @@
 
 @property (nonatomic, assign) Level *level;
 
-@property (nonatomic,assign) GameScene *scene;
-
-- (id)initWithScene:(GameScene *)scene;
-
 - (void)step;
 
 + (int)unit;

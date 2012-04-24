@@ -19,6 +19,9 @@
 
 -(void)setStepListener:(Game *)stepListener {
     _stepListener = stepListener;
+    
+    
+    
     self.stepListener.level->world->SetDebugDraw(m_debugDraw);
 }
 

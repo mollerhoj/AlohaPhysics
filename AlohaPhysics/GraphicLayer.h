@@ -18,8 +18,15 @@ enum  {
 }
 typedef Picture;
 
+//The shared GraphicsLayer
++(GraphicLayer*) sharedLayer;
+
+//Create a sprite of one of the pictures defined in the picture array
 -(CCSprite*)createSpriteFromPicture:(Picture)picture;
 
--(void)removeSprites;
+//Create a text label
+-(CCLabelTTF*)createText:(NSString*)text;
+
+-(void)removeGraphics;
 
 @end

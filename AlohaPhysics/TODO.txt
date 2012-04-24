@@ -1,0 +1,12 @@
+C Play sound on collision! (Hard)
+
+C Make polygon shapes
+
+C Make acelrating shapes
+
+J add images to the physical objects
+
+BEFORE RELEASE:
+
+Load background music
+Do not debug draw

@@ -6,11 +6,18 @@
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
+/*
+ The game scene initializes background, graphic, sound and touch managers
+ It also creates the game object.
+ 
+*/
+
 #import "GameScene.h"
 #import "BackgroundLayer.h"
 #import "GameLayer.h"
 #import "Game.h"
 #import "GraphicLayer.h"
+#import "SoundManager.h"
 
 @interface GameScene ()
 @property (nonatomic,assign) Game *game;
@@ -19,7 +26,6 @@
 @implementation GameScene
 
 @synthesize game = _game;
-@synthesize graphicLayer = _graphicLayer;
 
 -(id)init {
     self = [super init];
@@ -29,30 +35,30 @@
         [Game setUnit:(int)[CCDirector sharedDirector].winSize.width/15];
         NSAssert([CCDirector sharedDirector].winSize.width/15 == [CCDirector sharedDirector].winSize.height/10,@"The ratio between width and height is not right");
         
-        // Background Layer
+        //Background Layer
         BackgroundLayer *backgroundLayer = [BackgroundLayer node];
         [self addChild:backgroundLayer z:0];
         
-        // Graphic Layer
-        self.graphicLayer = [GraphicLayer node];
+        //Game object
+        self.game = [[Game alloc] init];
         
-        //Create the game object
-        self.game = [[Game alloc] initWithScene:self];
+        GraphicLayer* gl = [GraphicLayer sharedLayer];
         
-        // Gameplay Layer
+        //GraphicsLayer
+        [self addChild:gl z:2];
+        
+        //Gameplay Layer
         GameLayer *gameLayer = [GameLayer node];
-        
         gameLayer.touchListener = self.game.level;
         gameLayer.stepListener = self.game;
-        
         [self addChild:gameLayer z:5];
+        
+        //Setup soundmanager
+        //Outcommit so that I will not go crazy from the music!
+        //[[SoundManager sharedManager] setup];
+        
     }
     return self;
-}
-
--(void)setGraphicLayer:(CCLayer *)graphicLayer {
-    _graphicLayer = graphicLayer;
-    [self addChild:graphicLayer z:2];
 }
 
 @end
