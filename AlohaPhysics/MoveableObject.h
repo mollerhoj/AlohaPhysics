@@ -18,4 +18,6 @@
 @property (nonatomic,assign) b2Vec2 position;
 @property (nonatomic,assign) b2Body *physicalBody;
 
+-(void)step;
+
 @end

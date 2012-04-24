@@ -18,4 +18,10 @@
 @synthesize position = _position;
 @synthesize physicalBody = _physicalBody;
 
+//Update your own position
+-(void)step
+{
+    self.position = self.physicalBody->GetWorldCenter();
+}
+
 @end

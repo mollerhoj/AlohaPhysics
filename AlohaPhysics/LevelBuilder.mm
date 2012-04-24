@@ -220,7 +220,7 @@
             self.level.maxTime = 10;
             
             //Define polygon
-            b2Vec2 verts[] = {b2Vec2(0.3, 0.3), b2Vec2(-0.7, -0.3), b2Vec2(0.6, -0.3)};
+            b2Vec2 verts[] = {b2Vec2(0.3, 0.3), b2Vec2(-0.6, -0.3), b2Vec2(0.6, -0.3)};
             
             //Moveable objects
             [self addKinematicPolygonWithCoords:CGPointMake(1.7, 2.1) withVertexes:verts andNumberOfVertexes:3 withAngle:0.5 andCenter:b2Vec2(0.0, 0.0) andMechanicType:12 andMaxTimePlay:self.level.maxTime];

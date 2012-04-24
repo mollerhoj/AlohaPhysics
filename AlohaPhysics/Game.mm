@@ -94,7 +94,7 @@ static int _unit;
 {
     for (MoveableObject *pObject in self.level.physicalObjects)
     {
-        pObject.position = pObject.physicalBody->GetWorldCenter();
+        [pObject step];
     }
 }
 

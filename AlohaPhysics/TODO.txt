@@ -10,3 +10,7 @@ BEFORE RELEASE:
 
 Load background music
 Do not debug draw
+
+C check play or reverse in physical objects
+
+C refactor mechanics
