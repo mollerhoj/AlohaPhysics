@@ -46,7 +46,7 @@
         //Init levelBuilder
         self.levelBuilder = [[LevelBuilder alloc] initWithLevel:self];
 
-        self.currentLevel = 12;
+        self.currentLevel = 1;
         
         //Build level 1 as default
         [self.levelBuilder buildLevel:self.currentLevel];

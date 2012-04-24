@@ -10,12 +10,25 @@
 @interface Mechanic()
 
 @property (nonatomic, assign) MoveableObject *moveableObject;
+@property (nonatomic,assign) CGFloat playVelocity;
+@property (nonatomic,assign) CGFloat rewindVelocity;
 
 @end
 
 @implementation Mechanic
 
 @synthesize moveableObject = _moveableObject;
+@synthesize playVelocity = _playVelocity;
+@synthesize rewindVelocity = _rewindVelocity;
+
+-(id)initWithPlayVelocity:(CGFloat)play andRewindVelocity:(CGFloat)rewind 
+{
+    if( (self=[super init])) {
+		self.playVelocity = play;
+        self.rewindVelocity = rewind;
+    }
+    return self;
+}
 
 -(void)playMechanicType:(int) mechanicType withBody:(b2Body *)body
 {
