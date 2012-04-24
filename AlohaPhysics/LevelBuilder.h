@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "Level.h"
+#import "Mechanic.h"
 
 @interface LevelBuilder : NSObject
 
@@ -20,16 +21,20 @@
                             andY:(CGFloat)y 
                        withAngle:(CGFloat)a
                        andCenter:(b2Vec2)center
-                 andMechanicType:(int) mT 
+                 andMechanicType:(MechanicType) mT 
+                 andPlayVelocity:(b2Vec2)play 
+               andRewindVelocity:(b2Vec2)rewind 
                   andMaxTimePlay:(int)maxPlay;
 
 -(void)addKinematicPolygonWithCoords:(CGPoint)p 
                     withVertexes:(b2Vec2*)vertexes 
              andNumberOfVertexes:(int)count 
                        withAngle:(CGFloat)a 
-                       andCenter:(b2Vec2)center
-                 andMechanicType:(int) mT 
-                  andMaxTimePlay:(int)maxPlay;
+                       andCenter:(b2Vec2)center 
+                     andMechanicType:(MechanicType) mT 
+                     andPlayVelocity:(b2Vec2)play 
+                   andRewindVelocity:(b2Vec2)rewind 
+                      andMaxTimePlay:(int)maxPlay;
 
 -(void)addHeroWithCoords:(CGPoint)p;
 -(void)addGoalWithCoords:(CGPoint)p;

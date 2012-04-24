@@ -7,11 +7,9 @@
 //
 
 #import "Game.h"
-#import "Mechanic.h"
+#import "MoveableObject.h"
 
 @interface Game ()
-
-@property (nonatomic,assign) Mechanic *mechanic;
 
 -(void)moveAndStopPhysicalObjects;
 -(void)heroReachedGoal;
@@ -30,14 +28,12 @@ static int _unit;
 
 //@synthesize scene = _scene;
 @synthesize level = _level;
-@synthesize mechanic = _mechanic;
 
 /*
  init game with a level
 */
 - (id) init {
     if( (self=[super init])) {
-		self.mechanic = [[Mechanic alloc] init];
         self.level = [[Level alloc] init];
     }
     return self;
@@ -113,17 +109,17 @@ static int _unit;
                 if(self.level.time <= pObject.maxTimePlay) 
                 {
                     //Play moveable object
-                    [self.mechanic playMechanicType:pObject.mechanicType withBody:pObject.physicalBody];
+                    [pObject.mechanic playMechanicWithBody:pObject.physicalBody];
                 } else {
                     //Stop moveable object
-                    [self.mechanic stopMovementForBody:pObject.physicalBody];
+                    [pObject.mechanic stopMovementForBody:pObject.physicalBody];
                 }
             }
         } else {
             //Stop moveable objects when max time is reached
             for (MoveableObject *pObject in self.level.physicalObjects)
             {
-                [self.mechanic stopMovementForBody:pObject.physicalBody];
+                [pObject.mechanic stopMovementForBody:pObject.physicalBody];
             }
         }
     } else {
@@ -138,17 +134,17 @@ static int _unit;
                 if(self.level.time >= pObject.maxTimePlay) 
                 {
                     //Stop moveable object
-                    [self.mechanic stopMovementForBody:pObject.physicalBody];
+                    [pObject.mechanic stopMovementForBody:pObject.physicalBody];
                 } else {
                     //Rewind moveable object
-                    [self.mechanic rewindMechanicType:pObject.mechanicType withBody:pObject.physicalBody];
+                    [pObject.mechanic rewindMechanicWithBody:pObject.physicalBody];
                 }
             }
         } else {
             //Stop moveable objects when default is reached
             for (MoveableObject *pObject in self.level.physicalObjects)
             {
-                [self.mechanic stopMovementForBody:pObject.physicalBody];
+                [pObject.mechanic stopMovementForBody:pObject.physicalBody];
             }
         }
     }
