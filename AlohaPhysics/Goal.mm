@@ -34,8 +34,10 @@
 }
 
 -(void)hit {
-    [[SoundManager sharedManager] playSound:WIN];
-    self.status = WAS_HIT;
+    if (self.status == ALIVE) {
+        [[SoundManager sharedManager] playSound:WIN];
+        self.status = WAS_HIT;
+    }
 }
 
 -(void)step {

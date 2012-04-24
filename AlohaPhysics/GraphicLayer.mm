@@ -69,7 +69,7 @@ static GraphicLayer *sharedLayer;
             break;
         case BLOCK320x64:
             image = @"block320x64.png";
-            
+            break;
         default:
             NSLog(@"Sprite could not be loaded");
             break;
