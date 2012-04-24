@@ -6,6 +6,8 @@ C Make acelrating shapes
 
 C Make a menu
 
+J Make images for load, icon etc.
+
 J add images to the physical objects
 
 BEFORE RELEASE:
