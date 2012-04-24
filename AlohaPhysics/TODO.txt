@@ -1,8 +1,10 @@
+C Change model, so that physicalObjects are updated by their body
+
 C Play sound on collision! (Hard)
 
-C Make polygon shapes
-
 C Make acelrating shapes
+
+C Make a menu
 
 J add images to the physical objects
 
