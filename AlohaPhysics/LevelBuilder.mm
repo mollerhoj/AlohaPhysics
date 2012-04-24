@@ -273,7 +273,10 @@
     moveableObject.center = center;
     
     moveableObject.maxTimePlay = maxPlay;
-    moveableObject.sprite = [[GraphicLayer sharedLayer] createSpriteFromPicture:BLOCK320x64];
+    
+    Picture s = BLOCK320x64;
+    
+    moveableObject.sprite = [[GraphicLayer sharedLayer] createSpriteFromPicture:s];
 	
     //Create body
     b2Body *body = self.level->world->CreateBody(&bodyDef);

@@ -12,6 +12,8 @@
 
 @interface Goal ()
 
+@property (nonatomic,assign) double animation_dietime;
+
 -(void)disappear;
 
 @end
@@ -25,10 +27,14 @@
 @synthesize x = _x;
 @synthesize y = _y;
 
+@synthesize animation_dietime = _animation_dietime;
+
 -(id)init {
     self = [super init];
     if (self != nil) {
         self.sprite = [[GraphicLayer sharedLayer] createSpriteFromPicture:PICTURE];
+        self.sprite.scale = 0.5;
+        self.animation_dietime = 0;
     }
     return self;
 }
@@ -41,15 +47,27 @@
 }
 
 -(void)step {
+    
+    self.sprite.rotation += 1;
+    
     if (self.status == WAS_HIT) {
         [self disappear];
     }
 }
 
 -(void)disappear {
-    self.sprite.opacity -= 5;
     
-    if (self.sprite.opacity <= 0) {
+    if (self.sprite.opacity < 21) {
+        self.sprite.opacity = 1;
+    }else{
+        self.sprite.opacity -= 20;
+    }
+    
+    self.sprite.scale += 0.1;
+    
+    self.animation_dietime +=1;
+    
+    if (self.animation_dietime > 60) {
         self.status = IS_GONE;
     }
 }

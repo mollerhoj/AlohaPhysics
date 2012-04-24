@@ -28,9 +28,14 @@
 -(void)step
 {
     b2Vec2 worldPosition = self.physicalBody->GetWorldCenter();
-    self.x = (worldPosition.x+self.center.x)*32;
-    self.y = (worldPosition.y+self.center.y)*32;
-    self.sprite.rotation = (self.physicalBody->GetAngle()+self.angle)/M_PI*-(180);
+    float worldAngle = self.physicalBody->GetAngle()+self.angle;
+    
+    double d = ccpDistance(ccp(0,0),ccp(self.center.x,self.center.y));
+    double v = atan2(self.center.y, self.center.x)+self.physicalBody->GetAngle();
+    self.sprite.rotation = (worldAngle)/M_PI*-(180);
+    self.x = (worldPosition.x+cos(v)*d)*32;
+    self.y = (worldPosition.y+sin(v)*d)*32;
+    
 }
 
 -(void)setX:(double)x {

@@ -6,11 +6,19 @@ C check play or reverse in physical objects
 
 C refactor mechanics
 
-J TODO move logic to game objects
+J TODO move gameplay logic to game objects
+
+J Make a graphics manager
 
 J Make a level selection menu
 
 J Star animation
+
+Graphics:
+
+Background low def.
+Blocks all sizes
+Nails
 
 
 
