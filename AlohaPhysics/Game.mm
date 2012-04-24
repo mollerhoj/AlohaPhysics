@@ -102,6 +102,9 @@ static int _unit;
     //Make worlds step
     self.level->world->Step(1.0/STEPS_PER_SECOND, VELOCITY_ITERATIONS, POSITION_ITERATIONS);
     
+    //Loop through levels physical objects and update them
+    
+    
     //Check if hero is out of the frame
     b2Vec2 heroPosition = self.level.hero->GetPosition();
     if(heroPosition.x < -0.5 || heroPosition.x > 15.5 || heroPosition.y < -0.5 || heroPosition.y > 12.5) 
@@ -111,7 +114,7 @@ static int _unit;
 
     //Check if the hero reaches within radius 0.8 to goal
     b2Vec2 locationHero = self.level.hero->GetWorldCenter();
-    if(ccpDistance(CGPointMake(locationHero.x, locationHero.y), CGPointMake(self.level.goal.x/[Game unit], self.level.goal.y/[Game unit])) < 0.8f)
+    if(ccpDistance(CGPointMake(locationHero.x, locationHero.y), CGPointMake(self.level.goal.x, self.level.goal.y)) < 0.8f)
     {
         [self.level nextLevel];
     }

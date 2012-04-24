@@ -30,13 +30,13 @@
             self.level.maxTime = 40;
             
             //Moveable objects
-            [self addKinematicBoxWithCoords:CGPointMake(150.0, 150.0) withDimensionX:2.5 andY:0.5 withAngle:0.0 andCenter:b2Vec2(0.0, 0.0) andMechanicType:1 andMaxTimePlay:self.level.maxTime];
+            [self addKinematicBoxWithCoords:CGPointMake(4.6, 4.6) withDimensionX:2.5 andY:0.5 withAngle:0.0 andCenter:b2Vec2(0.0, 0.0) andMechanicType:1 andMaxTimePlay:self.level.maxTime];
             
             //Adding hero
-            [self addHeroWithCoords:CGPointMake(100.0, 300.0)];
+            [self addHeroWithCoords:CGPointMake(3.1, 9.4)];
             
             //Adding goal
-            [self addGoalWithCoords:CGPointMake(290.0, 30.0)];
+            [self addGoalWithCoords:CGPointMake(9.4, 1.0)];
             
             break;
         
@@ -45,13 +45,13 @@
             self.level.maxTime = 25;
             
             //Moveable objects
-            [self addKinematicBoxWithCoords:CGPointMake(100.0, 90.0) withDimensionX:2.0 andY:0.5 withAngle:-0.5 andCenter:b2Vec2(0.0, 0.0) andMechanicType:2 andMaxTimePlay:self.level.maxTime];
+            [self addKinematicBoxWithCoords:CGPointMake(3.1, 2.8) withDimensionX:2.0 andY:0.5 withAngle:-0.5 andCenter:b2Vec2(0.0, 0.0) andMechanicType:2 andMaxTimePlay:self.level.maxTime];
             
             //Adding hero
-            [self addHeroWithCoords:CGPointMake(100.0, 250.0)];
+            [self addHeroWithCoords:CGPointMake(3.1, 7.8)];
             
             //Adding goal
-            [self addGoalWithCoords:CGPointMake(320.0, 200.0)];
+            [self addGoalWithCoords:CGPointMake(10, 6.25)];
             
             break;
         
@@ -60,13 +60,13 @@
             self.level.maxTime = 20;
             
             //Moveable objects
-            [self addKinematicBoxWithCoords:CGPointMake(86.0, 150.0) withDimensionX:3.0 andY:0.3 withAngle:0.0 andCenter:b2Vec2(2.0, 0.0) andMechanicType:3 andMaxTimePlay:20];
+            [self addKinematicBoxWithCoords:CGPointMake(2.65, 4.7) withDimensionX:3.0 andY:0.3 withAngle:0.0 andCenter:b2Vec2(2.0, 0.0) andMechanicType:3 andMaxTimePlay:20];
             
             //Adding hero
-            [self addHeroWithCoords:CGPointMake(100.0, 200.0)];
+            [self addHeroWithCoords:CGPointMake(3.1, 6.25)];
             
             //Adding goal
-            [self addGoalWithCoords:CGPointMake(460.0, 150.0)];
+            [self addGoalWithCoords:CGPointMake(14.4, 4.7)];
             
             break;
             
@@ -75,16 +75,16 @@
             self.level.maxTime = 35;
             
             //Moveable objects
-            [self addKinematicBoxWithCoords:CGPointMake(75.0, 150.0) withDimensionX:1.5 andY:0.5 withAngle:0.5 andCenter:b2Vec2(0.0, 0.0) andMechanicType:3 andMaxTimePlay:self.level.maxTime];
-            [self addKinematicBoxWithCoords:CGPointMake(175.0, 150.0) withDimensionX:1.5 andY:0.5 withAngle:-0.5 andCenter:b2Vec2(0.0, 0.0) andMechanicType:5 andMaxTimePlay:self.level.maxTime];
-            [self addKinematicBoxWithCoords:CGPointMake(275.0, 150.0) withDimensionX:1.5 andY:0.5 withAngle:0.5 andCenter:b2Vec2(0.0, 0.0) andMechanicType:3 andMaxTimePlay:self.level.maxTime];
-            [self addKinematicBoxWithCoords:CGPointMake(375.0, 150.0) withDimensionX:1.5 andY:0.5 withAngle:-0.5 andCenter:b2Vec2(0.0, 0.0) andMechanicType:5 andMaxTimePlay:self.level.maxTime];
+            [self addKinematicBoxWithCoords:CGPointMake(2.34, 4.7) withDimensionX:1.5 andY:0.5 withAngle:0.5 andCenter:b2Vec2(0.0, 0.0) andMechanicType:3 andMaxTimePlay:self.level.maxTime];
+            [self addKinematicBoxWithCoords:CGPointMake(5.5, 4.7) withDimensionX:1.5 andY:0.5 withAngle:-0.5 andCenter:b2Vec2(0.0, 0.0) andMechanicType:5 andMaxTimePlay:self.level.maxTime];
+            [self addKinematicBoxWithCoords:CGPointMake(8.6, 4.7) withDimensionX:1.5 andY:0.5 withAngle:0.5 andCenter:b2Vec2(0.0, 0.0) andMechanicType:3 andMaxTimePlay:self.level.maxTime];
+            [self addKinematicBoxWithCoords:CGPointMake(11.7, 4.7) withDimensionX:1.5 andY:0.5 withAngle:-0.5 andCenter:b2Vec2(0.0, 0.0) andMechanicType:5 andMaxTimePlay:self.level.maxTime];
             
             //Adding hero
-            [self addHeroWithCoords:CGPointMake(75.0, 250.0)];
+            [self addHeroWithCoords:CGPointMake(2.34, 7.8)];
             
             //Adding goal
-            [self addGoalWithCoords:CGPointMake(460.0, 140.0)];
+            [self addGoalWithCoords:CGPointMake(14.4, 4.4)];
             
             break;
             
@@ -93,15 +93,15 @@
             self.level.maxTime = 40;
             
             //Moveable objects
-            [self addKinematicBoxWithCoords:CGPointMake(55.0, 80.0) withDimensionX:0.5 andY:0.5 withAngle:0.6 andCenter:b2Vec2(0.0, 0.0) andMechanicType:6 andMaxTimePlay:10];
-            [self addKinematicBoxWithCoords:CGPointMake(100.0, 70.0) withDimensionX:0.5 andY:0.5 withAngle:0.6 andCenter:b2Vec2(0.0, 0.0) andMechanicType:6 andMaxTimePlay:0];
-            [self addKinematicBoxWithCoords:CGPointMake(450.0, 70.0) withDimensionX:0.3 andY:1.5 withAngle:0.0 andCenter:b2Vec2(0.0, 0.0) andMechanicType:2 andMaxTimePlay:self.level.maxTime];
+            [self addKinematicBoxWithCoords:CGPointMake(1.7, 2.5) withDimensionX:0.5 andY:0.5 withAngle:0.6 andCenter:b2Vec2(0.0, 0.0) andMechanicType:6 andMaxTimePlay:10];
+            [self addKinematicBoxWithCoords:CGPointMake(3.1, 2.2) withDimensionX:0.5 andY:0.5 withAngle:0.6 andCenter:b2Vec2(0.0, 0.0) andMechanicType:6 andMaxTimePlay:0];
+            [self addKinematicBoxWithCoords:CGPointMake(14.1, 2.2) withDimensionX:0.3 andY:1.5 withAngle:0.0 andCenter:b2Vec2(0.0, 0.0) andMechanicType:2 andMaxTimePlay:self.level.maxTime];
             
             //Adding hero
-            [self addHeroWithCoords:CGPointMake(85.0, 100.0)];
+            [self addHeroWithCoords:CGPointMake(2.65, 3.1)];
             
             //Adding goal
-            [self addGoalWithCoords:CGPointMake(350.0, 40.0)];
+            [self addGoalWithCoords:CGPointMake(10.94, 1.25)];
             
             break;
             
@@ -110,13 +110,13 @@
             self.level.maxTime = 10;
             
             //Moveable objects
-            [self addKinematicBoxWithCoords:CGPointMake(220.0, 70.0) withDimensionX:1.5 andY:1.0 withAngle:0.0 andCenter:b2Vec2(0.0, 0.0) andMechanicType:4 andMaxTimePlay:self.level.maxTime];
+            [self addKinematicBoxWithCoords:CGPointMake(6.9, 2.2) withDimensionX:1.5 andY:1.0 withAngle:0.0 andCenter:b2Vec2(0.0, 0.0) andMechanicType:4 andMaxTimePlay:self.level.maxTime];
             
             //Adding hero
-            [self addHeroWithCoords:CGPointMake(220.0, 100.0)];
+            [self addHeroWithCoords:CGPointMake(6.9, 3.1)];
             
             //Adding goal
-            [self addGoalWithCoords:CGPointMake(220.0, 270.0)];
+            [self addGoalWithCoords:CGPointMake(6.9, 8.13)];
             
             break;
             
@@ -125,13 +125,13 @@
             self.level.maxTime = 20;
             
             //Moveable objects
-            [self addKinematicBoxWithCoords:CGPointMake(220.0, 90.0) withDimensionX:4.0 andY:0.3 withAngle:0.6 andCenter:b2Vec2(0.0, 0.0) andMechanicType:7 andMaxTimePlay:self.level.maxTime];
+            [self addKinematicBoxWithCoords:CGPointMake(6.9, 2.8) withDimensionX:4.0 andY:0.3 withAngle:0.6 andCenter:b2Vec2(0.0, 0.0) andMechanicType:7 andMaxTimePlay:self.level.maxTime];
             
             //Adding hero
-            [self addHeroWithCoords:CGPointMake(220.0, 120.0)];
+            [self addHeroWithCoords:CGPointMake(6.9, 3.75)];
             
             //Adding goal
-            [self addGoalWithCoords:CGPointMake(220.0, 260.0)];
+            [self addGoalWithCoords:CGPointMake(6.9, 8.13)];
             
             break;
             
@@ -140,42 +140,97 @@
             self.level.maxTime = 10;
             
             //Moveable objects
-            [self addKinematicBoxWithCoords:CGPointMake(40.0, 200.0) withDimensionX:1.2 andY:0.3 withAngle:-0.6 andCenter:b2Vec2(0.0, 0.0) andMechanicType:8 andMaxTimePlay:0];
-            [self addKinematicBoxWithCoords:CGPointMake(120.0, 170.0) withDimensionX:0.7 andY:0.3 withAngle:0. andCenter:b2Vec2(0.0, 0.0) andMechanicType:8 andMaxTimePlay:self.level.maxTime];
-            [self addKinematicBoxWithCoords:CGPointMake(220.0, 170.0) withDimensionX:0.7 andY:0.3 withAngle:0. andCenter:b2Vec2(0.0, 0.0) andMechanicType:8 andMaxTimePlay:self.level.maxTime];
-            [self addKinematicBoxWithCoords:CGPointMake(320.0, 170.0) withDimensionX:0.7 andY:0.3 withAngle:0. andCenter:b2Vec2(0.0, 0.0) andMechanicType:8 andMaxTimePlay:self.level.maxTime];
+            [self addKinematicBoxWithCoords:CGPointMake(1.25, 6.25) withDimensionX:1.2 andY:0.3 withAngle:-0.6 andCenter:b2Vec2(0.0, 0.0) andMechanicType:8 andMaxTimePlay:0];
+            [self addKinematicBoxWithCoords:CGPointMake(3.75, 5.3) withDimensionX:0.7 andY:0.3 withAngle:0. andCenter:b2Vec2(0.0, 0.0) andMechanicType:8 andMaxTimePlay:self.level.maxTime];
+            [self addKinematicBoxWithCoords:CGPointMake(6.9, 5.3) withDimensionX:0.7 andY:0.3 withAngle:0. andCenter:b2Vec2(0.0, 0.0) andMechanicType:8 andMaxTimePlay:self.level.maxTime];
+            [self addKinematicBoxWithCoords:CGPointMake(10, 5.3) withDimensionX:0.7 andY:0.3 withAngle:0. andCenter:b2Vec2(0.0, 0.0) andMechanicType:8 andMaxTimePlay:self.level.maxTime];
 
             
             //Adding hero
-            [self addHeroWithCoords:CGPointMake(40.0, 240.0)];
+            [self addHeroWithCoords:CGPointMake(1.25, 7.8)];
             
             //Adding goal
-            [self addGoalWithCoords:CGPointMake(460.0, 170.0)];
+            [self addGoalWithCoords:CGPointMake(14.4, 5.34)];
             
             break;
             
         case 9:
             //Setting max frames for a moveable object to move
-            self.level.maxTime = 10;
+            self.level.maxTime = 15;
             
             //Moveable objects
-            [self addKinematicBoxWithCoords:CGPointMake(120.0, 30.0) withDimensionX:1.2 andY:0.3 withAngle:-0.6 andCenter:b2Vec2(0.0, 0.0) andMechanicType:2 andMaxTimePlay:self.level.maxTime];
-            [self addKinematicBoxWithCoords:CGPointMake(330.0, 90.0) withDimensionX:1.2 andY:0.3 withAngle:0.6 andCenter:b2Vec2(0.0, 0.0) andMechanicType:2 andMaxTimePlay:self.level.maxTime];
-            [self addKinematicBoxWithCoords:CGPointMake(120.0, 150.0) withDimensionX:1.2 andY:0.3 withAngle:-0.6 andCenter:b2Vec2(0.0, 0.0) andMechanicType:2 andMaxTimePlay:self.level.maxTime];
-            [self addKinematicBoxWithCoords:CGPointMake(330.0, 210.0) withDimensionX:1.2 andY:0.3 withAngle:0.6 andCenter:b2Vec2(0.0, 0.0) andMechanicType:2 andMaxTimePlay:self.level.maxTime];
-            
+            [self addKinematicBoxWithCoords:CGPointMake(1.7, 1.0) withDimensionX:1.2 andY:0.3 withAngle:-0.6 andCenter:b2Vec2(1.0, 0.0) andMechanicType:9 andMaxTimePlay:self.level.maxTime];
+            [self addKinematicBoxWithCoords:CGPointMake(12.34, 2.8) withDimensionX:1.2 andY:0.3 withAngle:0.6 andCenter:b2Vec2(-1.0, 0.0) andMechanicType:10 andMaxTimePlay:self.level.maxTime];
+            [self addKinematicBoxWithCoords:CGPointMake(1.7, 4.7) withDimensionX:1.2 andY:0.3 withAngle:-0.6 andCenter:b2Vec2(1.0, 0.0) andMechanicType:9 andMaxTimePlay:self.level.maxTime];
+            [self addKinematicBoxWithCoords:CGPointMake(12.34, 6.6) withDimensionX:1.2 andY:0.3 withAngle:0.6 andCenter:b2Vec2(-1.0, 0.0) andMechanicType:10 andMaxTimePlay:self.level.maxTime];
             
             //Adding hero
-            [self addHeroWithCoords:CGPointMake(120.0, 120.0)];
+            [self addHeroWithCoords:CGPointMake(2.0, 2.0)];
             
             //Adding goal
-            [self addGoalWithCoords:CGPointMake(200.0, 270.0)];
+            [self addGoalWithCoords:CGPointMake(6.25, 9.4)];
             
+            break;
+            
+        case 10:
+            //Setting max frames for a moveable object to move
+            self.level.maxTime = 25;
+            
+            //Moveable objects
+            [self addKinematicBoxWithCoords:CGPointMake(7.8, 1.0) withDimensionX:1.2 andY:0.3 withAngle:0.0 andCenter:b2Vec2(5.0, 0.0) andMechanicType:5 andMaxTimePlay:self.level.maxTime];
+            
+            //Adding hero
+            [self addHeroWithCoords:CGPointMake(11.9, 6.25)];
+            
+            //Adding goal
+            [self addGoalWithCoords:CGPointMake(4.7, 6.25)];
+            
+            break;
+            
+        case 11:
+            //Setting max frames for a moveable object to move
+            self.level.maxTime = 30;
+            
+            //Moveable objects
+            [self addKinematicBoxWithCoords:CGPointMake(1.25, 6.25) withDimensionX:1.2 andY:0.3 withAngle:-0.6 andCenter:b2Vec2(0.0, 0.0) andMechanicType:8 andMaxTimePlay:0];
+            [self addKinematicBoxWithCoords:CGPointMake(3.75, 3.1) withDimensionX:0.7 andY:0.3 withAngle:0. andCenter:b2Vec2(0.0, 0.0) andMechanicType:11 andMaxTimePlay:self.level.maxTime];
+            [self addKinematicBoxWithCoords:CGPointMake(6.9, 7.5) withDimensionX:0.7 andY:0.3 withAngle:0. andCenter:b2Vec2(0.0, 0.0) andMechanicType:8 andMaxTimePlay:self.level.maxTime];
+            [self addKinematicBoxWithCoords:CGPointMake(10.94, 3.1) withDimensionX:0.7 andY:0.3 withAngle:0. andCenter:b2Vec2(0.0, 0.0) andMechanicType:11 andMaxTimePlay:self.level.maxTime];
+            
+            //Adding hero
+            [self addHeroWithCoords:CGPointMake(1.25, 7.5)];
+            
+            //Adding goal
+            [self addGoalWithCoords:CGPointMake(14.4, 5.94)];
+            
+            break;
+            
+        case 12:
+        {//Setting max frames for a moveable object to move
+            self.level.maxTime = 10;
+            
+            //Define polygon
+            b2Vec2 verts[] = {b2Vec2(0.3, 0.3), b2Vec2(-0.7, -0.3), b2Vec2(0.6, -0.3)};
+            
+            //Moveable objects
+            [self addKinematicPolygonWithCoords:CGPointMake(1.7, 2.1) withVertexes:verts andNumberOfVertexes:3 withAngle:0.5 andCenter:b2Vec2(0.0, 0.0) andMechanicType:12 andMaxTimePlay:self.level.maxTime];
+            [self addKinematicPolygonWithCoords:CGPointMake(3.5, 3.0) withVertexes:verts andNumberOfVertexes:3 withAngle:0.5 andCenter:b2Vec2(0.0, 0.0) andMechanicType:12 andMaxTimePlay:self.level.maxTime];
+            [self addKinematicPolygonWithCoords:CGPointMake(5.5, 4.0) withVertexes:verts andNumberOfVertexes:3 withAngle:0.5 andCenter:b2Vec2(0.0, 0.0) andMechanicType:12 andMaxTimePlay:self.level.maxTime];
+            [self addKinematicPolygonWithCoords:CGPointMake(7.5, 5.0) withVertexes:verts andNumberOfVertexes:3 withAngle:0.5 andCenter:b2Vec2(0.0, 0.0) andMechanicType:12 andMaxTimePlay:self.level.maxTime];
+            [self addKinematicPolygonWithCoords:CGPointMake(9.5, 6.0) withVertexes:verts andNumberOfVertexes:3 withAngle:0.5 andCenter:b2Vec2(0.0, 0.0) andMechanicType:12 andMaxTimePlay:self.level.maxTime];
+            [self addKinematicPolygonWithCoords:CGPointMake(11.5, 7.0) withVertexes:verts andNumberOfVertexes:3 withAngle:0.5 andCenter:b2Vec2(0.0, 0.0) andMechanicType:12 andMaxTimePlay:self.level.maxTime];
+            
+            //Adding hero
+            [self addHeroWithCoords:CGPointMake(2.25, 3.5)];
+            
+            //Adding goal
+            [self addGoalWithCoords:CGPointMake(13.4, 5.94)];
+        }
             break;
             
         default:
             //Adding hero
-            [self addHeroWithCoords:CGPointMake(100.0, 200.0)];
+            [self addHeroWithCoords:CGPointMake(3.1, 6.25)];
             break;
     }
     
@@ -194,9 +249,8 @@
     //Set up a 1m squared box in the physics world
 	b2BodyDef bodyDef;
     bodyDef.type = b2_kinematicBody; //Kinetic static body
-    //bodyDef.angle = a; //Define angle
     
-	bodyDef.position.Set(p.x/32, p.y/32);
+	bodyDef.position.Set(p.x, p.y);
 	
     MoveableObject *moveableObject = [[MoveableObject alloc] init];
     moveableObject.mechanicType = mT;
@@ -205,7 +259,7 @@
 	
     b2Body *body = self.level->world->CreateBody(&bodyDef);
 	
-	// Define another box shape for our dynamic body.
+	// Define another box shape for our kinematic body.
 	b2PolygonShape kinematicBox;
 	kinematicBox.SetAsBox(x, y, center, a);
 	
@@ -217,6 +271,43 @@
 	body->CreateFixture(&fixtureDef);
 }
 
+//Add a kinetic polygon to the physical world
+-(void)addKinematicPolygonWithCoords:(CGPoint)p 
+                    withVertexes:(b2Vec2*)vertexes 
+             andNumberOfVertexes:(int)count 
+                       withAngle:(CGFloat)a 
+                       andCenter:(b2Vec2)center
+                 andMechanicType:(int) mT 
+                  andMaxTimePlay:(int)maxPlay
+{
+	//Define the kinetic body
+    //Set up a 1m squared box in the physics world
+	b2BodyDef bodyDef;
+    bodyDef.type = b2_kinematicBody; //Kinetic static body
+    bodyDef.angle = a; //Define angle
+    
+	bodyDef.position.Set(p.x, p.y);
+	
+    MoveableObject *moveableObject = [[MoveableObject alloc] init];
+    moveableObject.mechanicType = mT;
+    moveableObject.maxTimePlay = maxPlay;
+    bodyDef.userData = moveableObject;
+	
+    b2Body *body = self.level->world->CreateBody(&bodyDef);
+	
+	// Define another polygon shape for our kinematic body
+    b2PolygonShape polygonShape;
+    polygonShape.Set(vertexes, count);
+    
+	// Define the dynamic body fixture.
+	b2FixtureDef fixtureDef;
+	fixtureDef.shape = &polygonShape;	
+	fixtureDef.density = 1.0f;
+	fixtureDef.friction = 0.2f;
+	body->CreateFixture(&fixtureDef);
+}
+
+
 //Add a hero to the physical world
 -(void)addHeroWithCoords:(CGPoint)p
 {
@@ -225,7 +316,7 @@
 	b2BodyDef bodyDef;
 	bodyDef.type = b2_dynamicBody;
     
-	bodyDef.position.Set(p.x/32, p.y/32);
+	bodyDef.position.Set(p.x, p.y);
 	//bodyDef.userData = sprite;
     
     // Construct a hero and set it to levels hero
@@ -251,7 +342,7 @@
 {
 	self.level.goal = p;
     CCSprite* sprite = [self.level.graphicLayer createSpriteFromPicture:(GOAL)];
-    sprite.position = ccp(p.x, p.y);
+    sprite.position = ccp(p.x*[Game unit], p.y*[Game unit]);
 }
 
 @end
