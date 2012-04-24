@@ -175,7 +175,7 @@
             [self addKinematicBoxWithCoords:CGPointMake(12.34, 6.6) withDimensionX:1.2 andY:0.3 withAngle:0.6 andCenter:b2Vec2(-1.0, 0.0) andMechanicType:ANGULAR andPlayVelocity:b2Vec2(-5.0, 0.0) andRewindVelocity:b2Vec2(5.0, 0.0) andMaxTimePlay:self.level.maxTime];
             
             //Adding hero
-            [self addHeroWithCoords:CGPointMake(2.0, 2.0)];
+            [self addHeroWithCoords:CGPointMake(2.0, 2.3)];
             
             //Adding goal
             [self addGoalWithCoords:CGPointMake(200.00, 300.0)];
