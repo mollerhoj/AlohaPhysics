@@ -10,6 +10,15 @@ J TODO move logic to game objects
 
 J Make a level selection menu
 
+J Star animation
+
+
+
+BEFORE RELEASE:
+
+Load background music
+Do not debug draw
+
 C check play or reverse in physical objects: DONE
 
 C refactor mechanics

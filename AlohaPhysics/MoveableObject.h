@@ -22,6 +22,8 @@
 @property (nonatomic,assign) CCSprite* sprite;
 @property (nonatomic,assign) double x;
 @property (nonatomic,assign) double y;
+@property (nonatomic,assign) CGFloat angle;
+@property (nonatomic,assign) b2Vec2 center;
 
 -(void)step;
 
