@@ -37,7 +37,7 @@
             [self addHeroWithCoords:CGPointMake(3.1, 9.4)];
             
             //Adding goal
-            [self addGoalWithCoords:CGPointMake(9.4, 1.0)];
+            [self addGoalWithCoords:CGPointMake(300.00, 30.0)];
             
             //Writing an introduction
             CCLabelTTF* intro = [[GraphicLayer sharedLayer] createText:@"Welcome to Aloha Physics!"];
@@ -61,7 +61,7 @@
             [self addHeroWithCoords:CGPointMake(3.1, 7.8)];
             
             //Adding goal
-            [self addGoalWithCoords:CGPointMake(10, 6.25)];
+            [self addGoalWithCoords:CGPointMake(320.0, 200.0)];
             
             break;
         
@@ -76,7 +76,7 @@
             [self addHeroWithCoords:CGPointMake(3.1, 6.25)];
             
             //Adding goal
-            [self addGoalWithCoords:CGPointMake(14.4, 4.7)];
+            [self addGoalWithCoords:CGPointMake(460.0, 150.0)];
             
             break;
             
@@ -94,7 +94,7 @@
             [self addHeroWithCoords:CGPointMake(2.34, 7.8)];
             
             //Adding goal
-            [self addGoalWithCoords:CGPointMake(14.4, 4.4)];
+            [self addGoalWithCoords:CGPointMake(460.0, 140.0)];
             
             break;
             
@@ -111,7 +111,7 @@
             [self addHeroWithCoords:CGPointMake(2.65, 3.1)];
             
             //Adding goal
-            [self addGoalWithCoords:CGPointMake(10.94, 1.25)];
+            [self addGoalWithCoords:CGPointMake(370.0, 40.0)];
             
             break;
             
@@ -126,7 +126,7 @@
             [self addHeroWithCoords:CGPointMake(6.9, 3.1)];
             
             //Adding goal
-            [self addGoalWithCoords:CGPointMake(6.9, 8.13)];
+            [self addGoalWithCoords:CGPointMake(220.0, 260.0)];
             
             break;
             
@@ -141,7 +141,7 @@
             [self addHeroWithCoords:CGPointMake(6.9, 3.75)];
             
             //Adding goal
-            [self addGoalWithCoords:CGPointMake(6.9, 8.13)];
+            [self addGoalWithCoords:CGPointMake(220.0, 260.0)];
             
             break;
             
@@ -153,14 +153,14 @@
             [self addKinematicBoxWithCoords:CGPointMake(1.25, 6.25) withDimensionX:1.2 andY:0.3 withAngle:-0.6 andCenter:b2Vec2(0.0, 0.0) andMechanicType:8 andMaxTimePlay:0];
             [self addKinematicBoxWithCoords:CGPointMake(3.75, 5.3) withDimensionX:0.7 andY:0.3 withAngle:0. andCenter:b2Vec2(0.0, 0.0) andMechanicType:8 andMaxTimePlay:self.level.maxTime];
             [self addKinematicBoxWithCoords:CGPointMake(6.9, 5.3) withDimensionX:0.7 andY:0.3 withAngle:0. andCenter:b2Vec2(0.0, 0.0) andMechanicType:8 andMaxTimePlay:self.level.maxTime];
-            [self addKinematicBoxWithCoords:CGPointMake(10, 5.3) withDimensionX:0.7 andY:0.3 withAngle:0. andCenter:b2Vec2(0.0, 0.0) andMechanicType:8 andMaxTimePlay:self.level.maxTime];
+            [self addKinematicBoxWithCoords:CGPointMake(10.5, 5.3) withDimensionX:0.7 andY:0.3 withAngle:0. andCenter:b2Vec2(0.0, 0.0) andMechanicType:8 andMaxTimePlay:self.level.maxTime];
 
             
             //Adding hero
             [self addHeroWithCoords:CGPointMake(1.25, 7.8)];
             
             //Adding goal
-            [self addGoalWithCoords:CGPointMake(14.4, 5.34)];
+            [self addGoalWithCoords:CGPointMake(460.0, 170.0)];
             
             break;
             
@@ -178,7 +178,7 @@
             [self addHeroWithCoords:CGPointMake(2.0, 2.0)];
             
             //Adding goal
-            [self addGoalWithCoords:CGPointMake(6.25, 9.4)];
+            [self addGoalWithCoords:CGPointMake(200.00, 300.0)];
             
             break;
             
@@ -193,7 +193,7 @@
             [self addHeroWithCoords:CGPointMake(11.9, 6.25)];
             
             //Adding goal
-            [self addGoalWithCoords:CGPointMake(4.7, 6.25)];
+            [self addGoalWithCoords:CGPointMake(150.0, 200.00)];
             
             break;
             
@@ -211,7 +211,7 @@
             [self addHeroWithCoords:CGPointMake(1.25, 7.5)];
             
             //Adding goal
-            [self addGoalWithCoords:CGPointMake(14.4, 5.94)];
+            [self addGoalWithCoords:CGPointMake(460.0, 190.0)];
             
             break;
             
@@ -234,7 +234,7 @@
             [self addHeroWithCoords:CGPointMake(2.25, 3.5)];
             
             //Adding goal
-            [self addGoalWithCoords:CGPointMake(13.4, 5.94)];
+            [self addGoalWithCoords:CGPointMake(430.0, 190.0)];
         }
             break;
             
@@ -261,14 +261,20 @@
     bodyDef.type = b2_kinematicBody; //Kinetic static body
     
 	bodyDef.position.Set(p.x, p.y);
-	
+    
     MoveableObject *moveableObject = [[MoveableObject alloc] init];
     moveableObject.mechanicType = mT;
     moveableObject.maxTimePlay = maxPlay;
-    bodyDef.userData = moveableObject;
+    //bodyDef.userData = moveableObject;
 	
+    //Create body
     b2Body *body = self.level->world->CreateBody(&bodyDef);
+    
+    moveableObject.physicalBody = body;
 	
+    //Add physical object to levels array
+    [self.level.physicalObjects addObject:moveableObject];
+    
 	// Define another box shape for our kinematic body.
 	b2PolygonShape kinematicBox;
 	kinematicBox.SetAsBox(x, y, center, a);
@@ -303,8 +309,14 @@
     moveableObject.maxTimePlay = maxPlay;
     bodyDef.userData = moveableObject;
 	
+    //Create physical body
     b2Body *body = self.level->world->CreateBody(&bodyDef);
 	
+    moveableObject.physicalBody = body;
+	
+    //Add physical object to levels array
+    [self.level.physicalObjects addObject:moveableObject];
+    
 	// Define another polygon shape for our kinematic body
     b2PolygonShape polygonShape;
     polygonShape.Set(vertexes, count);
@@ -350,9 +362,10 @@
 //Add a goal to the physical world
 -(void)addGoalWithCoords:(CGPoint)p
 {
-	self.level.goal = p;
-    CCSprite* sprite = [self.level.graphicLayer createSpriteFromPicture:(GOAL)];
-    sprite.position = ccp(p.x*[Game unit], p.y*[Game unit]);
+    Goal* goal = [[Goal alloc] init];
+    goal.x = p.x;
+    goal.y = p.y;
+	self.level.goal = goal;
 }
 
 @end

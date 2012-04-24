@@ -21,6 +21,7 @@
 
 @synthesize levelBuilder = _levelBuilder;
 @synthesize currentLevel = _currentLevel;
+@synthesize physicalObjects = _physicalObjects;
 
 @synthesize maxTime = _maxTime;
 @synthesize time = _time;
@@ -39,10 +40,13 @@
         //Define physical world
         [self defineWorld];
 
+        //Init array
+        self.physicalObjects = [[NSMutableArray alloc] init];
+        
         //Init levelBuilder
         self.levelBuilder = [[LevelBuilder alloc] initWithLevel:self];
 
-        self.currentLevel = 12;
+        self.currentLevel = 1;
         
         //Build level 1 as default
         [self.levelBuilder buildLevel:self.currentLevel];
@@ -61,6 +65,9 @@
 	{
 		world->DestroyBody(b);
 	}
+    
+    [self.physicalObjects removeAllObjects];
+    
     self.time = 0;
     self.won = NO;
 }

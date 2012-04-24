@@ -7,11 +7,15 @@
 //
 
 #import "MoveableObject.h"
+#import "cocos2d.h"
+#import "Box2D.h"
 
 @implementation MoveableObject
 
 @synthesize mechanicType = _mechanicType;
 @synthesize image = _image;
 @synthesize maxTimePlay = _maxTimePlay;
+@synthesize position = _position;
+@synthesize physicalBody = _physicalBody;
 
 @end
