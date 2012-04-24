@@ -12,7 +12,7 @@
 
 @implementation MoveableObject
 
-@synthesize mechanicType = _mechanicType;
+@synthesize mechanic = _mechanic;
 @synthesize image = _image;
 @synthesize maxTimePlay = _maxTimePlay;
 @synthesize position = _position;

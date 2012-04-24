@@ -11,6 +11,8 @@ BEFORE RELEASE:
 Load background music
 Do not debug draw
 
-C check play or reverse in physical objects
+C check play or reverse in physical objects: DONE
 
 C refactor mechanics
+
+C refactor level max time

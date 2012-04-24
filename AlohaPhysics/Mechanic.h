@@ -7,13 +7,21 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "MoveableObject.h"
 #import "Box2D.h"
 
 @interface Mechanic : NSObject 
 
--(void)playMechanicType:(int) mechanicType withBody:(b2Body *)body;
--(void)rewindMechanicType:(int) mechanicType withBody:(b2Body *)body;
+enum {
+    LINEAR,
+    ANGULAR,
+}
+typedef MechanicType;
+
+@property (nonatomic,assign) MechanicType type;
+
+-(id)initWithPlayVelocity:(b2Vec2)play andRewindVelocity:(b2Vec2)rewind andType:(MechanicType) type;
+-(void)playMechanicWithBody:(b2Body *)body;
+-(void)rewindMechanicWithBody:(b2Body *)body;
 -(void)stopMovementForBody:(b2Body *)body;
 
 @end

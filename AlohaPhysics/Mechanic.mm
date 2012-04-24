@@ -7,144 +7,55 @@
 //
 
 #import "Mechanic.h"
+#import "Box2D.h"
+
 @interface Mechanic()
 
-@property (nonatomic, assign) MoveableObject *moveableObject;
-@property (nonatomic,assign) CGFloat playVelocity;
-@property (nonatomic,assign) CGFloat rewindVelocity;
+@property (nonatomic,assign) b2Vec2 playVelocity;
+@property (nonatomic,assign) b2Vec2 rewindVelocity;
 
 @end
 
 @implementation Mechanic
 
-@synthesize moveableObject = _moveableObject;
 @synthesize playVelocity = _playVelocity;
 @synthesize rewindVelocity = _rewindVelocity;
+@synthesize type = _type;
 
--(id)initWithPlayVelocity:(CGFloat)play andRewindVelocity:(CGFloat)rewind 
+-(id)initWithPlayVelocity:(b2Vec2)play andRewindVelocity:(b2Vec2)rewind andType:(MechanicType) type
 {
     if( (self=[super init])) {
 		self.playVelocity = play;
         self.rewindVelocity = rewind;
+        self.type = type;
     }
     return self;
 }
 
--(void)playMechanicType:(int) mechanicType withBody:(b2Body *)body
+//Play kinematic body
+-(void)playMechanicWithBody:(b2Body *)body
 {
     if(body->GetType() == b2_kinematicBody) 
     {
-        switch (mechanicType) {
-            case 1:
-                body->SetAngularVelocity(-1.0);
-                break;
-        
-            case 2:
-                body->SetLinearVelocity(b2Vec2(0.0, 10.0));
-                break;
-        
-            case 3:
-                body->SetAngularVelocity(-2.0);
-                break;
-            
-            case 4:
-                body->SetLinearVelocity(b2Vec2(0.0, -8.7));
-                break;
-                
-            case 5:
-                body->SetAngularVelocity(2.0);
-                break;
-                
-            case 6:
-                body->SetLinearVelocity(b2Vec2(13.0, 11.0));   
-                break;
-                
-            case 7:
-                body->SetAngularVelocity(-3.5);
-                break;
-                
-            case 8:
-                body->SetLinearVelocity(b2Vec2(0.0, -5.0));
-                break;
-                
-            case 9:
-                body->SetAngularVelocity(5.0);
-                break;
-                
-            case 10:
-                body->SetAngularVelocity(-5.0);
-                break;
-                
-            case 11:
-                body->SetLinearVelocity(b2Vec2(0.0, 5.0));
-                break;
-                
-            case 12:
-                body->SetLinearVelocity(b2Vec2(5.0, 5.0));
-                break;
-                
-            default:
-                break;
+        if(self.type == LINEAR)
+        {
+            body->SetLinearVelocity(self.playVelocity);
+        } else {
+            body->SetAngularVelocity(self.playVelocity.x); //Not cool! TODO
         }
     }
 }
 
--(void)rewindMechanicType:(int) mechanicType withBody:(b2Body *)body
+//Rewind kinematic body
+-(void)rewindMechanicWithBody:(b2Body *)body
 {
     if(body->GetType() == b2_kinematicBody) 
     {
-        switch (mechanicType) {
-            
-            case 1:
-                body->SetAngularVelocity(1.0);                
-                break;
-                
-            case 2:
-                body->SetLinearVelocity(b2Vec2(0.0, -10.0));
-                break;
-                
-            case 3:
-                body->SetAngularVelocity(2.0);
-                break;
-                
-            case 4:
-                body->SetLinearVelocity(b2Vec2(0.0, 8.7));
-                break;
-                
-            case 5:
-                body->SetAngularVelocity(-2.0);
-                break;
-                
-            case 6:
-                body->SetLinearVelocity(b2Vec2(-13.0, -11.0));    
-                break;
-                
-            case 7:
-                body->SetAngularVelocity(3.5);
-                break;
-                
-            case 8:
-                body->SetLinearVelocity(b2Vec2(0.0, 5.0));
-                break;
-                
-            case 9:
-                body->SetAngularVelocity(-5.0);
-                break;
-                
-            case 10:
-                body->SetAngularVelocity(5.0);
-                break;
-                
-            case 11:
-                body->SetLinearVelocity(b2Vec2(0.0, -5.0));
-                break;
-                
-            case 12:
-                body->SetLinearVelocity(b2Vec2(-5.0, -5.0));
-                break;
-                
-            default:
-                break;
+        if(self.type == LINEAR)
+        {
+            body->SetLinearVelocity(self.rewindVelocity);
+        } else {
+            body->SetAngularVelocity(self.rewindVelocity.x); //Not cool! TODO
         }
     }
 }
