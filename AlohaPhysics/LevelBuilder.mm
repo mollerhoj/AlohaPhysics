@@ -10,7 +10,7 @@
 #import "Game.h"
 #import "MoveableObject.h"
 #import "Box2D.h"
-#import "GraphicLayer.h"
+#import "Graphicmanager.h"
 #import "Hero.h"
 
 @implementation LevelBuilder
@@ -41,11 +41,11 @@
             [self addGoalWithCoords:CGPointMake(300.00, 30.0)];
             
             //Writing an introduction
-            CCLabelTTF* intro = [[GraphicLayer sharedLayer] createText:@"Welcome to Aloha Physics!"];
+            CCLabelTTF* intro = [[GraphicManager sharedManager] createText:@"Welcome to Aloha Physics!"];
             intro.position = ccp(240,280);
             
             //Writing an instruction
-            CCLabelTTF* instruction = [[GraphicLayer sharedLayer] createText:@"Press the screen to start!"];
+            CCLabelTTF* instruction = [[GraphicManager sharedManager] createText:@"Press the screen to start!"];
             instruction.position = ccp(240,230);
             
         } //(These are nessary when defining new objects in switch statement)
@@ -276,7 +276,7 @@
     
     Picture s = BLOCK320x64;
     
-    moveableObject.sprite = [[GraphicLayer sharedLayer] createSpriteFromPicture:s];
+    moveableObject.sprite = [[GraphicManager sharedManager] createSpriteFromPicture:s];
 	
     //Create body
     b2Body *body = self.level->world->CreateBody(&bodyDef);

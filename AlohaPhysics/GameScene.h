@@ -8,7 +8,7 @@
 
 #import "CCScene.h"
 #import "cocos2d.h"
-#import "GraphicLayer.h"
+#import "GraphicManager.h"
 
 @interface GameScene : CCScene
 

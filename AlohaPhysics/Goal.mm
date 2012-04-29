@@ -7,7 +7,7 @@
 //
 
 #import "Goal.h"
-#import "GraphicLayer.h"
+#import "GraphicManager.h"
 #import "SoundManager.h"
 
 @interface Goal ()
@@ -32,7 +32,7 @@
 -(id)init {
     self = [super init];
     if (self != nil) {
-        self.sprite = [[GraphicLayer sharedLayer] createSpriteFromPicture:PICTURE];
+        self.sprite = [[GraphicManager sharedManager] createSpriteFromPicture:PICTURE];
         self.sprite.scale = 0.5;
         self.animation_dietime = 0;
     }

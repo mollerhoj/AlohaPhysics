@@ -7,7 +7,7 @@
 //
 
 #import "Hero.h"
-#import "GraphicLayer.h"
+#import "GraphicManager.h"
 #import "cocos2d.h"
 #import "Box2D.h"
 #import "Game.h"
@@ -24,7 +24,7 @@
 -(id)init {
     self = [super init];
     if (self != nil) {
-        self.sprite = [[GraphicLayer sharedLayer] createSpriteFromPicture:PICTURE];
+        self.sprite = [[GraphicManager sharedManager] createSpriteFromPicture:PICTURE];
     }
     return self;
 }

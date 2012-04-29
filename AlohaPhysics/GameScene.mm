@@ -16,7 +16,7 @@
 #import "BackgroundLayer.h"
 #import "GameLayer.h"
 #import "Game.h"
-#import "GraphicLayer.h"
+#import "GraphicManager.h"
 #import "SoundManager.h"
 
 @interface GameScene ()
@@ -43,7 +43,7 @@
         //Game object
         self.game = [[Game alloc] init];
         
-        GraphicLayer* gl = [GraphicLayer sharedLayer];
+        GraphicManager* gl = [GraphicManager sharedManager];
         
         //GraphicsLayer
         [self addChild:gl z:2];

@@ -6,8 +6,6 @@ C check play or reverse in physical objects
 
 C refactor mechanics
 
-J TODO move gameplay logic to game objects
-
 J Make a graphics manager
 
 J Make a level selection menu
@@ -19,8 +17,6 @@ Graphics:
 Background low def.
 Blocks all sizes
 Nails
-
-
 
 BEFORE RELEASE:
 

@@ -81,7 +81,7 @@
         glDisableClientState(GL_TEXTURE_COORD_ARRAY);
 
             
-        self.stepListener.level->world->DrawDebugData();
+        //self.stepListener.level->world->DrawDebugData();
 
         // restore default GL states
         glEnable(GL_TEXTURE_2D);

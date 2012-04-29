@@ -9,7 +9,7 @@
 #import "Level.h"
 #import "LevelBuilder.h"
 #import "Game.h"
-#import "GraphicLayer.h"
+#import "Graphicmanager.h"
 #import "SoundManager.h"
 
 @interface Level ()
@@ -26,7 +26,6 @@
 @synthesize maxTime = _maxTime;
 @synthesize time = _time;
 @synthesize playing = _playing;
-@synthesize graphicLayer = _graphicLayer;
 @synthesize hero = _hero;
 @synthesize goal = _goal;
 @synthesize won = _won;
@@ -58,7 +57,7 @@
 -(void)destroyLevel
 {
     //Remove all sprites from graphics
-	[[GraphicLayer sharedLayer] removeGraphics];
+	[[GraphicManager sharedManager] removeGraphics];
     
     //Iterate over the bodies in the physics world and delete them
     for (b2Body* b = world->GetBodyList(); b; b = b->GetNext())
