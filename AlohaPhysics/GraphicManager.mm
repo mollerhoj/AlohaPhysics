@@ -6,7 +6,7 @@
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
-
+// Managing sprites and labels on the current main layer. (The main layer is defined as the layer that all objects draw to)
 
 #import "GraphicManager.h"
 #import "Game.h"

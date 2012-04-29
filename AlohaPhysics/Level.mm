@@ -6,6 +6,8 @@
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
+// The level (play board, game board) of the game. Handing creation and removal of objects.
+
 #import "Level.h"
 #import "LevelBuilder.h"
 #import "Game.h"

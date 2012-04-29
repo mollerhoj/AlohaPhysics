@@ -6,6 +6,8 @@
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
+// The hero (main character, player) of the game, also a physical object (A ball).
+
 #import "Hero.h"
 #import "GraphicManager.h"
 #import "cocos2d.h"

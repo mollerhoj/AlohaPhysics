@@ -6,6 +6,7 @@
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
+// The red background layer
 
 #import "BackgroundLayer.h"
 #import "Game.h"

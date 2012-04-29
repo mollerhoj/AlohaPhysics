@@ -6,6 +6,8 @@
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
+// Defines how levels looks
+
 #import "LevelBuilder.h"
 #import "Game.h"
 #import "MoveableObject.h"

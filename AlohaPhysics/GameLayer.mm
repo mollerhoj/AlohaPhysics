@@ -6,6 +6,8 @@
 //  Copyright 2012 __MyCompanyName__. All rights reserved.
 //
 
+// A layer that combines touch detection, stepping (ticking), and debug drawing.
+
 #import "GameLayer.h"
 #import "Game.h"
 #import "MoveableObject.h"

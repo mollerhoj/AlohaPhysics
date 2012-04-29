@@ -6,6 +6,8 @@
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
+// A physical object
+
 #import "MoveableObject.h"
 #import "cocos2d.h"
 #import "Box2D.h"

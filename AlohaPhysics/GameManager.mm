@@ -6,6 +6,8 @@
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
+//  Handling what scenes to show, globally accessable singleton
+
 #import "GameManager.h"
 #import "GameScene.h"
 

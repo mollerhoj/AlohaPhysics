@@ -9,7 +9,6 @@
 /*
  The game scene initializes background, graphic, sound and touch managers
  It also creates the game object.
- 
 */
 
 #import "GameScene.h"

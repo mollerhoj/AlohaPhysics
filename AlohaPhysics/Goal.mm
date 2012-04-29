@@ -6,6 +6,8 @@
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
+// The goal (finishline) in the game, visualised by a star.
+
 #import "Goal.h"
 #import "GraphicManager.h"
 #import "SoundManager.h"
