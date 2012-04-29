@@ -4,13 +4,17 @@ C Make shapes move in game object (mechanic remove)
 
 C check play or reverse in physical objects
 
-C refactor mechanics
+C refactor mechanics DONE
 
 J Make a graphics manager
 
 J Make a level selection menu
 
-J Star animation
+J Star animation DONE
+
+End screen
+
+AlohaPhysics intro screen
 
 Graphics:
 
@@ -20,11 +24,11 @@ Nails
 
 BEFORE RELEASE:
 
-Load background music
+Load background music DONE
 Do not debug draw
 
 C check play or reverse in physical objects: DONE
 
-C refactor mechanics
+C refactor mechanics DONE
 
 C refactor level max time
