@@ -12,4 +12,6 @@
 
 @interface GameScene : CCScene
 
++(GraphicManager *) sharedManager;
+
 @end

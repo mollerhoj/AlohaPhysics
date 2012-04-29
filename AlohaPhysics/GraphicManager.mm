@@ -14,23 +14,22 @@
 @interface GraphicManager()
 
 //The sprite batch for all the sprites to be created in
-@property (nonatomic,assign) CCSpriteBatchNode *batch;
-@property (nonatomic,assign) NSMutableSet *labels;
+@property (nonatomic,assign) CCSpriteBatchNode *batch; //Batch holding all sprites
+@property (nonatomic,assign) NSMutableSet *labels; //Array holding all labels
 @end
 
 @implementation GraphicManager
+
+@synthesize batch = _batch;
+@synthesize labels = _labels;
+@synthesize layer = _layer;
 
 #define graphicsTag 1
 
 //The shared Layer
 static GraphicManager *sharedManager;
 
-//Batch holding all sprites
-@synthesize batch = _batch;
-
-//Array holding all labels
-@synthesize labels = _labels;
-
+//Access singleton
 +(GraphicManager*) sharedManager
 {
 	@synchronized(self)     {
@@ -46,13 +45,17 @@ static GraphicManager *sharedManager;
     if (self != nil) {
         //Init sprite batch
         self.batch = [CCSpriteBatchNode batchNodeWithFile:@"sprites.png" capacity:150];
-		[self addChild:self.batch z:0 tag:graphicsTag];
         [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"sprites.plist"];       
         
         //Init array to hold all labels
         self.labels = [[NSMutableSet alloc] init];
     }
     return self;
+}
+
+-(void)setLayer:(CCLayer *)layer {
+    _layer = layer;
+    [self.layer addChild:self.batch z:0 tag:graphicsTag];
 }
 
 //Create a new sprite on this layer with the given Picture, and return it
@@ -88,7 +91,7 @@ static GraphicManager *sharedManager;
 //Create a label in the on this layer and return it
 -(CCLabelTTF*)createText:(NSString*)text {
     CCLabelTTF *label = [CCLabelTTF labelWithString:text fontName:@"Quicksand" fontSize:24];
-    [self addChild:label z:0];
+    [self.layer addChild:label z:0];
     [label setColor:ccc3(0,0,0)];
     [self.labels addObject:label];
     return label;
@@ -96,10 +99,9 @@ static GraphicManager *sharedManager;
 
 //Remove all graphics from this layer
 -(void)removeGraphics {
-    
     //Remove all labels from graphicsLayer
     for (CCLabelTTF* label in self.labels) {
-        [self removeChild:label cleanup:true];
+        [self.layer removeChild:label cleanup:true];
     }
     //Remove all labels from array;
     [self.labels removeAllObjects];
@@ -108,7 +110,6 @@ static GraphicManager *sharedManager;
     [self.batch removeAllChildrenWithCleanup:true];
 }
 
- 
 @end
  
 

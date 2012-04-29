@@ -34,7 +34,9 @@
         //Set the unit of the game
         [Game setUnit:(int)[CCDirector sharedDirector].winSize.width/15];
         
-        NSAssert([CCDirector sharedDirector].winSize.width/15 == [CCDirector sharedDirector].winSize.height/10,@"The ratio between width and height is not right");
+        //Setup soundmanager
+        //Outcommit so that I will not go crazy from the music!
+        [[SoundManager sharedManager] setup];
         
         //Background Layer
         BackgroundLayer *backgroundLayer = [BackgroundLayer node];
@@ -43,21 +45,17 @@
         //Game object
         self.game = [[Game alloc] init];
         
-        GraphicManager* gl = [GraphicManager sharedManager];
-        
+    
         //GraphicsLayer
-        [self addChild:gl z:2];
+        CCLayer* mainLayer = [CCLayer node];
+        [self addChild:mainLayer];
+        [[GraphicManager sharedManager]setLayer:mainLayer];
         
         //Gameplay Layer
         GameLayer *gameLayer = [GameLayer node];
         gameLayer.touchListener = self.game.level;
         gameLayer.stepListener = self.game;
         [self addChild:gameLayer z:5];
-        
-        //Setup soundmanager
-        //Outcommit so that I will not go crazy from the music!
-        [[SoundManager sharedManager] setup];
-        
     }
     return self;
 }

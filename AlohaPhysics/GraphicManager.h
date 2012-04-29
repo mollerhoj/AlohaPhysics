@@ -9,7 +9,7 @@
 #import "CCLayer.h"
 #import "cocos2d.h"
 
-@interface GraphicManager : CCLayer
+@interface GraphicManager : NSObject
 
 enum  {
     HERO,
@@ -20,6 +20,9 @@ typedef Picture;
 
 //The shared GraphicsLayer
 +(GraphicManager *) sharedManager;
+
+//What layer should I draw to?
+@property (nonatomic,assign) CCLayer* layer;
 
 //Create a sprite of one of the pictures defined in the picture array
 -(CCSprite*)createSpriteFromPicture:(Picture)picture;

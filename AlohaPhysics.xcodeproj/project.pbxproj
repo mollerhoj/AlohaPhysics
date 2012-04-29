@@ -23,6 +23,7 @@
 		1D41F30E1545459400F60662 /* sprites.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1D41F30C1545459400F60662 /* sprites.plist */; };
 		1D41F30F1545459400F60662 /* sprites.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D41F30D1545459400F60662 /* sprites.png */; };
 		1D9FFBA0154CEE0400DC0F6E /* GraphicManager.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1D9FFB9F154CEE0300DC0F6E /* GraphicManager.mm */; };
+		1D9FFBA3154D007E00DC0F6E /* GameManager.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1D9FFBA2154D007E00DC0F6E /* GameManager.mm */; };
 		1DD2E07C1544B9B50072CFB3 /* SoundManager.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1DD2E07B1544B9B50072CFB3 /* SoundManager.mm */; };
 		1DD2E0841544E7EE0072CFB3 /* Chill.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1DD2E0831544E7EE0072CFB3 /* Chill.mp3 */; };
 		1DD2E0861544E8820072CFB3 /* Win.wav in Resources */ = {isa = PBXBuildFile; fileRef = 1DD2E0851544E8820072CFB3 /* Win.wav */; };
@@ -216,6 +217,8 @@
 		1D41F30D1545459400F60662 /* sprites.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = sprites.png; path = Resources/sprites.png; sourceTree = "<group>"; };
 		1D9FFB9E154CEB1800DC0F6E /* GraphicManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = GraphicManager.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		1D9FFB9F154CEE0300DC0F6E /* GraphicManager.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = GraphicManager.mm; sourceTree = "<group>"; };
+		1D9FFBA1154D007E00DC0F6E /* GameManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameManager.h; sourceTree = "<group>"; };
+		1D9FFBA2154D007E00DC0F6E /* GameManager.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = GameManager.mm; sourceTree = "<group>"; };
 		1DD2E07A1544B9B40072CFB3 /* SoundManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoundManager.h; sourceTree = "<group>"; };
 		1DD2E07B1544B9B50072CFB3 /* SoundManager.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SoundManager.mm; sourceTree = "<group>"; };
 		1DD2E0831544E7EE0072CFB3 /* Chill.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Chill.mp3; sourceTree = "<group>"; };
@@ -653,7 +656,6 @@
 		1DF8B05A153B919600D9ED4A /* AlohaPhysics */ = {
 			isa = PBXGroup;
 			children = (
-				1D9FFB9F154CEE0300DC0F6E /* GraphicManager.mm */,
 				1DF8B21F153B919900D9ED4A /* AppDelegate.h */,
 				1DF8B220153B919900D9ED4A /* AppDelegate.mm */,
 				1DF8B222153B919900D9ED4A /* RootViewController.h */,
@@ -662,9 +664,12 @@
 				1DF8B226153B919900D9ED4A /* HelloWorldLayer.mm */,
 				1DE2B5FF15438BDB003855DE /* GameScene.h */,
 				1DE2B60015438BDB003855DE /* GameScene.mm */,
+				1D9FFBA1154D007E00DC0F6E /* GameManager.h */,
+				1D9FFBA2154D007E00DC0F6E /* GameManager.mm */,
 				1D054C86153E5F810015BBAD /* GameLayer.h */,
 				1D054C87153E5F810015BBAD /* GameLayer.mm */,
 				1D9FFB9E154CEB1800DC0F6E /* GraphicManager.h */,
+				1D9FFB9F154CEE0300DC0F6E /* GraphicManager.mm */,
 				1D41F3061545183F00F60662 /* Goal.h */,
 				1D41F3071545184000F60662 /* Goal.mm */,
 				1D1BF4D31546856F00A7E036 /* Hero.h */,
@@ -1439,6 +1444,7 @@
 				1D41F3081545184000F60662 /* Goal.mm in Sources */,
 				1D1BF4D51546857000A7E036 /* Hero.mm in Sources */,
 				1D9FFBA0154CEE0400DC0F6E /* GraphicManager.mm in Sources */,
+				1D9FFBA3154D007E00DC0F6E /* GameManager.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
