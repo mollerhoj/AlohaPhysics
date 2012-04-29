@@ -125,9 +125,7 @@
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "47"
-         endingLineNumber = "47"
-         landmarkName = "-init"
-         landmarkType = "5">
+         endingLineNumber = "47">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"
@@ -139,9 +137,7 @@
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "31"
-         endingLineNumber = "31"
-         landmarkName = "-init"
-         landmarkType = "5">
+         endingLineNumber = "31">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"
@@ -149,11 +145,11 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "AlohaPhysics/GameLayer.mm"
-         timestampString = "356853992.737873"
+         timestampString = "357375475.941958"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "22"
-         endingLineNumber = "22"
+         startingLineNumber = "24"
+         endingLineNumber = "24"
          landmarkName = "-setStepListener:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -241,11 +237,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "AlohaPhysics/Hero.mm"
-         timestampString = "356944691.70579"
+         timestampString = "357375475.941958"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "33"
-         endingLineNumber = "33"
+         startingLineNumber = "35"
+         endingLineNumber = "35"
          landmarkName = "-step"
          landmarkType = "5">
       </FileBreakpoint>
@@ -267,11 +263,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "AlohaPhysics/GameManager.mm"
-         timestampString = "357372854.846597"
+         timestampString = "357375475.941958"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "38"
-         endingLineNumber = "38"
+         startingLineNumber = "40"
+         endingLineNumber = "40"
          landmarkName = "-init"
          landmarkType = "5">
       </FileBreakpoint>
@@ -280,11 +276,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "AlohaPhysics/GameManager.mm"
-         timestampString = "357372854.846597"
+         timestampString = "357375475.941958"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "51"
-         endingLineNumber = "51"
+         startingLineNumber = "55"
+         endingLineNumber = "55"
          landmarkName = "-runScene:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -293,11 +289,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "AlohaPhysics/GameManager.mm"
-         timestampString = "357372854.846597"
+         timestampString = "357375475.941958"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "40"
-         endingLineNumber = "40"
+         startingLineNumber = "42"
+         endingLineNumber = "42"
          landmarkName = "-init"
          landmarkType = "5">
       </FileBreakpoint>
@@ -319,11 +315,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "AlohaPhysics/GameManager.mm"
-         timestampString = "357373809.414014"
+         timestampString = "357375475.941958"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "49"
-         endingLineNumber = "49"
+         startingLineNumber = "53"
+         endingLineNumber = "53"
          landmarkName = "-runScene:"
          landmarkType = "5">
       </FileBreakpoint>

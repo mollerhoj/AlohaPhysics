@@ -1450,6 +1450,7 @@
 				1D1BF4D51546857000A7E036 /* Hero.mm in Sources */,
 				1D9FFBA0154CEE0400DC0F6E /* GraphicManager.mm in Sources */,
 				1D9FFBA3154D007E00DC0F6E /* GameManager.mm in Sources */,
+				CAE6A1D9154D0C7300717B29 /* MyContactListener.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
