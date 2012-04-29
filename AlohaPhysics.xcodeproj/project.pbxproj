@@ -188,6 +188,7 @@
 		1DF8B23C153B926900D9ED4A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF8B056153B919600D9ED4A /* Foundation.framework */; };
 		1DF8B242153B926900D9ED4A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1DF8B240153B926900D9ED4A /* InfoPlist.strings */; };
 		1DF8B245153B926900D9ED4A /* AlohaTester.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DF8B244153B926900D9ED4A /* AlohaTester.m */; };
+		CAE6A1D9154D0C7300717B29 /* MyContactListener.mm in Sources */ = {isa = PBXBuildFile; fileRef = CAE6A1D8154D0C7300717B29 /* MyContactListener.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -545,6 +546,8 @@
 		1DF8B243153B926900D9ED4A /* AlohaTester.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AlohaTester.h; sourceTree = "<group>"; };
 		1DF8B244153B926900D9ED4A /* AlohaTester.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AlohaTester.m; sourceTree = "<group>"; };
 		1DF8B246153B926900D9ED4A /* AlohaTester-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AlohaTester-Prefix.pch"; sourceTree = "<group>"; };
+		CAE6A1D7154D0C7300717B29 /* MyContactListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyContactListener.h; sourceTree = "<group>"; };
+		CAE6A1D8154D0C7300717B29 /* MyContactListener.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MyContactListener.mm; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -679,6 +682,8 @@
 				1DF8B21B153B919900D9ED4A /* Supporting Files */,
 				1D054C91154262D30015BBAD /* Game.h */,
 				1D054C92154262D40015BBAD /* Game.mm */,
+				CAE6A1D7154D0C7300717B29 /* MyContactListener.h */,
+				CAE6A1D8154D0C7300717B29 /* MyContactListener.mm */,
 				1D054C94154267A30015BBAD /* Level.h */,
 				1D054C95154267A30015BBAD /* Level.mm */,
 				1D054C97154267B20015BBAD /* LevelBuilder.h */,
@@ -1439,6 +1444,7 @@
 				1DD2E07C1544B9B50072CFB3 /* SoundManager.mm in Sources */,
 				1D41F3081545184000F60662 /* Goal.mm in Sources */,
 				1D1BF4D51546857000A7E036 /* Hero.mm in Sources */,
+				CAE6A1D9154D0C7300717B29 /* MyContactListener.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

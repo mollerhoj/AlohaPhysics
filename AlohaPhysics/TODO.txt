@@ -12,6 +12,10 @@ J Make a level selection menu
 
 J Star animation DONE
 
+End screen
+
+AlohaPhysics intro screen
+
 
 
 BEFORE RELEASE:

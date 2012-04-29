@@ -56,7 +56,7 @@
         
         //Setup soundmanager
         //Outcommit so that I will not go crazy from the music!
-        [[SoundManager sharedManager] setup];
+        //[[SoundManager sharedManager] setup];
         
     }
     return self;
