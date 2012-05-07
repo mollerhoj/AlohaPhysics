@@ -17,7 +17,6 @@
 -(void)heroOutOfFrame;
 -(void)updatePhysicalObjects;
 @property MyContactListener *contactListener;
-@property BOOL heroHit;
 
 @end
 
@@ -32,7 +31,6 @@ static int _unit;
 //@synthesize scene = _scene;
 @synthesize level = _level;
 @synthesize contactListener = _contactListener;
-@synthesize heroHit = _heroHit;
 
 /*
  init game with a level
@@ -43,7 +41,7 @@ static int _unit;
         
         // Create contact listener
         self.contactListener = new MyContactListener();
-        self.level->world->SetContactListener(_contactListener);
+        self.level->world->SetContactListener(self.contactListener);
     }
     
     return self;
@@ -66,22 +64,6 @@ static int _unit;
     [self heroReachedGoal];
     [self heroOutOfFrame];
     [self updatePhysicalObjects];
-    
-    //Check collision of hero with anything else
-    b2Fixture *heroFixture = self.level.hero.physicalBody->GetFixtureList();
-    for(MoveableObject *pObject in self.level.physicalObjects) {
-        std::vector<MyContact>::iterator pos;
-        for(pos = self.contactListener->_contacts.begin(); 
-            pos != self.contactListener->_contacts.end(); ++pos) {
-            MyContact contact = *pos;
-        
-            if ((contact.fixtureA == pObject.physicalBody->GetFixtureList() && contact.fixtureB == heroFixture) ||
-                (contact.fixtureA == heroFixture && contact.fixtureB == pObject.physicalBody->GetFixtureList())) 
-            {
-                NSLog(@"Hero hit another object!");
-            }
-        }
-    }
     
     //TODO: Use a listener and remove this from game loop
     if (self.level.goal.status == IS_GONE) {
