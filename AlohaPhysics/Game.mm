@@ -19,7 +19,6 @@
 -(void)heroOutOfFrame;
 -(void)updatePhysicalObjects;
 @property MyContactListener *contactListener;
-@property BOOL heroHit;
 
 @end
 
@@ -34,7 +33,6 @@ static int _unit;
 //@synthesize scene = _scene;
 @synthesize level = _level;
 @synthesize contactListener = _contactListener;
-@synthesize heroHit = _heroHit;
 
 /*
  init game with a level
@@ -45,7 +43,7 @@ static int _unit;
         
         // Create contact listener
         self.contactListener = new MyContactListener();
-        self.level->world->SetContactListener(_contactListener);
+        self.level->world->SetContactListener(self.contactListener);
     }
     
     return self;

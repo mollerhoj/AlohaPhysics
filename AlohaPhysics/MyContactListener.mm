@@ -6,34 +6,42 @@
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
-#import "MyContactListener.h"
+#include "MyContactListener.h"
 
-MyContactListener::MyContactListener() : _contacts() {
+MyContactListener::MyContactListener() : contacts()
+{
 }
 
-MyContactListener::~MyContactListener() {
+MyContactListener::~MyContactListener()
+{
 }
 
-void MyContactListener::BeginContact(b2Contact* contact) {
-    // We need to copy out the data because the b2Contact passed in
-    // is reused.
-    MyContact myContact = { contact->GetFixtureA(), contact->GetFixtureB() };
-    _contacts.push_back(myContact);
+void MyContactListener::BeginContact(b2Contact* contact)
+{
 }
 
-void MyContactListener::EndContact(b2Contact* contact) {
-    MyContact myContact = { contact->GetFixtureA(), contact->GetFixtureB() };
-    std::vector<MyContact>::iterator pos;
-    pos = std::find(_contacts.begin(), _contacts.end(), myContact);
-    if (pos != _contacts.end()) {
-        _contacts.erase(pos);
+void MyContactListener::EndContact(b2Contact* contact)
+{
+}
+
+void MyContactListener::PreSolve(b2Contact* contact,
+                                 const b2Manifold* oldManifold)
+{
+}
+
+void MyContactListener::PostSolve(b2Contact* contact,
+                                  const b2ContactImpulse* impulse)
+{
+    int32 count = contact->GetManifold()->pointCount;
+    
+    float32 maxImpulse = 0.0f;
+    for (int32 i = 0; i < count; ++i)
+    {
+        maxImpulse = b2Max(maxImpulse, impulse->normalImpulses[i]);
     }
-}
-
-void MyContactListener::PreSolve(b2Contact* contact, 
-                                 const b2Manifold* oldManifold) {
-}
-
-void MyContactListener::PostSolve(b2Contact* contact, 
-                                  const b2ContactImpulse* impulse) {
+    
+    if (maxImpulse > 3.0f)
+    {
+        NSLog(@"Impulse strong enough for hero to sound!");
+    }
 }
