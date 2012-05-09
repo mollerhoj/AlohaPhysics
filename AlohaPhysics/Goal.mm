@@ -22,7 +22,7 @@
 
 @implementation Goal
 
-#define PICTURE GOAL
+#define PICTURE @"Sprite_Goal.png"
 
 @synthesize sprite = _sprite;
 @synthesize status = _status;
@@ -34,7 +34,7 @@
 -(id)init {
     self = [super init];
     if (self != nil) {
-        self.sprite = [[GraphicManager sharedManager] createSpriteFromPicture:PICTURE];
+        self.sprite = [[GraphicManager sharedManager] createSprite:PICTURE];
         self.sprite.scale = 0.5;
         self.animation_dietime = 0;
     }

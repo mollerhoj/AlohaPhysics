@@ -20,7 +20,7 @@
 @synthesize hasAudioBeenInitialized = _hasAudioBeenInitialized;
 @synthesize soundReady = _soundReady;
 
-#define BACKGROUND_MUSIC @"Chill.mp3"
+#define BACKGROUND_MUSIC @"Bouncy Ride.m4a"
 
 #define WIN_SOUND @"Win.wav"
 #define DIE_SOUND @"Die.wav"

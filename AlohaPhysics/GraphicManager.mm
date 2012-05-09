@@ -23,6 +23,7 @@
 @synthesize batch = _batch;
 @synthesize labels = _labels;
 @synthesize layer = _layer;
+@synthesize font = _font;
 
 #define graphicsTag 1
 
@@ -60,27 +61,10 @@ static GraphicManager *sharedManager;
 }
 
 //Create a new sprite on this layer with the given Picture, and return it
--(CCSprite*)createSpriteFromPicture:(Picture)picture {
-    NSString *image;
-    
-    //Defining where each picture is placed on the spritesheet
-    switch (picture) {
-        case HERO:
-            image = @"Sprite_Hero.png";
-            break;
-        case GOAL:
-            image = @"Sprite_Goal.png";
-            break;
-        case BLOCK320x64:
-            image = @"block320x64.png";
-            break;
-        default:
-            NSLog(@"Sprite could not be loaded");
-            break;
-    }
+-(CCSprite*)createSprite:(NSString*)fileName {
     
     //Cut out the sprite
-    CCSprite *sprite = [CCSprite spriteWithSpriteFrameName:image];
+    CCSprite *sprite = [CCSprite spriteWithSpriteFrameName:fileName];
     
     //Put sprite in the layer
     [self.batch addChild:sprite];
@@ -91,7 +75,7 @@ static GraphicManager *sharedManager;
 
 //Create a label in the on this layer and return it
 -(CCLabelTTF*)createText:(NSString*)text {
-    CCLabelTTF *label = [CCLabelTTF labelWithString:text fontName:@"Quicksand" fontSize:24];
+    CCLabelTTF *label = [CCLabelTTF labelWithString:text fontName:self.font fontSize:24];
     [self.layer addChild:label z:0];
     [label setColor:ccc3(0,0,0)];
     [self.labels addObject:label];

@@ -52,6 +52,8 @@ static GameManager* sharedManager;
         //Outcommit so that I will not go crazy from the music!
         [[SoundManager sharedManager] setup];
         
+        [GraphicManager sharedManager].font = @"Quicksand";
+        
         self.gameScene = [GameScene node];
         self.levelSelectScene = [LevelSelectScene node];
     }

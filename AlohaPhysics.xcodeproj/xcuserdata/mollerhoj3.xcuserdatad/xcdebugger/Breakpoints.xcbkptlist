@@ -148,20 +148,6 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          isPathRelative = "1"
-         filePath = "AlohaPhysics/GameLayer.mm"
-         timestampString = "357375475.941958"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "24"
-         endingLineNumber = "24"
-         landmarkName = "-setStepListener:"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         isPathRelative = "1"
          filePath = "AlohaPhysics/GraphicLayer.mm"
          timestampString = "356923809.309309"
          startingColumnNumber = "9223372036854775807"
@@ -267,11 +253,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "AlohaPhysics/GameManager.mm"
-         timestampString = "357726400.011122"
+         timestampString = "358233061.696583"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "55"
-         endingLineNumber = "55"
+         startingLineNumber = "57"
+         endingLineNumber = "57"
          landmarkName = "-init"
          landmarkType = "5">
       </FileBreakpoint>
@@ -280,11 +266,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "AlohaPhysics/GameManager.mm"
-         timestampString = "357726400.011122"
+         timestampString = "358233061.696583"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "57"
-         endingLineNumber = "57"
+         startingLineNumber = "59"
+         endingLineNumber = "59"
          landmarkName = "-init"
          landmarkType = "5">
       </FileBreakpoint>
@@ -293,11 +279,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "AlohaPhysics/GraphicManager.mm"
-         timestampString = "358225256.166781"
+         timestampString = "358233061.696583"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "57"
-         endingLineNumber = "57"
+         startingLineNumber = "58"
+         endingLineNumber = "58"
          landmarkName = "-setLayer:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -306,11 +292,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "AlohaPhysics/GameManager.mm"
-         timestampString = "358221634.529542"
+         timestampString = "358233061.696583"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "84"
-         endingLineNumber = "84"
+         startingLineNumber = "86"
+         endingLineNumber = "86"
          landmarkName = "-runScene:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -345,11 +331,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "AlohaPhysics/GameManager.mm"
-         timestampString = "357726919.163341"
+         timestampString = "358233061.696583"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "62"
-         endingLineNumber = "62"
+         startingLineNumber = "64"
+         endingLineNumber = "64"
          landmarkName = "-startGame"
          landmarkType = "5">
       </FileBreakpoint>
@@ -371,11 +357,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "AlohaPhysics/GameManager.mm"
-         timestampString = "357726978.497295"
+         timestampString = "358233061.696583"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "63"
-         endingLineNumber = "63"
+         startingLineNumber = "65"
+         endingLineNumber = "65"
          landmarkName = "-startGame"
          landmarkType = "5">
       </FileBreakpoint>
@@ -449,11 +435,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "AlohaPhysics/GameManager.mm"
-         timestampString = "358221634.529542"
+         timestampString = "358233061.696583"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "67"
-         endingLineNumber = "67"
+         startingLineNumber = "69"
+         endingLineNumber = "69"
          landmarkName = "-ScenesEnumToScene:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -501,11 +487,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "AlohaPhysics/GraphicManager.mm"
-         timestampString = "358225250.813028"
+         timestampString = "358233061.696583"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "58"
-         endingLineNumber = "58"
+         startingLineNumber = "59"
+         endingLineNumber = "59"
          landmarkName = "-setLayer:"
          landmarkType = "5">
       </FileBreakpoint>

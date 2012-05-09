@@ -66,7 +66,7 @@ static int _unit;
     [self heroReachedGoal];
     [self heroOutOfFrame];
     [self updatePhysicalObjects];
-    
+    /*
     //Check collision of hero with anything else
     b2Fixture *heroFixture = self.level.hero.physicalBody->GetFixtureList();
     for(MoveableObject *pObject in self.level.physicalObjects) {
@@ -81,7 +81,7 @@ static int _unit;
                 //NSLog(@"Hero hit another object!");
             }
         }
-    }
+    }*/
     
     //TODO: Use a listener and remove this from game loop
     if (self.level.goal.status == IS_GONE) {

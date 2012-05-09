@@ -379,8 +379,7 @@
     
     moveableObject.maxTimePlay = maxPlay;
     
-    Picture s = BLOCK320x64;
-    moveableObject.sprite = [[GraphicManager sharedManager] createSpriteFromPicture:s];
+    moveableObject.sprite = [[GraphicManager sharedManager] createSprite:@"block320x64.png"];
 	
     //Create body
     b2Body *body = self.level->world->CreateBody(&bodyDef);
@@ -467,6 +466,7 @@
     hero.y = p.y;
     
     hero.physicalBody = self.level->world->CreateBody(&bodyDef);
+    //b2Body *body = self.level->world->CreateBody(&bodyDef);
 	
 	// Define another circle shape for our dynamic body.
     b2CircleShape dynamicCircle;
@@ -478,6 +478,7 @@
 	fixtureDef.density = 1.0f;
 	fixtureDef.friction = 0.4f;
     fixtureDef.restitution = 0.15f;
+    //body->CreateFixture(&fixtureDef);
     hero.physicalBody->CreateFixture(&fixtureDef);
     
 	self.level.hero = hero;
