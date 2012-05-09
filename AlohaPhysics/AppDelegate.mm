@@ -13,6 +13,9 @@
 #import "GameManager.h"
 #import "RootViewController.h"
 
+#import "GameScene.h"
+#import "LevelSelectScene.h"
+
 @implementation AppDelegate
 
 @synthesize window;

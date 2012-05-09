@@ -380,7 +380,6 @@
     moveableObject.maxTimePlay = maxPlay;
     
     Picture s = BLOCK320x64;
-    
     moveableObject.sprite = [[GraphicManager sharedManager] createSpriteFromPicture:s];
 	
     //Create body

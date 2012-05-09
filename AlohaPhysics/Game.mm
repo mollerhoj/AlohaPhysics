@@ -80,7 +80,7 @@ static int _unit;
             if ((contact.fixtureA == pObject.physicalBody->GetFixtureList() && contact.fixtureB == heroFixture) ||
                 (contact.fixtureA == heroFixture && contact.fixtureB == pObject.physicalBody->GetFixtureList())) 
             {
-                NSLog(@"Hero hit another object!");
+                //NSLog(@"Hero hit another object!");
             }
         }
     }

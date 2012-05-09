@@ -1,30 +1,17 @@
-C Play sound on collision! (Hard)
+C Play sound on collision!
 
 C Make shapes move in game object (mechanic remove)
 
 C check play or reverse in physical objects
 
-C refactor mechanics DONE
-
-J TODO move logic to game objects SOME DONE
-
 J Make a level selection menu
 
-J Star animation DONE
+J Draw documentation
 
-Graphics:
-
-AlohaPhysics intro screen
-
-
+J resize boxes
 
 BEFORE RELEASE:
 
 Load background music DONE
 Do not debug draw
-
-C check play or reverse in physical objects: DONE
-
-C refactor mechanics DONE
-
 C refactor level max time

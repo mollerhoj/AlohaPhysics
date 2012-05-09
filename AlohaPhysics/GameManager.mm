@@ -10,16 +10,23 @@
 
 #import "GameManager.h"
 #import "GameScene.h"
+#import "cocos2d.h"
+#import "Game.h"
+#import "SoundManager.h"
+#import "GraphicManager.h"
+#import "LevelSelectScene.h"
 
 @interface GameManager()
 
 @property (nonatomic, assign) CCScene* gameScene;
+@property (nonatomic, assign) CCScene* levelSelectScene;
 
 @end
 
 @implementation GameManager
 
-@synthesize gameScene;
+@synthesize gameScene = _gameScene;
+@synthesize levelSelectScene = _levelSelectScene;
 
 static GameManager* sharedManager;
 
@@ -37,8 +44,16 @@ static GameManager* sharedManager;
 -(id)init {
     self = [super init];
     if (self != nil) {
-        self.gameScene = [GameScene node];
         
+        //Set the unit of the game
+        [Game setUnit:(int)[CCDirector sharedDirector].winSize.width/15];
+        
+        //Setup soundmanager
+        //Outcommit so that I will not go crazy from the music!
+        [[SoundManager sharedManager] setup];
+        
+        self.gameScene = [GameScene node];
+        self.levelSelectScene = [LevelSelectScene node];
     }
     return self;
 }
@@ -49,16 +64,40 @@ static GameManager* sharedManager;
     [self runScene:GameSceneEnum];
 }
 
-//Run this scene!
--(void)runScene:(Scenes)scene {
+-(CCScene*)ScenesEnumToScene:(Scenes)scene
+{
     switch (scene) {
         case GameSceneEnum:
-            [[CCDirector sharedDirector] runWithScene:self.gameScene];
+            return self.gameScene;
+            break;
+        case LevelSelectSceneEnum:
+            return self.levelSelectScene;
             break;
             
         default:
             break;
     }
+    return nil;
+}
+
+//Run this scene!
+-(void)runScene:(Scenes)scene {
+    [[CCDirector sharedDirector] runWithScene:[self ScenesEnumToScene:scene]];
+}
+
+//Push this scene!
+-(void)pushScene:(Scenes)scene {
+    [[CCDirector sharedDirector] pushScene:[self ScenesEnumToScene:scene]];
+}
+
+//Push this scene!
+-(void)popScene {
+    [[CCDirector sharedDirector] popScene];
+}
+
+//Replace this scene!
+-(void)replaceScene:(Scenes)scene {
+    [[CCDirector sharedDirector] replaceScene:[self ScenesEnumToScene:scene]];
 }
 
 @end

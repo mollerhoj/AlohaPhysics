@@ -20,4 +20,8 @@ typedef enum {
 
 -(void)startGame;
 
+-(void)runScene:(Scenes)scene;
+
+-(void)pushScene:(Scenes)scene;
+
 @end

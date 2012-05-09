@@ -18,48 +18,33 @@
 #import "GraphicManager.h"
 #import "SoundManager.h"
 
-@interface GameScene ()
-@property (nonatomic,assign) Game *game;
-@end
-
 @implementation GameScene
 
-@synthesize game = _game;
+@synthesize mainLayer = _mainLayer;
 
 -(id)init {
     self = [super init];
     if (self != nil) {
-        
-        //Set the unit of the game
-        [Game setUnit:(int)[CCDirector sharedDirector].winSize.width/15];
-        
-        //Setup soundmanager
-        //Outcommit so that I will not go crazy from the music!
-        [[SoundManager sharedManager] setup];
         
         //Background Layer
         BackgroundLayer *backgroundLayer = [BackgroundLayer node];
         [self addChild:backgroundLayer z:0];
         
         //Game object
-        self.game = [[Game alloc] init];
-        
+        Game* game = [[Game alloc] init];
     
         //GraphicsLayer
-        CCLayer* mainLayer = [CCLayer node];
-        [self addChild:mainLayer];
-        [[GraphicManager sharedManager]setLayer:mainLayer];
+        self.mainLayer = [CCLayer node];
+        [self addChild:self.mainLayer];
         
         //Gameplay Layer
         GameLayer *gameLayer = [GameLayer node];
-        gameLayer.touchListener = self.game.level;
-        gameLayer.stepListener = self.game;
+        gameLayer.touchListener = game.level;
+        gameLayer.stepListener = game;
         [self addChild:gameLayer z:5];
         
-        //Setup soundmanager
-        //Outcommit so that I will not go crazy from the music!
-        //[[SoundManager sharedManager] setup];
-        
+        //THIS SHOUD BE PLACED ELSE WHERE: THINK ARCHICTURE
+        [[GraphicManager sharedManager]setLayer:self.mainLayer];
     }
     return self;
 }

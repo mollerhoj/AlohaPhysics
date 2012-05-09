@@ -53,9 +53,10 @@ static GraphicManager *sharedManager;
     return self;
 }
 
+
 -(void)setLayer:(CCLayer *)layer {
     _layer = layer;
-    [self.layer addChild:self.batch z:0 tag:graphicsTag];
+    [_layer addChild:self.batch z:0 tag:graphicsTag];
 }
 
 //Create a new sprite on this layer with the given Picture, and return it
