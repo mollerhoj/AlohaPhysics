@@ -14,7 +14,7 @@
 
 @implementation Hero
 
-#define PICTURE HERO
+//#define PICTURE HERO
 
 @synthesize sprite = _sprite;
 @synthesize x = _x;
@@ -24,7 +24,7 @@
 -(id)init {
     self = [super init];
     if (self != nil) {
-        self.sprite = [[GraphicLayer sharedLayer] createSpriteFromPicture:PICTURE];
+        self.sprite = [[GraphicLayer sharedLayer] createSpriteFromPicture:@"Sprite_Hero.png"];
     }
     return self;
 }

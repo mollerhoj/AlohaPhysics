@@ -24,7 +24,8 @@
                  andMechanicType:(MechanicType) mT 
                  andPlayVelocity:(b2Vec2)play 
                andRewindVelocity:(b2Vec2)rewind 
-                  andMaxTimePlay:(int)maxPlay;
+                  andMaxTimePlay:(int)maxPlay 
+                      withSprite:(NSString*) picture;
 
 -(void)addKinematicPolygonWithCoords:(CGPoint)p 
                     withVertexes:(b2Vec2*)vertexes 
@@ -34,7 +35,8 @@
                      andMechanicType:(MechanicType) mT 
                      andPlayVelocity:(b2Vec2)play 
                    andRewindVelocity:(b2Vec2)rewind 
-                      andMaxTimePlay:(int)maxPlay;
+                      andMaxTimePlay:(int)maxPlay 
+                          withSprite:(NSString*) picture;
 
 -(void)addHeroWithCoords:(CGPoint)p;
 -(void)addGoalWithCoords:(CGPoint)p;

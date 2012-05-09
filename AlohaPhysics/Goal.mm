@@ -18,7 +18,7 @@
 
 @implementation Goal
 
-#define PICTURE GOAL
+//#define PICTURE GOAL
 
 @synthesize sprite = _sprite;
 @synthesize status = _status;
@@ -28,7 +28,7 @@
 -(id)init {
     self = [super init];
     if (self != nil) {
-        self.sprite = [[GraphicLayer sharedLayer] createSpriteFromPicture:PICTURE];
+        self.sprite = [[GraphicLayer sharedLayer] createSpriteFromPicture:@"Sprite_Goal.png"];
     }
     return self;
 }

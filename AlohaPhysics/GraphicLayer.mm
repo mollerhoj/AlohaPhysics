@@ -56,24 +56,11 @@ static GraphicLayer *sharedLayer;
 }
 
 //Create a new sprite on this layer with the given Picture, and return it
--(CCSprite*)createSpriteFromPicture:(Picture)picture {
+-(CCSprite*)createSpriteFromPicture:(NSString*)picture 
+{
     NSString *image;
     
-    //Defining where each picture is placed on the spritesheet
-    switch (picture) {
-        case HERO:
-            image = @"Sprite_Hero.png";
-            break;
-        case GOAL:
-            image = @"Sprite_Goal.png";
-            break;
-        case BLOCK320x64:
-            image = @"block320x64.png";
-            
-        default:
-            NSLog(@"Sprite could not be loaded");
-            break;
-    }
+    image = picture;
     
     //Cut out the sprite
     CCSprite *sprite = [CCSprite spriteWithSpriteFrameName:image];
