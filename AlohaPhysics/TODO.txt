@@ -1,7 +1,3 @@
-BEFORE PROJECT FINAL:
-
-C Play sound on collision! (Hard)
-
 C Make shapes move in game object (mechanic remove)
 
 C check play or reverse in physical objects
