@@ -1,8 +1,8 @@
 //
-//  GameScene.h
+//  LevelSelectScene.h
 //  AlohaPhysics
 //
-//  Created by Jens Møllerhøj on 21/04/2012.
+//  Created by Jens Møllerhøj on 02/05/2012.
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
@@ -10,7 +10,7 @@
 #import "cocos2d.h"
 #import "GraphicManager.h"
 
-@interface GameScene : CCScene
+@interface LevelSelectScene : CCScene
 
 @property (assign,nonatomic) CCLayer* mainLayer;
 

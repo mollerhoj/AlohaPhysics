@@ -6,15 +6,15 @@
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
+// The hero (main character, player) of the game, also a physical object (A ball).
+
 #import "Hero.h"
-#import "GraphicLayer.h"
+#import "GraphicManager.h"
 #import "cocos2d.h"
 #import "Box2D.h"
 #import "Game.h"
 
 @implementation Hero
-
-//#define PICTURE HERO
 
 @synthesize sprite = _sprite;
 @synthesize x = _x;
@@ -24,7 +24,7 @@
 -(id)init {
     self = [super init];
     if (self != nil) {
-        self.sprite = [[GraphicLayer sharedLayer] createSpriteFromPicture:@"Sprite_Hero.png"];
+        self.sprite = [[GraphicManager sharedManager] createSpriteFromPicture:@"Sprite_Hero.png"];
     }
     return self;
 }

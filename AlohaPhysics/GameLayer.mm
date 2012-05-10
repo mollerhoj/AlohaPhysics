@@ -6,6 +6,8 @@
 //  Copyright 2012 __MyCompanyName__. All rights reserved.
 //
 
+// A layer that combines touch detection, stepping (ticking), and debug drawing.
+
 #import "GameLayer.h"
 #import "Game.h"
 #import "MoveableObject.h"
@@ -80,7 +82,8 @@
         glDisableClientState(GL_COLOR_ARRAY);
         glDisableClientState(GL_TEXTURE_COORD_ARRAY);
 
-            self.stepListener.level->world->DrawDebugData();
+            
+        //self.stepListener.level->world->DrawDebugData();
 
         // restore default GL states
         glEnable(GL_TEXTURE_2D);

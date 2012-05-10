@@ -1,43 +1,42 @@
 //
-//  GraphicLayer.m
+//  GraphicManager.m
 //  AlohaPhysics
 //
 //  Created by Jens Møllerhøj on 21/04/2012.
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
+// Managing sprites and labels on the current main layer. (The main layer is defined as the layer that all objects draw to)
 
-
-#import "GraphicLayer.h"
+#import "GraphicManager.h"
 #import "Game.h"
 
-@interface GraphicLayer()
+@interface GraphicManager()
 
 //The sprite batch for all the sprites to be created in
-@property (nonatomic,assign) CCSpriteBatchNode *batch;
-@property (nonatomic,assign) NSMutableSet *labels;
+@property (nonatomic,assign) CCSpriteBatchNode *batch; //Batch holding all sprites
+@property (nonatomic,assign) NSMutableSet *labels; //Array holding all labels
 @end
 
-@implementation GraphicLayer
+@implementation GraphicManager
+
+@synthesize batch = _batch;
+@synthesize labels = _labels;
+@synthesize layer = _layer;
 
 #define graphicsTag 1
 
 //The shared Layer
-static GraphicLayer *sharedLayer;
+static GraphicManager *sharedManager;
 
-//Batch holding all sprites
-@synthesize batch = _batch;
-
-//Array holding all labels
-@synthesize labels = _labels;
-
-+(GraphicLayer*) sharedLayer
+//Access singleton
++(GraphicManager*) sharedManager
 {
 	@synchronized(self)     {
-		if (!sharedLayer)
-			sharedLayer = [[GraphicLayer alloc] init];
+		if (!sharedManager)
+			sharedManager = [[GraphicManager alloc] init];
 	}
-	return sharedLayer;
+	return sharedManager;
 }
 
 //Init loads images from the big file.
@@ -46,13 +45,18 @@ static GraphicLayer *sharedLayer;
     if (self != nil) {
         //Init sprite batch
         self.batch = [CCSpriteBatchNode batchNodeWithFile:@"sprites.png" capacity:150];
-		[self addChild:self.batch z:0 tag:graphicsTag];
         [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"sprites.plist"];       
         
         //Init array to hold all labels
         self.labels = [[NSMutableSet alloc] init];
     }
     return self;
+}
+
+
+-(void)setLayer:(CCLayer *)layer {
+    _layer = layer;
+    [_layer addChild:self.batch z:0 tag:graphicsTag];
 }
 
 //Create a new sprite on this layer with the given Picture, and return it
@@ -75,7 +79,7 @@ static GraphicLayer *sharedLayer;
 //Create a label in the on this layer and return it
 -(CCLabelTTF*)createText:(NSString*)text {
     CCLabelTTF *label = [CCLabelTTF labelWithString:text fontName:@"Quicksand" fontSize:24];
-    [self addChild:label z:0];
+    [self.layer addChild:label z:0];
     [label setColor:ccc3(0,0,0)];
     [self.labels addObject:label];
     return label;
@@ -83,10 +87,9 @@ static GraphicLayer *sharedLayer;
 
 //Remove all graphics from this layer
 -(void)removeGraphics {
-    
     //Remove all labels from graphicsLayer
     for (CCLabelTTF* label in self.labels) {
-        [self removeChild:label cleanup:true];
+        [self.layer removeChild:label cleanup:true];
     }
     //Remove all labels from array;
     [self.labels removeAllObjects];
@@ -95,7 +98,6 @@ static GraphicLayer *sharedLayer;
     [self.batch removeAllChildrenWithCleanup:true];
 }
 
- 
 @end
  
 

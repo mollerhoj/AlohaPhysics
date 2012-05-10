@@ -15,8 +15,6 @@
     
 +(SoundManager*) sharedManager;
 
--(void)testAudio;
-
 -(void)setup;
 
 enum {

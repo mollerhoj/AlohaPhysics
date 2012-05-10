@@ -9,7 +9,7 @@
 #import "cocos2d.h"
 #import "Box2D.h"
 #import <Foundation/Foundation.h>
-#import "GraphicLayer.h"
+#import "GraphicManager.h"
 #import "Goal.h"
 #import "Hero.h"
 
@@ -20,7 +20,6 @@
 
 @property (nonatomic,assign) Hero *hero;
 @property (nonatomic,assign) Goal *goal;
-@property (nonatomic,assign) GraphicLayer *graphicLayer;
 @property (nonatomic,assign) NSMutableArray *physicalObjects;
 
 @property (nonatomic, assign) double maxTime;

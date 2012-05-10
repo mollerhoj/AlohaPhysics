@@ -6,6 +6,8 @@
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
+// Managing sounds and music, loads the music in a different thread
+
 #import "SoundManager.h"
 
 @interface SoundManager()

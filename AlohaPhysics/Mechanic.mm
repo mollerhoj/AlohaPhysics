@@ -6,6 +6,8 @@
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
+// A Game mechanic, (moves/flips a brick)
+
 #import "Mechanic.h"
 #import "Box2D.h"
 

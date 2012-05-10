@@ -1,5 +1,5 @@
 //
-//  GraphicLayer.h
+//  GraphicManager.h
 //  AlohaPhysics
 //
 //  Created by Jens Møllerhøj on 21/04/2012.
@@ -9,7 +9,7 @@
 #import "CCLayer.h"
 #import "cocos2d.h"
 
-@interface GraphicLayer : CCLayer
+@interface GraphicManager : NSObject
 
 enum  {
     HERO,
@@ -19,7 +19,10 @@ enum  {
 typedef Picture;
 
 //The shared GraphicsLayer
-+(GraphicLayer*) sharedLayer;
++(GraphicManager *) sharedManager;
+
+//What layer should I draw to?
+@property (nonatomic,assign) CCLayer* layer;
 
 //Create a sprite of one of the pictures defined in the picture array
 -(CCSprite*)createSpriteFromPicture:(NSString*)picture;
