@@ -13,6 +13,7 @@
 #import "Game.h"
 #import "Graphicmanager.h"
 #import "SoundManager.h"
+#import "GameManager.h"
 
 @interface Level ()
 @property (nonatomic,assign) LevelBuilder *levelBuilder;
@@ -20,6 +21,8 @@
 @end
 
 @implementation Level
+
+#define NUMBER_OF_LEVELS 10
 
 @synthesize levelBuilder = _levelBuilder;
 @synthesize currentLevel = _currentLevel;
@@ -86,7 +89,12 @@
 {
     [self destroyLevel];
     self.currentLevel++;
-    [self.levelBuilder buildLevel:self.currentLevel];
+    
+    if (self.currentLevel < NUMBER_OF_LEVELS) {
+        [self.levelBuilder buildLevel:self.currentLevel];
+    }else{
+        [[GameManager sharedManager] replaceScene:EndSceneEnum];
+    }
 }
 
 /*

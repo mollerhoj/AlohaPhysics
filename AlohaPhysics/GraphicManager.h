@@ -11,18 +11,14 @@
 
 @interface GraphicManager : NSObject
 
-enum  {
-    HERO,
-    GOAL,
-    BLOCK320x64
-}
-typedef Picture;
-
 //The shared GraphicsLayer
 +(GraphicManager *) sharedManager;
 
-//What layer should I draw to?
+//Layer
 @property (nonatomic,assign) CCLayer* layer;
+
+//What font should I use?
+@property (nonatomic,assign) NSString* font;
 
 //Create a sprite of one of the pictures defined in the picture array
 -(CCSprite*)createSpriteFromPicture:(NSString*)picture;

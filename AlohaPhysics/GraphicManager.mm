@@ -23,6 +23,7 @@
 @synthesize batch = _batch;
 @synthesize labels = _labels;
 @synthesize layer = _layer;
+@synthesize font = _font;
 
 #define graphicsTag 1
 
@@ -43,8 +44,9 @@ static GraphicManager *sharedManager;
 -(id)init {
     self = [super init];
     if (self != nil) {
-        //Init sprite batch
+        //Set the batch to the batch of sprites.
         self.batch = [CCSpriteBatchNode batchNodeWithFile:@"sprites.png" capacity:150];
+        //Put all sprites in shared Cache
         [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"sprites.plist"];       
         
         //Init array to hold all labels
@@ -53,10 +55,24 @@ static GraphicManager *sharedManager;
     return self;
 }
 
-
+//Setting a layer automatically makes sprites from the sprite.png ready.
+//This is not very scalable, but makes the code easier for small games.
 -(void)setLayer:(CCLayer *)layer {
+    
+    //Set the layer
     _layer = layer;
-    [_layer addChild:self.batch z:0 tag:graphicsTag];
+    
+    //Remove all sprites from cache
+    [[CCSpriteFrameCache sharedSpriteFrameCache] removeSpriteFrames];
+    
+    //Set the batch to the batch of sprites. Must be a new batch, which is why sprites are reloaded everytime sceens are switched
+    self.batch = [CCSpriteBatchNode batchNodeWithFile:@"sprites.png" capacity:150];
+    
+    //Put all sprites in shared Cache
+    [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"sprites.plist"];    
+    
+    //Add the batch to the new layer
+    [self.layer addChild:self.batch z:0 tag:graphicsTag];
 }
 
 //Create a new sprite on this layer with the given Picture, and return it
@@ -66,8 +82,8 @@ static GraphicManager *sharedManager;
     
     image = picture;
     
-    //Cut out the sprite
-    CCSprite *sprite = [CCSprite spriteWithSpriteFrameName:image];
+    //Get the sprite from the frame
+    CCSprite *sprite = [CCSprite spriteWithSpriteFrameName:fileName];
     
     //Put sprite in the layer
     [self.batch addChild:sprite];
@@ -78,7 +94,7 @@ static GraphicManager *sharedManager;
 
 //Create a label in the on this layer and return it
 -(CCLabelTTF*)createText:(NSString*)text {
-    CCLabelTTF *label = [CCLabelTTF labelWithString:text fontName:@"Quicksand" fontSize:24];
+    CCLabelTTF *label = [CCLabelTTF labelWithString:text fontName:self.font fontSize:24];
     [self.layer addChild:label z:0];
     [label setColor:ccc3(0,0,0)];
     [self.labels addObject:label];

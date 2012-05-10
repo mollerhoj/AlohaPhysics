@@ -15,18 +15,10 @@
 #import "SoundManager.h"
 #import "GraphicManager.h"
 #import "LevelSelectScene.h"
-
-@interface GameManager()
-
-@property (nonatomic, assign) CCScene* gameScene;
-@property (nonatomic, assign) CCScene* levelSelectScene;
-
-@end
+#import "StartScene.h"
+#import "EndScene.h"
 
 @implementation GameManager
-
-@synthesize gameScene = _gameScene;
-@synthesize levelSelectScene = _levelSelectScene;
 
 static GameManager* sharedManager;
 
@@ -52,8 +44,8 @@ static GameManager* sharedManager;
         //Outcommit so that I will not go crazy from the music!
         [[SoundManager sharedManager] setup];
         
-        self.gameScene = [GameScene node];
-        self.levelSelectScene = [LevelSelectScene node];
+        //Set the default font
+        [GraphicManager sharedManager].font = @"Quicksand";
     }
     return self;
 }
@@ -61,19 +53,21 @@ static GameManager* sharedManager;
 //Start the game
 -(void)startGame {
     //Run the first scene of the game
-    [self runScene:GameSceneEnum];
+
+    [self runScene:StartScreenSceneEnum];
 }
 
 -(CCScene*)ScenesEnumToScene:(Scenes)scene
 {
     switch (scene) {
         case GameSceneEnum:
-            return self.gameScene;
+            return [GameScene node];
             break;
-        case LevelSelectSceneEnum:
-            return self.levelSelectScene;
+        case StartScreenSceneEnum:
+            return [StartScene node];
             break;
-            
+        case EndSceneEnum:
+            return [EndScene node];
         default:
             break;
     }

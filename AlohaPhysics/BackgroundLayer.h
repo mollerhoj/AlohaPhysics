@@ -11,4 +11,6 @@
 
 @interface BackgroundLayer : CCLayer
 
+@property (nonatomic,assign) NSString* image;
+
 @end
