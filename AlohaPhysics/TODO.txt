@@ -6,12 +6,27 @@ C check play or reverse in physical objects
 
 J Make a level selection menu
 
-J Draw documentation
-
 J resize boxes
+
+J Make levelbuilder load from json.
+
+A gameObject class that all visible gameplay objects inherits from
+It’s step function moves the sprite. 
+
+Let Game be the gameLayer, (in charge of the ticking, and creation of levels)
+
+Split gameLayer into more objects with different functionality
+
+Setup a test envirement.
+
+Many enums should be replaced with plists
+Soundmanager genetic with plist instead of enum
+
+Refactoring: Logic from game loop to game objects.
+
 
 BEFORE RELEASE:
 
-Load background music DONE
+Load background music
 Do not debug draw
 C refactor level max time

@@ -664,15 +664,6 @@
 			name = Model;
 			sourceTree = "<group>";
 		};
-		1D670467155B660800E416BF /* Control */ = {
-			isa = PBXGroup;
-			children = (
-				1DE2B5FF15438BDB003855DE /* GameScene.h */,
-				1DE2B60015438BDB003855DE /* GameScene.mm */,
-			);
-			name = Control;
-			sourceTree = "<group>";
-		};
 		1D670474155B7D9500E416BF /* Utils */ = {
 			isa = PBXGroup;
 			children = (
@@ -700,6 +691,8 @@
 		1D670476155B7E9500E416BF /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				1DE2B5FF15438BDB003855DE /* GameScene.h */,
+				1DE2B60015438BDB003855DE /* GameScene.mm */,
 				1D054C86153E5F810015BBAD /* GameLayer.h */,
 				1D054C87153E5F810015BBAD /* GameLayer.mm */,
 				1DAF505D15527930000B6EFC /* LevelSelectLayer.h */,
@@ -767,12 +760,11 @@
 				1D670476155B7E9500E416BF /* Scenes */,
 				1D670475155B7DE500E416BF /* Managers */,
 				1D670474155B7D9500E416BF /* Utils */,
-				1D670467155B660800E416BF /* Control */,
 				1D670466155B65F100E416BF /* Model */,
 				1D670465155B65CE00E416BF /* Engine */,
 				1DE2B5FA15438971003855DE /* BackgroundLayer.h */,
-				1DF8B06F153B919600D9ED4A /* libs */,
 				1DE2B5FB15438971003855DE /* BackgroundLayer.mm */,
+				1DF8B06F153B919600D9ED4A /* libs */,
 				1DF8B05B153B919600D9ED4A /* Resources */,
 				1DF8B21B153B919900D9ED4A /* Supporting Files */,
 				CAE6A1D7154D0C7300717B29 /* MyContactListener.h */,
