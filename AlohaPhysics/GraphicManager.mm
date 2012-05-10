@@ -76,11 +76,8 @@ static GraphicManager *sharedManager;
 }
 
 //Create a new sprite on this layer with the given Picture, and return it
--(CCSprite*)createSpriteFromPicture:(NSString*)picture 
-{
-    NSString *image;
+-(CCSprite*)createSprite:(NSString*)fileName {
     
-    image = picture;
     
     //Get the sprite from the frame
     CCSprite *sprite = [CCSprite spriteWithSpriteFrameName:fileName];

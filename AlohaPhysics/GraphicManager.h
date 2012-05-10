@@ -21,7 +21,7 @@
 @property (nonatomic,assign) NSString* font;
 
 //Create a sprite of one of the pictures defined in the picture array
--(CCSprite*)createSpriteFromPicture:(NSString*)picture;
+-(CCSprite*)createSprite:(NSString*)fileName;
 
 //Create a text label
 -(CCLabelTTF*)createText:(NSString*)text;

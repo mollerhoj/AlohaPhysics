@@ -22,6 +22,8 @@
 
 @implementation Goal
 
+#define PICTURE @"Sprite_Goal.png"
+
 @synthesize sprite = _sprite;
 @synthesize status = _status;
 @synthesize x = _x;
