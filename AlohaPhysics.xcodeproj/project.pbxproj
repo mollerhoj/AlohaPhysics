@@ -27,6 +27,7 @@
 		1D670460155A358E00E416BF /* StartScreenLayer.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1D67045F155A358D00E416BF /* StartScreenLayer.mm */; };
 		1D670461155A358E00E416BF /* StartScreenLayer.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1D67045F155A358D00E416BF /* StartScreenLayer.mm */; };
 		1D670464155B658D00E416BF /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D670463155B658C00E416BF /* Utils.m */; };
+		1D67046A155B6A6B00E416BF /* EndScene.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1D670469155B6A6900E416BF /* EndScene.mm */; };
 		1D9FFBA0154CEE0400DC0F6E /* GraphicManager.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1D9FFB9F154CEE0300DC0F6E /* GraphicManager.mm */; };
 		1D9FFBA3154D007E00DC0F6E /* GameManager.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1D9FFBA2154D007E00DC0F6E /* GameManager.mm */; };
 		1DAF5057155275FD000B6EFC /* LevelSelectScene.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1DAF5056155275FD000B6EFC /* LevelSelectScene.mm */; };
@@ -227,6 +228,8 @@
 		1D67045F155A358D00E416BF /* StartScreenLayer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = StartScreenLayer.mm; sourceTree = "<group>"; };
 		1D670462155B658B00E416BF /* Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utils.h; sourceTree = "<group>"; };
 		1D670463155B658C00E416BF /* Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utils.m; sourceTree = "<group>"; };
+		1D670468155B6A6700E416BF /* EndScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EndScene.h; sourceTree = "<group>"; };
+		1D670469155B6A6900E416BF /* EndScene.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = EndScene.mm; sourceTree = "<group>"; };
 		1D9FFB9E154CEB1800DC0F6E /* GraphicManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = GraphicManager.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		1D9FFB9F154CEE0300DC0F6E /* GraphicManager.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = GraphicManager.mm; sourceTree = "<group>"; };
 		1D9FFBA1154D007E00DC0F6E /* GameManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameManager.h; sourceTree = "<group>"; };
@@ -715,6 +718,8 @@
 				1DAF505E15527930000B6EFC /* LevelSelectLayer.mm */,
 				1D67045E155A358C00E416BF /* StartScreenLayer.h */,
 				1D67045F155A358D00E416BF /* StartScreenLayer.mm */,
+				1D670468155B6A6700E416BF /* EndScene.h */,
+				1D670469155B6A6900E416BF /* EndScene.mm */,
 				1D9FFBA1154D007E00DC0F6E /* GameManager.h */,
 				1D9FFBA2154D007E00DC0F6E /* GameManager.mm */,
 				1D054C86153E5F810015BBAD /* GameLayer.h */,
@@ -1502,6 +1507,7 @@
 				1DAF505F15527930000B6EFC /* LevelSelectLayer.mm in Sources */,
 				1D670460155A358E00E416BF /* StartScreenLayer.mm in Sources */,
 				1D670464155B658D00E416BF /* Utils.m in Sources */,
+				1D67046A155B6A6B00E416BF /* EndScene.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

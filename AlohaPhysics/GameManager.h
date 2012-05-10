@@ -14,6 +14,7 @@
 typedef enum {
     StartScreenSceneEnum,
     GameSceneEnum,
+    EndSceneEnum,
     LevelSelectSceneEnum
 } Scenes;
 
@@ -24,5 +25,9 @@ typedef enum {
 -(void)runScene:(Scenes)scene;
 
 -(void)pushScene:(Scenes)scene;
+
+-(void)popScene;
+
+-(void)replaceScene:(Scenes)scene;
 
 @end
