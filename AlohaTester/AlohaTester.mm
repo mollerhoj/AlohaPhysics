@@ -7,6 +7,8 @@
 //
 
 #import "AlohaTester.h"
+#import <Foundation/Foundation.h>
+#import "cocos2d.h"
 
 // A simple test class
 
@@ -29,6 +31,9 @@
 - (void)testExample
 {
     STFail(@"Unit tests are not implemented yet in AlohaTester");
+    
+    
+    
 }
 
 @end
