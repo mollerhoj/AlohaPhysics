@@ -15,6 +15,7 @@
 #import "SoundManager.h"
 #import "GraphicManager.h"
 #import "LevelSelectScene.h"
+#import "StartScreenLayer.h"
 
 @interface GameManager()
 
@@ -54,7 +55,7 @@ static GameManager* sharedManager;
         
         [GraphicManager sharedManager].font = @"Quicksand";
         
-        self.gameScene = [GameScene node];
+        //self.gameScene = [GameScene node];
         self.levelSelectScene = [LevelSelectScene node];
     }
     return self;
@@ -63,7 +64,8 @@ static GameManager* sharedManager;
 //Start the game
 -(void)startGame {
     //Run the first scene of the game
-    [self runScene:GameSceneEnum];
+
+    [self runScene:StartScreenSceneEnum];
 }
 
 -(CCScene*)ScenesEnumToScene:(Scenes)scene
@@ -75,7 +77,9 @@ static GameManager* sharedManager;
         case LevelSelectSceneEnum:
             return self.levelSelectScene;
             break;
-            
+        case StartScreenSceneEnum:
+            return [StartScreenLayer scene];
+            break;
         default:
             break;
     }

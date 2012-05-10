@@ -14,7 +14,7 @@
 //The shared GraphicsLayer
 +(GraphicManager *) sharedManager;
 
-//What layer should I draw to?
+//Layer
 @property (nonatomic,assign) CCLayer* layer;
 
 //What font should I use?

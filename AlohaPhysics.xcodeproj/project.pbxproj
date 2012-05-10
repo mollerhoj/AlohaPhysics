@@ -24,10 +24,13 @@
 		1D41F30F1545459400F60662 /* sprites.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D41F30D1545459400F60662 /* sprites.png */; };
 		1D67045C155A348D00E416BF /* Bouncy Ride.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 1D67045B155A348D00E416BF /* Bouncy Ride.m4a */; };
 		1D67045D155A348D00E416BF /* Bouncy Ride.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 1D67045B155A348D00E416BF /* Bouncy Ride.m4a */; };
+		1D670460155A358E00E416BF /* StartScreenLayer.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1D67045F155A358D00E416BF /* StartScreenLayer.mm */; };
+		1D670461155A358E00E416BF /* StartScreenLayer.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1D67045F155A358D00E416BF /* StartScreenLayer.mm */; };
+		1D670464155B658D00E416BF /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D670463155B658C00E416BF /* Utils.m */; };
 		1D9FFBA0154CEE0400DC0F6E /* GraphicManager.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1D9FFB9F154CEE0300DC0F6E /* GraphicManager.mm */; };
 		1D9FFBA3154D007E00DC0F6E /* GameManager.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1D9FFBA2154D007E00DC0F6E /* GameManager.mm */; };
 		1DAF5057155275FD000B6EFC /* LevelSelectScene.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1DAF5056155275FD000B6EFC /* LevelSelectScene.mm */; };
-		1DAF505F15527930000B6EFC /* LevelSelectLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DAF505E15527930000B6EFC /* LevelSelectLayer.m */; };
+		1DAF505F15527930000B6EFC /* LevelSelectLayer.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1DAF505E15527930000B6EFC /* LevelSelectLayer.mm */; };
 		1DD2E07C1544B9B50072CFB3 /* SoundManager.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1DD2E07B1544B9B50072CFB3 /* SoundManager.mm */; };
 		1DD2E0841544E7EE0072CFB3 /* Chill.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1DD2E0831544E7EE0072CFB3 /* Chill.mp3 */; };
 		1DD2E0861544E8820072CFB3 /* Win.wav in Resources */ = {isa = PBXBuildFile; fileRef = 1DD2E0851544E8820072CFB3 /* Win.wav */; };
@@ -220,6 +223,10 @@
 		1D41F30C1545459400F60662 /* sprites.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = sprites.plist; path = Resources/sprites.plist; sourceTree = "<group>"; };
 		1D41F30D1545459400F60662 /* sprites.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = sprites.png; path = Resources/sprites.png; sourceTree = "<group>"; };
 		1D67045B155A348D00E416BF /* Bouncy Ride.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Bouncy Ride.m4a"; sourceTree = "<group>"; };
+		1D67045E155A358C00E416BF /* StartScreenLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StartScreenLayer.h; sourceTree = "<group>"; };
+		1D67045F155A358D00E416BF /* StartScreenLayer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = StartScreenLayer.mm; sourceTree = "<group>"; };
+		1D670462155B658B00E416BF /* Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utils.h; sourceTree = "<group>"; };
+		1D670463155B658C00E416BF /* Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utils.m; sourceTree = "<group>"; };
 		1D9FFB9E154CEB1800DC0F6E /* GraphicManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = GraphicManager.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		1D9FFB9F154CEE0300DC0F6E /* GraphicManager.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = GraphicManager.mm; sourceTree = "<group>"; };
 		1D9FFBA1154D007E00DC0F6E /* GameManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameManager.h; sourceTree = "<group>"; };
@@ -227,7 +234,7 @@
 		1DAF5055155275FD000B6EFC /* LevelSelectScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LevelSelectScene.h; sourceTree = "<group>"; };
 		1DAF5056155275FD000B6EFC /* LevelSelectScene.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = LevelSelectScene.mm; sourceTree = "<group>"; };
 		1DAF505D15527930000B6EFC /* LevelSelectLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LevelSelectLayer.h; sourceTree = "<group>"; };
-		1DAF505E15527930000B6EFC /* LevelSelectLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LevelSelectLayer.m; sourceTree = "<group>"; };
+		1DAF505E15527930000B6EFC /* LevelSelectLayer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = LevelSelectLayer.mm; sourceTree = "<group>"; };
 		1DD2E07A1544B9B40072CFB3 /* SoundManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoundManager.h; sourceTree = "<group>"; };
 		1DD2E07B1544B9B50072CFB3 /* SoundManager.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SoundManager.mm; sourceTree = "<group>"; };
 		1DD2E0831544E7EE0072CFB3 /* Chill.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Chill.mp3; sourceTree = "<group>"; };
@@ -620,6 +627,31 @@
 			name = Fonts;
 			sourceTree = "<group>";
 		};
+		1D670465155B65CE00E416BF /* Engine */ = {
+			isa = PBXGroup;
+			children = (
+				1DF8B21F153B919900D9ED4A /* AppDelegate.h */,
+				1DF8B220153B919900D9ED4A /* AppDelegate.mm */,
+				1DF8B222153B919900D9ED4A /* RootViewController.h */,
+				1DF8B223153B919900D9ED4A /* RootViewController.m */,
+			);
+			name = Engine;
+			sourceTree = "<group>";
+		};
+		1D670466155B65F100E416BF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		1D670467155B660800E416BF /* Control */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Control;
+			sourceTree = "<group>";
+		};
 		1DD2E07E1544BC300072CFB3 /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
@@ -670,10 +702,9 @@
 		1DF8B05A153B919600D9ED4A /* AlohaPhysics */ = {
 			isa = PBXGroup;
 			children = (
-				1DF8B21F153B919900D9ED4A /* AppDelegate.h */,
-				1DF8B220153B919900D9ED4A /* AppDelegate.mm */,
-				1DF8B222153B919900D9ED4A /* RootViewController.h */,
-				1DF8B223153B919900D9ED4A /* RootViewController.m */,
+				1D670467155B660800E416BF /* Control */,
+				1D670466155B65F100E416BF /* Model */,
+				1D670465155B65CE00E416BF /* Engine */,
 				1DF8B225153B919900D9ED4A /* HelloWorldLayer.h */,
 				1DF8B226153B919900D9ED4A /* HelloWorldLayer.mm */,
 				1DE2B5FF15438BDB003855DE /* GameScene.h */,
@@ -681,7 +712,9 @@
 				1DAF5055155275FD000B6EFC /* LevelSelectScene.h */,
 				1DAF5056155275FD000B6EFC /* LevelSelectScene.mm */,
 				1DAF505D15527930000B6EFC /* LevelSelectLayer.h */,
-				1DAF505E15527930000B6EFC /* LevelSelectLayer.m */,
+				1DAF505E15527930000B6EFC /* LevelSelectLayer.mm */,
+				1D67045E155A358C00E416BF /* StartScreenLayer.h */,
+				1D67045F155A358D00E416BF /* StartScreenLayer.mm */,
 				1D9FFBA1154D007E00DC0F6E /* GameManager.h */,
 				1D9FFBA2154D007E00DC0F6E /* GameManager.mm */,
 				1D054C86153E5F810015BBAD /* GameLayer.h */,
@@ -694,6 +727,8 @@
 				1D1BF4D41546856F00A7E036 /* Hero.mm */,
 				1DE2B5FA15438971003855DE /* BackgroundLayer.h */,
 				1DE2B5FB15438971003855DE /* BackgroundLayer.mm */,
+				1D670462155B658B00E416BF /* Utils.h */,
+				1D670463155B658C00E416BF /* Utils.m */,
 				1DF8B228153B919900D9ED4A /* GLES-Render.h */,
 				1DF8B229153B919900D9ED4A /* GLES-Render.mm */,
 				1DF8B22B153B919900D9ED4A /* GameConfig.h */,
@@ -1464,7 +1499,9 @@
 				1D9FFBA3154D007E00DC0F6E /* GameManager.mm in Sources */,
 				CAE6A1D9154D0C7300717B29 /* MyContactListener.mm in Sources */,
 				1DAF5057155275FD000B6EFC /* LevelSelectScene.mm in Sources */,
-				1DAF505F15527930000B6EFC /* LevelSelectLayer.m in Sources */,
+				1DAF505F15527930000B6EFC /* LevelSelectLayer.mm in Sources */,
+				1D670460155A358E00E416BF /* StartScreenLayer.mm in Sources */,
+				1D670464155B658D00E416BF /* Utils.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1473,6 +1510,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1DF8B245153B926900D9ED4A /* AlohaTester.mm in Sources */,
+				1D670461155A358E00E416BF /* StartScreenLayer.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

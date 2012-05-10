@@ -30,21 +30,19 @@
         BackgroundLayer *backgroundLayer = [BackgroundLayer node];
         [self addChild:backgroundLayer z:0];
         
-        //Game object
-        Game* game = [[Game alloc] init];
-    
         //GraphicsLayer
         self.mainLayer = [CCLayer node];
         [self addChild:self.mainLayer];
+        [GraphicManager sharedManager].layer = self.mainLayer;
+        
+        //Game object
+        Game* game = [[Game alloc] init];
         
         //Gameplay Layer
         GameLayer *gameLayer = [GameLayer node];
         gameLayer.touchListener = game.level;
         gameLayer.stepListener = game;
         [self addChild:gameLayer z:5];
-        
-        //THIS SHOUD BE PLACED ELSE WHERE: THINK ARCHICTURE
-        [[GraphicManager sharedManager]setLayer:self.mainLayer];
     }
     return self;
 }

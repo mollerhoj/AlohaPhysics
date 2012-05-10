@@ -12,6 +12,7 @@
 @interface GameManager : NSObject
 
 typedef enum {
+    StartScreenSceneEnum,
     GameSceneEnum,
     LevelSelectSceneEnum
 } Scenes;
