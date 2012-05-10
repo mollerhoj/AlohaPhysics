@@ -15,7 +15,7 @@
 #import "SoundManager.h"
 #import "GraphicManager.h"
 #import "LevelSelectScene.h"
-#import "StartScreenLayer.h"
+#import "StartScene.h"
 #import "EndScene.h"
 
 @interface GameManager()
@@ -79,7 +79,7 @@ static GameManager* sharedManager;
             return self.levelSelectScene;
             break;
         case StartScreenSceneEnum:
-            return [StartScreenLayer scene];
+            return [StartScene node];
             break;
         case EndSceneEnum:
             return [EndScene node];

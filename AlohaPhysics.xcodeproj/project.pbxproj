@@ -24,10 +24,9 @@
 		1D41F30F1545459400F60662 /* sprites.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D41F30D1545459400F60662 /* sprites.png */; };
 		1D67045C155A348D00E416BF /* Bouncy Ride.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 1D67045B155A348D00E416BF /* Bouncy Ride.m4a */; };
 		1D67045D155A348D00E416BF /* Bouncy Ride.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 1D67045B155A348D00E416BF /* Bouncy Ride.m4a */; };
-		1D670460155A358E00E416BF /* StartScreenLayer.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1D67045F155A358D00E416BF /* StartScreenLayer.mm */; };
-		1D670461155A358E00E416BF /* StartScreenLayer.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1D67045F155A358D00E416BF /* StartScreenLayer.mm */; };
 		1D670464155B658D00E416BF /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D670463155B658C00E416BF /* Utils.m */; };
 		1D67046A155B6A6B00E416BF /* EndScene.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1D670469155B6A6900E416BF /* EndScene.mm */; };
+		1D670473155B7B7B00E416BF /* StartScene.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1D670472155B7B6A00E416BF /* StartScene.mm */; };
 		1D9FFBA0154CEE0400DC0F6E /* GraphicManager.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1D9FFB9F154CEE0300DC0F6E /* GraphicManager.mm */; };
 		1D9FFBA3154D007E00DC0F6E /* GameManager.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1D9FFBA2154D007E00DC0F6E /* GameManager.mm */; };
 		1DAF5057155275FD000B6EFC /* LevelSelectScene.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1DAF5056155275FD000B6EFC /* LevelSelectScene.mm */; };
@@ -224,12 +223,12 @@
 		1D41F30C1545459400F60662 /* sprites.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = sprites.plist; path = Resources/sprites.plist; sourceTree = "<group>"; };
 		1D41F30D1545459400F60662 /* sprites.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = sprites.png; path = Resources/sprites.png; sourceTree = "<group>"; };
 		1D67045B155A348D00E416BF /* Bouncy Ride.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Bouncy Ride.m4a"; sourceTree = "<group>"; };
-		1D67045E155A358C00E416BF /* StartScreenLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StartScreenLayer.h; sourceTree = "<group>"; };
-		1D67045F155A358D00E416BF /* StartScreenLayer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = StartScreenLayer.mm; sourceTree = "<group>"; };
 		1D670462155B658B00E416BF /* Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utils.h; sourceTree = "<group>"; };
 		1D670463155B658C00E416BF /* Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utils.m; sourceTree = "<group>"; };
 		1D670468155B6A6700E416BF /* EndScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EndScene.h; sourceTree = "<group>"; };
 		1D670469155B6A6900E416BF /* EndScene.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = EndScene.mm; sourceTree = "<group>"; };
+		1D670471155B7B6400E416BF /* StartScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StartScene.h; sourceTree = "<group>"; };
+		1D670472155B7B6A00E416BF /* StartScene.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = StartScene.mm; sourceTree = "<group>"; };
 		1D9FFB9E154CEB1800DC0F6E /* GraphicManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = GraphicManager.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		1D9FFB9F154CEE0300DC0F6E /* GraphicManager.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = GraphicManager.mm; sourceTree = "<group>"; };
 		1D9FFBA1154D007E00DC0F6E /* GameManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameManager.h; sourceTree = "<group>"; };
@@ -633,6 +632,9 @@
 		1D670465155B65CE00E416BF /* Engine */ = {
 			isa = PBXGroup;
 			children = (
+				1DF8B228153B919900D9ED4A /* GLES-Render.h */,
+				1DF8B229153B919900D9ED4A /* GLES-Render.mm */,
+				1DF8B22B153B919900D9ED4A /* GameConfig.h */,
 				1DF8B21F153B919900D9ED4A /* AppDelegate.h */,
 				1DF8B220153B919900D9ED4A /* AppDelegate.mm */,
 				1DF8B222153B919900D9ED4A /* RootViewController.h */,
@@ -644,6 +646,20 @@
 		1D670466155B65F100E416BF /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				1D054C91154262D30015BBAD /* Game.h */,
+				1D054C92154262D40015BBAD /* Game.mm */,
+				1D054C94154267A30015BBAD /* Level.h */,
+				1D054C95154267A30015BBAD /* Level.mm */,
+				1D054C97154267B20015BBAD /* LevelBuilder.h */,
+				1D054C98154267B50015BBAD /* LevelBuilder.mm */,
+				1D054C9A154267CF0015BBAD /* Mechanic.h */,
+				1D054C9B154267CF0015BBAD /* Mechanic.mm */,
+				1D054C9D154267F20015BBAD /* MoveableObject.h */,
+				1D054C9E154267F30015BBAD /* MoveableObject.mm */,
+				1D41F3061545183F00F60662 /* Goal.h */,
+				1D41F3071545184000F60662 /* Goal.mm */,
+				1D1BF4D31546856F00A7E036 /* Hero.h */,
+				1D1BF4D41546856F00A7E036 /* Hero.mm */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -651,8 +667,51 @@
 		1D670467155B660800E416BF /* Control */ = {
 			isa = PBXGroup;
 			children = (
+				1DE2B5FF15438BDB003855DE /* GameScene.h */,
+				1DE2B60015438BDB003855DE /* GameScene.mm */,
 			);
 			name = Control;
+			sourceTree = "<group>";
+		};
+		1D670474155B7D9500E416BF /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				1D670462155B658B00E416BF /* Utils.h */,
+				1D670463155B658C00E416BF /* Utils.m */,
+				1DF8B225153B919900D9ED4A /* HelloWorldLayer.h */,
+				1DF8B226153B919900D9ED4A /* HelloWorldLayer.mm */,
+			);
+			name = Utils;
+			sourceTree = "<group>";
+		};
+		1D670475155B7DE500E416BF /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				1D9FFBA1154D007E00DC0F6E /* GameManager.h */,
+				1D9FFBA2154D007E00DC0F6E /* GameManager.mm */,
+				1D9FFB9E154CEB1800DC0F6E /* GraphicManager.h */,
+				1D9FFB9F154CEE0300DC0F6E /* GraphicManager.mm */,
+				1DD2E07A1544B9B40072CFB3 /* SoundManager.h */,
+				1DD2E07B1544B9B50072CFB3 /* SoundManager.mm */,
+			);
+			name = Managers;
+			sourceTree = "<group>";
+		};
+		1D670476155B7E9500E416BF /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				1D054C86153E5F810015BBAD /* GameLayer.h */,
+				1D054C87153E5F810015BBAD /* GameLayer.mm */,
+				1DAF505D15527930000B6EFC /* LevelSelectLayer.h */,
+				1DAF505E15527930000B6EFC /* LevelSelectLayer.mm */,
+				1DAF5055155275FD000B6EFC /* LevelSelectScene.h */,
+				1DAF5056155275FD000B6EFC /* LevelSelectScene.mm */,
+				1D670468155B6A6700E416BF /* EndScene.h */,
+				1D670469155B6A6900E416BF /* EndScene.mm */,
+				1D670471155B7B6400E416BF /* StartScene.h */,
+				1D670472155B7B6A00E416BF /* StartScene.mm */,
+			);
+			name = Scenes;
 			sourceTree = "<group>";
 		};
 		1DD2E07E1544BC300072CFB3 /* Sounds */ = {
@@ -705,55 +764,19 @@
 		1DF8B05A153B919600D9ED4A /* AlohaPhysics */ = {
 			isa = PBXGroup;
 			children = (
+				1D670476155B7E9500E416BF /* Scenes */,
+				1D670475155B7DE500E416BF /* Managers */,
+				1D670474155B7D9500E416BF /* Utils */,
 				1D670467155B660800E416BF /* Control */,
 				1D670466155B65F100E416BF /* Model */,
 				1D670465155B65CE00E416BF /* Engine */,
-				1DF8B225153B919900D9ED4A /* HelloWorldLayer.h */,
-				1DF8B226153B919900D9ED4A /* HelloWorldLayer.mm */,
-				1DE2B5FF15438BDB003855DE /* GameScene.h */,
-				1DE2B60015438BDB003855DE /* GameScene.mm */,
-				1DAF5055155275FD000B6EFC /* LevelSelectScene.h */,
-				1DAF5056155275FD000B6EFC /* LevelSelectScene.mm */,
-				1DAF505D15527930000B6EFC /* LevelSelectLayer.h */,
-				1DAF505E15527930000B6EFC /* LevelSelectLayer.mm */,
-				1D67045E155A358C00E416BF /* StartScreenLayer.h */,
-				1D67045F155A358D00E416BF /* StartScreenLayer.mm */,
-				1D670468155B6A6700E416BF /* EndScene.h */,
-				1D670469155B6A6900E416BF /* EndScene.mm */,
-				1D9FFBA1154D007E00DC0F6E /* GameManager.h */,
-				1D9FFBA2154D007E00DC0F6E /* GameManager.mm */,
-				1D054C86153E5F810015BBAD /* GameLayer.h */,
-				1D054C87153E5F810015BBAD /* GameLayer.mm */,
-				1D9FFB9E154CEB1800DC0F6E /* GraphicManager.h */,
-				1D9FFB9F154CEE0300DC0F6E /* GraphicManager.mm */,
-				1D41F3061545183F00F60662 /* Goal.h */,
-				1D41F3071545184000F60662 /* Goal.mm */,
-				1D1BF4D31546856F00A7E036 /* Hero.h */,
-				1D1BF4D41546856F00A7E036 /* Hero.mm */,
 				1DE2B5FA15438971003855DE /* BackgroundLayer.h */,
 				1DE2B5FB15438971003855DE /* BackgroundLayer.mm */,
-				1D670462155B658B00E416BF /* Utils.h */,
-				1D670463155B658C00E416BF /* Utils.m */,
-				1DF8B228153B919900D9ED4A /* GLES-Render.h */,
-				1DF8B229153B919900D9ED4A /* GLES-Render.mm */,
-				1DF8B22B153B919900D9ED4A /* GameConfig.h */,
 				1DF8B05B153B919600D9ED4A /* Resources */,
 				1DF8B06F153B919600D9ED4A /* libs */,
 				1DF8B21B153B919900D9ED4A /* Supporting Files */,
-				1D054C91154262D30015BBAD /* Game.h */,
-				1D054C92154262D40015BBAD /* Game.mm */,
 				CAE6A1D7154D0C7300717B29 /* MyContactListener.h */,
 				CAE6A1D8154D0C7300717B29 /* MyContactListener.mm */,
-				1D054C94154267A30015BBAD /* Level.h */,
-				1D054C95154267A30015BBAD /* Level.mm */,
-				1D054C97154267B20015BBAD /* LevelBuilder.h */,
-				1D054C98154267B50015BBAD /* LevelBuilder.mm */,
-				1D054C9A154267CF0015BBAD /* Mechanic.h */,
-				1D054C9B154267CF0015BBAD /* Mechanic.mm */,
-				1DD2E07A1544B9B40072CFB3 /* SoundManager.h */,
-				1DD2E07B1544B9B50072CFB3 /* SoundManager.mm */,
-				1D054C9D154267F20015BBAD /* MoveableObject.h */,
-				1D054C9E154267F30015BBAD /* MoveableObject.mm */,
 				1DD2E08B1544EFA70072CFB3 /* TODO.txt */,
 			);
 			path = AlohaPhysics;
@@ -1505,9 +1528,9 @@
 				CAE6A1D9154D0C7300717B29 /* MyContactListener.mm in Sources */,
 				1DAF5057155275FD000B6EFC /* LevelSelectScene.mm in Sources */,
 				1DAF505F15527930000B6EFC /* LevelSelectLayer.mm in Sources */,
-				1D670460155A358E00E416BF /* StartScreenLayer.mm in Sources */,
 				1D670464155B658D00E416BF /* Utils.m in Sources */,
 				1D67046A155B6A6B00E416BF /* EndScene.mm in Sources */,
+				1D670473155B7B7B00E416BF /* StartScene.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1516,7 +1539,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				1DF8B245153B926900D9ED4A /* AlohaTester.mm in Sources */,
-				1D670461155A358E00E416BF /* StartScreenLayer.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
