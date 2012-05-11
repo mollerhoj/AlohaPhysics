@@ -31,7 +31,7 @@
                                                                   target:self
                                                                 selector:@selector(restartButtonAction)];
         
-        restartButton.position=ccp(50,50);
+        restartButton.position=ccp(250,100);
         CCMenu *menu=[CCMenu menuWithItems:restartButton,nil];
         menu.position=ccp(0,0);
         [menuLayer addChild:menu];
