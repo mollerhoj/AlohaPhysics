@@ -34,7 +34,7 @@
 -(id)init {
     self = [super init];
     if (self != nil) {
-        self.sprite = [[GraphicManager sharedManager] createSpriteFromPicture:@"Sprite_Goal.png"];
+        self.sprite = [[GraphicManager sharedManager] createSprite:@"Sprite_Goal.png"];
         self.sprite.scale = 0.5;
         self.animation_dietime = 0;
     }

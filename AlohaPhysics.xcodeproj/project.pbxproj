@@ -195,6 +195,7 @@
 		1DF8B23C153B926900D9ED4A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF8B056153B919600D9ED4A /* Foundation.framework */; };
 		1DF8B242153B926900D9ED4A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1DF8B240153B926900D9ED4A /* InfoPlist.strings */; };
 		1DF8B245153B926900D9ED4A /* AlohaTester.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1DF8B244153B926900D9ED4A /* AlohaTester.mm */; };
+		CA7E5A11155CBF4600D95CF6 /* ObjectUtilities.mm in Sources */ = {isa = PBXBuildFile; fileRef = CA7E5A10155CBF4600D95CF6 /* ObjectUtilities.mm */; };
 		CAE6A1D9154D0C7300717B29 /* MyContactListener.mm in Sources */ = {isa = PBXBuildFile; fileRef = CAE6A1D8154D0C7300717B29 /* MyContactListener.mm */; };
 /* End PBXBuildFile section */
 
@@ -565,6 +566,8 @@
 		1DF8B243153B926900D9ED4A /* AlohaTester.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AlohaTester.h; sourceTree = "<group>"; };
 		1DF8B244153B926900D9ED4A /* AlohaTester.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = AlohaTester.mm; sourceTree = "<group>"; };
 		1DF8B246153B926900D9ED4A /* AlohaTester-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AlohaTester-Prefix.pch"; sourceTree = "<group>"; };
+		CA7E5A0F155CBF4600D95CF6 /* ObjectUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ObjectUtilities.h; sourceTree = "<group>"; };
+		CA7E5A10155CBF4600D95CF6 /* ObjectUtilities.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ObjectUtilities.mm; sourceTree = "<group>"; };
 		CAE6A1D7154D0C7300717B29 /* MyContactListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyContactListener.h; sourceTree = "<group>"; };
 		CAE6A1D8154D0C7300717B29 /* MyContactListener.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MyContactListener.mm; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -658,6 +661,8 @@
 				1D054C9E154267F30015BBAD /* MoveableObject.mm */,
 				1D41F3061545183F00F60662 /* Goal.h */,
 				1D41F3071545184000F60662 /* Goal.mm */,
+				CA7E5A0F155CBF4600D95CF6 /* ObjectUtilities.h */,
+				CA7E5A10155CBF4600D95CF6 /* ObjectUtilities.mm */,
 				1D1BF4D31546856F00A7E036 /* Hero.h */,
 				1D1BF4D41546856F00A7E036 /* Hero.mm */,
 			);
@@ -1523,6 +1528,7 @@
 				1D670464155B658D00E416BF /* Utils.m in Sources */,
 				1D67046A155B6A6B00E416BF /* EndScene.mm in Sources */,
 				1D670473155B7B7B00E416BF /* StartScene.mm in Sources */,
+				CA7E5A11155CBF4600D95CF6 /* ObjectUtilities.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

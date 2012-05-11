@@ -7,6 +7,8 @@
 //
 
 #include "MyContactListener.h"
+#import "SoundManager.h"
+#import "ObjectUtilities.h"
 
 MyContactListener::MyContactListener() : contacts()
 {
@@ -22,6 +24,20 @@ void MyContactListener::BeginContact(b2Contact* contact)
 
 void MyContactListener::EndContact(b2Contact* contact)
 {
+    b2Body *a = contact->GetFixtureA()->GetBody();
+    b2Body *b = contact->GetFixtureB()->GetBody();
+    ObjectUtilities *aO = (ObjectUtilities*)a->GetUserData();
+    ObjectUtilities *bO = (ObjectUtilities*)b->GetUserData();
+    
+    if(aO.isHit)
+    {
+        aO.isHit = NO;
+    }
+    
+    if(bO.isHit) 
+    {
+        bO.isHit = NO;
+    }
 }
 
 void MyContactListener::PreSolve(b2Contact* contact,
@@ -32,16 +48,29 @@ void MyContactListener::PreSolve(b2Contact* contact,
 void MyContactListener::PostSolve(b2Contact* contact,
                                   const b2ContactImpulse* impulse)
 {
-    int32 count = contact->GetManifold()->pointCount;
+
+    b2Body *a = contact->GetFixtureA()->GetBody();
+    b2Body *b = contact->GetFixtureB()->GetBody();
+    ObjectUtilities *aO = (ObjectUtilities*)a->GetUserData();
+    ObjectUtilities *bO = (ObjectUtilities*)b->GetUserData();
     
     float32 maxImpulse = 0.0f;
-    for (int32 i = 0; i < count; ++i)
-    {
-        maxImpulse = b2Max(maxImpulse, impulse->normalImpulses[i]);
-    }
+    maxImpulse = b2Max(maxImpulse, impulse->normalImpulses[0]);
     
     if (maxImpulse > 3.0f)
     {
-        NSLog(@"Impulse strong enough for hero to sound!");
+        if(!aO.isHit && !bO.isHit)
+        {
+            //[[SoundManager sharedManager] playSound:HIT];
+            if(!aO.isHit)
+            {
+                aO.isHit = YES;
+            }
+            
+            if(!bO.isHit) 
+            {
+                bO.isHit = YES;
+            }
+        }
     }
 }

@@ -18,7 +18,7 @@
         
         //Background Layer
         BackgroundLayer *backgroundLayer = [BackgroundLayer node];
-        backgroundLayer.image = @"Background.png";
+        backgroundLayer.image = @"Endscreen.png";
         [self addChild:backgroundLayer z:0];
         
         //MenuLayer

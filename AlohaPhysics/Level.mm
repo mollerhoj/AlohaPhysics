@@ -22,7 +22,7 @@
 
 @implementation Level
 
-#define NUMBER_OF_LEVELS 10
+#define NUMBER_OF_LEVELS 15
 
 @synthesize levelBuilder = _levelBuilder;
 @synthesize currentLevel = _currentLevel;
