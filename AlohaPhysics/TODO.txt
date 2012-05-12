@@ -4,13 +4,9 @@ C Make shapes move in game object (mechanic remove)
 
 C check play or reverse in physical objects
 
+Make a level selection menu
 
-
-J Make a level selection menu
-
-J resize boxes
-
-J Make levelbuilder load from json.
+Make levelbuilder load from json.
 
 A gameObject class that all visible gameplay objects inherits from
 It’s step function moves the sprite. 
@@ -25,7 +21,6 @@ Many enums should be replaced with plists
 Soundmanager genetic with plist instead of enum
 
 Refactoring: Logic from game loop to game objects.
-
 
 BEFORE RELEASE:
 

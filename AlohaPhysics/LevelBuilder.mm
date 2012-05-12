@@ -106,7 +106,7 @@
             //Moveable objects
             [self addKinematicBoxWithCoords:CGPointMake(1.7, 2.5) withDimensionX:0.4 andY:0.4 withAngle:0.6 andCenter:b2Vec2(0.0, 0.0) andMechanicType:LINEAR andPlayVelocity:b2Vec2(13.0, 11.0) andRewindVelocity:b2Vec2(-13.0, -11.0) andMaxTimePlay:10 withSprite:@"block51x51.png"];
             [self addKinematicBoxWithCoords:CGPointMake(3.1, 2.2) withDimensionX:0.4 andY:0.4 withAngle:0.6 andCenter:b2Vec2(0.0, 0.0) andMechanicType:LINEAR andPlayVelocity:b2Vec2(13.0, 11.0) andRewindVelocity:b2Vec2(-13.0, -11.0) andMaxTimePlay:0 withSprite:@"block51x51.png"];
-            [self addKinematicBoxWithCoords:CGPointMake(14.1, 2.2) withDimensionX:0.4 andY:1.5 withAngle:0.0 andCenter:b2Vec2(0.0, 0.0) andMechanicType:LINEAR andPlayVelocity:b2Vec2(0.0, 10.0) andRewindVelocity:b2Vec2(0.0, -10.0) andMaxTimePlay:self.level.maxTime withSprite:@"block51x192.png"];
+            [self addKinematicBoxWithCoords:CGPointMake(14.1, 2.2) withDimensionX:1.5 andY:0.4 withAngle:1.572 andCenter:b2Vec2(0.0, 0.0) andMechanicType:LINEAR andPlayVelocity:b2Vec2(0.0, 10.0) andRewindVelocity:b2Vec2(0.0, -10.0) andMaxTimePlay:self.level.maxTime withSprite:@"block192x51.png"];
             
             //Adding hero
             [self addHeroWithCoords:CGPointMake(2.65, 3.1)];
@@ -227,8 +227,8 @@
             [self addKinematicBoxWithCoords:CGPointMake(13.0, 7.0) withDimensionX:1.2 andY:0.4 withAngle:0.5 andCenter:b2Vec2(-1.0, 0.0) andMechanicType:ANGULAR andPlayVelocity:b2Vec2(-4.0, 0.0) andRewindVelocity:b2Vec2(4.0, 0.0) andMaxTimePlay:self.level.maxTime withSprite:@"block154x51.png"];
             [self addKinematicBoxWithCoords:CGPointMake(2.0, 3.5) withDimensionX:1.2 andY:0.4 withAngle:-0.7 andCenter:b2Vec2(1.0, 0.0) andMechanicType:ANGULAR andPlayVelocity:b2Vec2(4.0, 0.0) andRewindVelocity:b2Vec2(-4.0, 0.0) andMaxTimePlay:self.level.maxTime withSprite:@"block154x51.png"];
             //Obstacles
-            [self addKinematicBoxWithCoords:CGPointMake(7.5, 6.7) withDimensionX:0.4 andY:1.2 withAngle:0.0 andCenter:b2Vec2(0.0, 0.0) andMechanicType:ANGULAR andPlayVelocity:b2Vec2(4.0, 0.0) andRewindVelocity:b2Vec2(-4.0, 0.0) andMaxTimePlay:0 withSprite:@"block51x154.png"];
-            [self addKinematicBoxWithCoords:CGPointMake(7.5, 2.0) withDimensionX:0.4 andY:1.5 withAngle:0.0 andCenter:b2Vec2(0.0, 0.0) andMechanicType:ANGULAR andPlayVelocity:b2Vec2(4.0, 0.0) andRewindVelocity:b2Vec2(-4.0, 0.0) andMaxTimePlay:0 withSprite:@"block51x192.png"];
+            [self addKinematicBoxWithCoords:CGPointMake(7.5, 6.7) withDimensionX:1.2 andY:0.4 withAngle:1.572 andCenter:b2Vec2(0.0, 0.0) andMechanicType:ANGULAR andPlayVelocity:b2Vec2(4.0, 0.0) andRewindVelocity:b2Vec2(-4.0, 0.0) andMaxTimePlay:0 withSprite:@"block154x51.png"];
+            [self addKinematicBoxWithCoords:CGPointMake(7.5, 2.0) withDimensionX:1.5 andY:0.4 withAngle:1.572 andCenter:b2Vec2(0.0, 0.0) andMechanicType:ANGULAR andPlayVelocity:b2Vec2(4.0, 0.0) andRewindVelocity:b2Vec2(-4.0, 0.0) andMaxTimePlay:0 withSprite:@"block192x51.png"];
             
             //Adding hero
             [self addHeroWithCoords:CGPointMake(12.5, 9.5)];
@@ -260,8 +260,8 @@
             
             [self addKinematicBoxWithCoords:CGPointMake(2.0, 3.5) withDimensionX:1.6 andY:0.4 withAngle:-0.7 andCenter:b2Vec2(1.0, 0.0) andMechanicType:ANGULAR andPlayVelocity:b2Vec2(4.0, 0.0) andRewindVelocity:b2Vec2(-4.0, 0.0) andMaxTimePlay:self.level.maxTime withSprite:@"block205x51.png"];
             
-            [self addKinematicBoxWithCoords:CGPointMake(11.0, 8.0) withDimensionX:0.4 andY:1.5 withAngle:0.0 andCenter:b2Vec2(0.0, 0.0) andMechanicType:ANGULAR andPlayVelocity:b2Vec2(4.0, 0.0) andRewindVelocity:b2Vec2(-4.0, 0.0) andMaxTimePlay:0 withSprite:@"block51x192.png"];
-            [self addKinematicBoxWithCoords:CGPointMake(11.0, 3.0) withDimensionX:0.4 andY:1.5 withAngle:0.0 andCenter:b2Vec2(0.0, 0.0) andMechanicType:ANGULAR andPlayVelocity:b2Vec2(4.0, 0.0) andRewindVelocity:b2Vec2(-4.0, 0.0) andMaxTimePlay:0 withSprite:@"block51x192.png"];
+            [self addKinematicBoxWithCoords:CGPointMake(11.0, 8.0) withDimensionX:1.5 andY:0.4 withAngle:1.572 andCenter:b2Vec2(0.0, 0.0) andMechanicType:ANGULAR andPlayVelocity:b2Vec2(4.0, 0.0) andRewindVelocity:b2Vec2(-4.0, 0.0) andMaxTimePlay:0 withSprite:@"block192x51.png"];
+            [self addKinematicBoxWithCoords:CGPointMake(11.0, 3.0) withDimensionX:1.5 andY:0.4 withAngle:1.572 andCenter:b2Vec2(0.0, 0.0) andMechanicType:ANGULAR andPlayVelocity:b2Vec2(4.0, 0.0) andRewindVelocity:b2Vec2(-4.0, 0.0) andMaxTimePlay:0 withSprite:@"block192x51.png"];
             
             //Adding hero
             [self addHeroWithCoords:CGPointMake(2.5, 7.8)];

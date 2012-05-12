@@ -18,7 +18,7 @@
         
         //Background Layer
         BackgroundLayer *backgroundLayer = [BackgroundLayer node];
-        backgroundLayer.image = @"Background.png";
+        backgroundLayer.image = @"Startscreen.png";
         [self addChild:backgroundLayer z:0];
         
         //MenuLayer
@@ -31,7 +31,7 @@
                                                                     target:self
                                                                   selector:@selector(playButtonAction)];
         
-        playButton.position=ccp(50,50);
+        playButton.position=ccp(250,80);
         CCMenu *menu=[CCMenu menuWithItems:playButton,nil];
         menu.position=ccp(0,0);
         [menuLayer addChild:menu];
